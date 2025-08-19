@@ -1524,6 +1524,12 @@ bool Application::launch(InstancePtr instance,
     if (m_updateRunning) {
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
+        if (settings()->get("AutoSyncModpack").toBool()) {
+            if (!syncWithServer(instance)) {
+                qWarning() << "Modpack sync failed, aborting launch.";
+                return false;
+            }
+        }
         QMutexLocker locker(&m_instanceExtrasMutex);
         auto& extras = m_instanceExtras[instance->id()];
         auto window = extras.window;
