@@ -2,7 +2,7 @@
 #include "ServerCommunication.h"
 #include "BaseInstance.h"
 
-int SyncModpack(BaseInstance instance) {
+int SyncModpack(InstancePtr instance) {
     // Get the global Application instance’s network manager and Application's setting manager
     auto net = APPLICATION->network();
     auto settings = APPLICATION->settings();

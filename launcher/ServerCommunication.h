@@ -2,4 +2,4 @@
 
 #include "BaseInstance.h"
 
-int SyncModpack(BaseInstance* instance);
+int SyncModpack(InstancePtr instance);
