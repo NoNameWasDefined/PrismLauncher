@@ -47,6 +47,7 @@
 #include <memory>
 
 #include <BaseInstance.h>
+#include <InstanceList.h>
 
 #include "launch/LogModel.h"
 #include "minecraft/launch/MinecraftTarget.h"
