@@ -24,16 +24,19 @@ int SyncModpack(InstancePtr instance)
     QObject::connect(reply, &QNetworkReply::finished, [reply, instanceName]() {
         int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QByteArray response = reply->readAll();
-
-        if (statusCode == 204) {
-            qDebug() << "No update for instance:" << instanceName;
-        } else if (statusCode == 210) {
-            qDebug() << "Updating modpack" << instanceName;
-        } else if (statusCode >= 200 && statusCode < 300) {
-            qDebug() << "Manifest for" << instanceName << ":" << response;
-        } else {
-            qWarning() << "Server error:" << statusCode << response;
-        }
+        switch (statusCode) {
+            case 204:
+                qDebug() << "No update for instance:" << instanceName;
+                break;
+            case 210:
+                qDebug() << "Updating modpack" << instanceName;
+                break;
+            case 300:
+                qDebug() << "Manifest for" << instanceName << ":" << response;
+                break;
+            default:
+                qWarning() << "Server error:" << statusCode << response;
+        };
 
         reply->deleteLater();
     });
