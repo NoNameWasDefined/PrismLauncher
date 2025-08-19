@@ -9,8 +9,8 @@ int SyncModpack(InstancePtr instance) {
   auto settings = APPLICATION->settings();
 
   // Extract name and type
-  QString instanceName = instance.settings()->get("name").toString();
-  QString instanceType = instance.settings()->get("InstanceType").toString();
+  String instanceName = instance->settings()->get("name").toString();
+  QString instanceType = instance->settings()->get("InstanceType").toString();
 
   // Read app setting
   QString serverUrl = settings->get("ModpackSyncServerURL").toString();
