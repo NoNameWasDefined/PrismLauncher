@@ -42,6 +42,7 @@
 
 #include "Application.h"
 #include "BuildConfig.h"
+#include "ServerCommunication.h"
 
 #include "DataMigrationTask.h"
 #include "java/JavaInstallList.h"
@@ -1525,7 +1526,7 @@ bool Application::launch(InstancePtr instance,
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
         if (settings()->get("AutoSyncModpack").toBool()) {
-            if (!syncWithServer(instance)) {
+            if (!SyncModpack(instance)) {
                 qWarning() << "Modpack sync failed, aborting launch.";
                 return false;
             }

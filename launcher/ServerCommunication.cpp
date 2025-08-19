@@ -14,13 +14,25 @@ int SyncModpack(BaseInstance instance) {
     // Read app setting
     QString serverUrl = settings->get("ModpackSyncServerURL").toString();
 
-    // Example: request the manifest
-    QNetworkRequest request(QUrl(serverUrl + "/manifest.json?=" + instanceName + "&" + instanceType));
+    // Request manifest
+    QUrl url(serverUrl + "/manifest.json?name=" + instanceName + "&type=" + instanceType);
+    QNetworkRequest request(url);
     auto reply = net->get(request);
 
-    QObject::connect(reply, &QNetworkReply::finished, [reply]() {
+    QObject::connect(reply, &QNetworkReply::finished, [reply, instanceName]() {
+        int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         QByteArray response = reply->readAll();
-        qDebug() << "Manifest from server:" << response;
+
+        if (statusCode == 204) {
+            qDebug() << "No update for instance:" << instanceName;
+        } else if (statusCode == 210) {
+            qDebug() << "Updating modpack" << instanceName;
+        } else if (statusCode >= 200 && statusCode < 300) {
+            qDebug() << "Manifest for" << instanceName << ":" << response;
+        } else {
+            qWarning() << "Server error:" << statusCode << response;
+        }
+
         reply->deleteLater();
     });
 
