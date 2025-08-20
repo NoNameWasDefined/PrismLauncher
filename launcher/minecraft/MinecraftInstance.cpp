@@ -176,7 +176,6 @@ void MinecraftInstance::loadSpecificSettings()
 {
     if (isSpecificSettingsLoaded())
         return;
-
     // Java Settings
     auto locationOverride = m_settings->registerSetting("OverrideJavaLocation", false);
     auto argsOverride = m_settings->registerSetting("OverrideJavaArgs", false);
