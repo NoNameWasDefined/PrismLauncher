@@ -38,6 +38,7 @@
 #include <QFuture>
 #include <QFutureWatcher>
 #include <QUrl>
+#include <quazip/quazip.h>
 #include "InstanceTask.h"
 
 class QuaZip;
@@ -61,12 +62,14 @@ class InstanceImportTask : public InstanceTask {
     QString getRootFromZip(QuaZip* zip, const QString& root = "");
 
    private slots:
-    void processZipPack();
+    void processAnyPack();
+    void processJSONPack(QJsonDocument packJson);
+    void processZipPack(QuaZip* packZip);
     void extractFinished();
 
    private: /* data */
     QUrl m_sourceUrl;
-    QString m_archivePath;
+    QString m_json_or_archivePath;
     Task::Ptr m_task;
     enum class ModpackType {
         Unknown,

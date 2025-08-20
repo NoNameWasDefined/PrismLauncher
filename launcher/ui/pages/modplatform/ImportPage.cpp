@@ -114,8 +114,10 @@ void ImportPage::updateState()
             bool isZip = QMimeDatabase().mimeTypeForUrl(url).suffixes().contains("zip");
             // mrpack is a modrinth pack
             bool isMRPack = fi.suffix() == "mrpack";
+            // json is a custom pack
+            bool isJSON = fi.suffix() == "json"
 
-            if (fi.exists() && (isZip || isMRPack)) {
+            if (fi.exists() && (isZip || isMRPack || isJSON)) {
                 auto extra_info = QMap(m_extra_info);
                 qDebug() << "Pack Extra Info" << extra_info << m_extra_info;
                 dialog->setSuggestedPack(fi.completeBaseName(), new InstanceImportTask(url, this, std::move(extra_info)));
@@ -171,9 +173,9 @@ void ImportPage::updateState()
                     CustomMessageBox::selectable(this, tr("Error"), tr("This url isn't a valid modpack !"), QMessageBox::Critical)->show();
                 }
             });
-            ProgressDialog dlUrlDialod(this);
-            dlUrlDialod.setSkipButton(true, tr("Abort"));
-            dlUrlDialod.execWithTask(job.get());
+            ProgressDialog dlUrlDialog(this);
+            dlUrlDialog.setSkipButton(true, tr("Abort"));
+            dlUrlDialog.execWithTask(job.get());
             return;
         } else {
             if (input.endsWith("?client=y")) {

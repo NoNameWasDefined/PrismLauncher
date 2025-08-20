@@ -80,7 +80,7 @@ void InstanceImportTask::executeTask()
     setAbortable(true);
 
     if (m_sourceUrl.isLocalFile()) {
-        m_archivePath = m_sourceUrl.toLocalFile();
+        m_json_or_archivePath = m_sourceUrl.toLocalFile();
         processZipPack();
     } else {
         setStatus(tr("Downloading modpack:\n%1").arg(m_sourceUrl.toString()));
@@ -95,12 +95,12 @@ void InstanceImportTask::downloadFromUrl()
 
     auto entry = APPLICATION->metacache()->resolveEntry("general", path);
     entry->setStale(true);
-    m_archivePath = entry->getFullPath();
+    m_json_or_archivePath = entry->getFullPath();
 
     auto filesNetJob = makeShared<NetJob>(tr("Modpack download"), APPLICATION->network());
     filesNetJob->addNetAction(Net::ApiDownload::makeCached(m_sourceUrl, entry));
 
-    connect(filesNetJob.get(), &NetJob::succeeded, this, &InstanceImportTask::processZipPack);
+    connect(filesNetJob.get(), &NetJob::succeeded, this, &InstanceImportTask::processAnyPack);
     connect(filesNetJob.get(), &NetJob::progress, this, &InstanceImportTask::setProgress);
     connect(filesNetJob.get(), &NetJob::stepProgress, this, &InstanceImportTask::propagateStepProgress);
     connect(filesNetJob.get(), &NetJob::failed, this, &InstanceImportTask::emitFailed);
@@ -144,21 +144,46 @@ QString InstanceImportTask::getRootFromZip(QuaZip* zip, const QString& root)
     return {};
 }
 
-void InstanceImportTask::processZipPack()
+void InstanceImportTask::processAnyPack()
 {
     setStatus(tr("Attempting to determine instance type"));
-    QDir extractDir(m_stagingPath);
-    qDebug() << "Attempting to create instance from" << m_archivePath;
+    qDebug() << "Attempting to create instance from" << m_json_or_archivePath;
+    qDebug() << "Attempting to determine instance type";
 
     // open the zip and find relevant files in it
-    auto packZip = std::make_shared<QuaZip>(m_archivePath);
-    if (!packZip->open(QuaZip::mdUnzip)) {
-        emitFailed(tr("Unable to open supplied modpack zip file."));
-        return;
+    auto packZip = std::make_shared<QuaZip>(m_json_or_archivePath);
+    if (packZip->open(QuaZip::mdUnzip)) {
+        InstanceImportTask::processZipPack(packZip);
+    } else {
+        packZip->close();
+        QFile file(m_json_or_archivePath);
+        if (file.open(QIODevice::ReadOnly)) {
+            QByteArray data = file.read(16);
+            file.close();
+            QJsonDocument json = QJsonDocument::fromJson(data);
+            if (!json.isNull()) {
+                processJSONPack(json);
+                return;
+            } else {
+                emitFailed(tr("Unable to open supplied modpack zip or JSON file."));
+            return;
+            }
+        } else {
+            emitFailed(tr("Unable to open file."));
+            return;
+        }
     }
+}
 
+void InstanceImportTask::processJSONPack(QJsonDocument packJson)
+{
+    //process JSON file at `m_json_or_archive_path`
+}
+
+void InstanceImportTask::processZipPack(QuaZip* packZip)
+{
+    QDir extractDir(m_stagingPath);
     QuaZipDir packZipDir(packZip.get());
-    qDebug() << "Attempting to determine instance type";
 
     QString root;
 
