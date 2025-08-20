@@ -1,3 +1,4 @@
+#include "ServerCommunication.h"
 #include "Application.h"
 #include "BaseInstance.h"
 #include "ServerCommunication.h"
