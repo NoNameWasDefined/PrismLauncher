@@ -62,9 +62,9 @@ class InstanceImportTask : public InstanceTask {
     QString getRootFromZip(QuaZip* zip, const QString& root = "");
 
    private slots:
-    void processAnyPack();
+    void processPack();
     void processJSONPack(QJsonDocument packJson);
-    void processZipPack(QuaZip* packZip);
+    void processZipPack(std::shared_ptr<QuaZip> packZip);
     void extractFinished();
 
    private: /* data */

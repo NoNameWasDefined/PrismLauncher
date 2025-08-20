@@ -81,7 +81,7 @@ void InstanceImportTask::executeTask()
 
     if (m_sourceUrl.isLocalFile()) {
         m_json_or_archivePath = m_sourceUrl.toLocalFile();
-        processZipPack();
+        processPack();
     } else {
         setStatus(tr("Downloading modpack:\n%1").arg(m_sourceUrl.toString()));
 
@@ -100,7 +100,7 @@ void InstanceImportTask::downloadFromUrl()
     auto filesNetJob = makeShared<NetJob>(tr("Modpack download"), APPLICATION->network());
     filesNetJob->addNetAction(Net::ApiDownload::makeCached(m_sourceUrl, entry));
 
-    connect(filesNetJob.get(), &NetJob::succeeded, this, &InstanceImportTask::processAnyPack);
+    connect(filesNetJob.get(), &NetJob::succeeded, this, &InstanceImportTask::processPack);
     connect(filesNetJob.get(), &NetJob::progress, this, &InstanceImportTask::setProgress);
     connect(filesNetJob.get(), &NetJob::stepProgress, this, &InstanceImportTask::propagateStepProgress);
     connect(filesNetJob.get(), &NetJob::failed, this, &InstanceImportTask::emitFailed);
@@ -144,7 +144,7 @@ QString InstanceImportTask::getRootFromZip(QuaZip* zip, const QString& root)
     return {};
 }
 
-void InstanceImportTask::processAnyPack()
+void InstanceImportTask::processPack()
 {
     setStatus(tr("Attempting to determine instance type"));
     qDebug() << "Attempting to create instance from" << m_json_or_archivePath;
@@ -166,7 +166,7 @@ void InstanceImportTask::processAnyPack()
                 return;
             } else {
                 emitFailed(tr("Unable to open supplied modpack zip or JSON file."));
-            return;
+                return;
             }
         } else {
             emitFailed(tr("Unable to open file."));
@@ -177,10 +177,10 @@ void InstanceImportTask::processAnyPack()
 
 void InstanceImportTask::processJSONPack(QJsonDocument packJson)
 {
-    //process JSON file at `m_json_or_archive_path`
+    // process JSON file at `m_json_or_archive_path`
 }
 
-void InstanceImportTask::processZipPack(QuaZip* packZip)
+void InstanceImportTask::processZipPack(std::shared_ptr<QuaZip> packZip)
 {
     QDir extractDir(m_stagingPath);
     QuaZipDir packZipDir(packZip.get());
