@@ -35,10 +35,10 @@
 
 #pragma once
 
+#include <quazip/quazip.h>
 #include <QFuture>
 #include <QFutureWatcher>
 #include <QUrl>
-#include <quazip/quazip.h>
 #include "InstanceTask.h"
 
 class QuaZip;
