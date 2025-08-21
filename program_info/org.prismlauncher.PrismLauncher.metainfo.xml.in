@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <id>@Launcher_AppID@</id>
-  <name>Prism Launcher</name>
-  <summary>Custom Minecraft Launcher to easily manage multiple Minecraft installations at once</summary>
+  <name>Prism Launcher Share</name>
+  <summary>Custom Minecraft Launcher to easily manage multiple Minecraft installations at once. And now, don't bother with mods version or adding mod on every one of your friends computer.
+   Just upload it, and boom! You're done</summary>
   <developer id="org.prismlauncher">
     <name>Prism Launcher Contributors</name>
   </developer>

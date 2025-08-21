@@ -2,8 +2,8 @@
 
 #include "BaseInstance.h"
 
-// TODO: rename this class
-class ServerInstance : public BaseInstance {
+// Should not be a BaseInstance, because BaseInstance is for Minecraft instances
+class ServerUtils{ // Communication with sync server
    public:
     QByteArray CreateManifest(InstancePtr instance);
     std::pair<int, QByteArray> PostManifest(InstancePtr instance);

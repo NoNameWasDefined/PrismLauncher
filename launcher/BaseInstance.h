@@ -284,6 +284,8 @@ class BaseInstance : public QObject, public std::enable_shared_from_this<BaseIns
 
     bool isLegacy();
 
+    QString rootDir() const { return m_rootDir; }
+
    protected:
     void changeStatus(Status newStatus);
 
