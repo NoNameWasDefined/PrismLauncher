@@ -14,7 +14,7 @@
 #include <QObject>
 #include <QUrl>
 
-QByteArray CreateManifest(InstancePtr instance)
+QByteArray ServerInstance::CreateManifest(InstancePtr instance)
 {
     // Extract instance metadata
     QString instanceName = instance->settings()->get("name").toString();
@@ -49,7 +49,7 @@ QByteArray CreateManifest(InstancePtr instance)
     return manifestData;
 }
 
-std::pair<int, QByteArray> PostManifest(InstancePtr instance)
+std::pair<int, QByteArray> ServerInstance::PostManifest(InstancePtr instance)
 {
     // Get the global Application instance's network manager and settings manager
     auto net = APPLICATION->network();
@@ -59,7 +59,7 @@ std::pair<int, QByteArray> PostManifest(InstancePtr instance)
     QString serverUrl = settings->get("ModpackSyncServerURL").toString();
     QUrl url(serverUrl + "/compareMods");
 
-    QByteArray manifestData = CreateManifest(instance);
+    QByteArray manifestData = ServerInstance::CreateManifest(instance);
 
     // Send POST request with manifest.json
     QNetworkRequest request(url);
@@ -78,9 +78,10 @@ std::pair<int, QByteArray> PostManifest(InstancePtr instance)
     return std::make_pair(code, response);
 }
 
-int SyncModpack(InstancePtr instance)
+int ServerInstance::SyncModpack(InstancePtr instance)
 {
     auto [code, response] = PostManifest(instance);
+    QString instanceName = instance->name();
     switch (code) {
         case 204:
             qDebug() << "No update for instance:" << instanceName;
@@ -92,7 +93,7 @@ int SyncModpack(InstancePtr instance)
             qDebug() << "Manifest for" << instanceName << ":" << response;
             break;
         default:
-            qWarning() << "Server error:" << statusCode << response;
+            qWarning() << "Server error:" << code << response;
     };
     qDebug() << "Server replied with:" << response;
     return 0;
