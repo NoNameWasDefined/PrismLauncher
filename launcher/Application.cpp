@@ -1526,7 +1526,7 @@ bool Application::launch(InstancePtr instance,
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
         if (settings()->get("AutoSyncModpack").toBool()) {
-            if (!SyncModpack(instance)) {
+            if (!ServerInstance::SyncModpack(instance)) {
                 qWarning() << "Modpack sync failed, aborting launch.";
                 return false;
             }
