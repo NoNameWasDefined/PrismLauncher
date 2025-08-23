@@ -832,6 +832,8 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
         // Online sync
         m_settings->registerSetting("ModpackSyncServerURL", "");
         m_settings->registerSetting("AutoSyncModpack", true);
+        m_settings->registerSetting("ServerId", "prism");
+        m_settings->registerSetting("ServerPsswd", "a2enhjdi4");
 
         // data pack window
         // in future, more pages may be added - so this name is chosen to avoid needing migration
@@ -1526,7 +1528,7 @@ bool Application::launch(InstancePtr instance,
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
         if (settings()->get("AutoSyncModpack").toBool()) {
-            if (!ServerInstance::SyncModpack(instance)) {
+            if (!ServerUtils::SyncModpack(instance)) {
                 qWarning() << "Modpack sync failed, aborting launch.";
                 return false;
             }

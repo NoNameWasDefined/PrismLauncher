@@ -5,11 +5,11 @@
 #include <QFile>
 #include "FileSystem.h"
 
-protected:
-virtual std::shared_ptr<MinecraftInstance> createInstance() = 0;
-
 void InstanceCreationTask::executeTask() {
   setAbortable(true);
+
+ protected:
+  virtual std::shared_ptr<MinecraftInstance> createInstance() = 0;
 
   if (updateInstance()) {
     emitSucceeded();
@@ -22,8 +22,8 @@ void InstanceCreationTask::executeTask() {
     return;
   }
 
-  createdInstance = createInstance();
-  if (!createdInstance()) {
+  auto createdInstance = createInstance();
+  if (!createdInstance) {
     if (m_abort)
       return;
 
@@ -66,7 +66,8 @@ void InstanceCreationTask::executeTask() {
       return;
     }
   }
-  if (!m_abort)
-    ServerUtils::postManifest(createInstance);
+  if (!m_abort) {
+    ServerUtils::PostManifest(createdInstance);
     emitSucceeded();
+  }
 }

@@ -111,24 +111,27 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
   return manifestDoc.toJson(QJsonDocument::Compact);
 }
 
-int ServerUtils::PostManifest(InstancePtr instance) {
+int ServerUtils::PutManifest(InstancePtr instance) {
   // Get the global Application instance's network manager and settings manager
   auto net = APPLICATION->network();
   auto settings = APPLICATION->settings();
 
-  // Get instance name to build url
+  // Get credentials and instance name to build url
+  QString username = settings->get("ServerId").toString();
+  QString password = settings->get("ServerPsswd").toString();
+  QString serverUrl = settings->get("ModpackSyncServerURL").toString();
   QString instanceName = instance->settings()->get("name").toString();
 
-  // Build request URL
-  QString serverUrl = settings->get("ModpackSyncServerURL").toString();
-  QUrl url(serverUrl + "/" + instanceName + "/manifest.json");
+  // Build Put url with credentials
+  QUrl url(serverUrl + "/modpacks/" + instanceName + "/manifest.json");
+  url.setUserName(username);
+  url.setPassword(password);
 
-  QByteArray manifestData = ServerInstance::CreateManifest(instance);
-
-  // Send POST request with manifest.json
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-  QNetworkReply* reply = net->post(request, manifestData);
+
+  QByteArray manifestData = ServerInstance::CreateManifest(instance);
+  QNetworkReply* reply = net->put(request, manifestData);
 
   // Use event loop to block until finished
   QEventLoop loop;
@@ -147,12 +150,16 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   auto net = APPLICATION->network();
   auto settings = APPLICATION->settings();
 
-  // Get instance name to build url
+  // Get credentials and instance name to build url
+  QString username = settings->get("ServerId").toString();
+  QString password = settings->get("ServerPsswd").toString();
+  QString serverUrl = settings->get("ModpackSyncServerURL").toString();
   QString instanceName = instance->settings()->get("name").toString();
 
-  // Build request URL
-  QString serverUrl = settings->get("ModpackSyncServerURL").toString();
-  QUrl url(serverUrl + "/" + instanceName + "/manifest.json");
+  // Build Put url with credentials
+  QUrl url(serverUrl + "/modpacks/" + instanceName + "/manifest.json");
+  url.setUserName(username);
+  url.setPassword(password);
 
   QByteArray manifestData = ServerInstance::CreateManifest(instance);
 
@@ -173,7 +180,10 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
 }
 
 int ServerUtils::SyncModpack(InstancePtr instance) {
-  auto [code, response] = checkManifest(instance);
+  auto [code, response] = GetManifest(instance);
+  QJsonDocument serverManifest = QJsonDocument::fromJson(response);
+
+  auto localManifest = CreateManifest(instance);
   QString instanceName = instance->name();
   switch (code) {
     case 204:
