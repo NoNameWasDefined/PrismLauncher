@@ -352,7 +352,7 @@ bool ModrinthCreationTask::createInstance()
         inst->copyManagedPack(instance);
     }
 
-    return ended_well;
+    return instance;
 }
 
 bool ModrinthCreationTask::parseManifest(const QString& index_path,

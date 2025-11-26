@@ -6,6 +6,7 @@
 class ServerUtils{ // Communication with sync server
    public:
     QByteArray CreateManifest(InstancePtr instance);
-    std::pair<int, QByteArray> PostManifest(InstancePtr instance);
+    std::pair<int, QByteArray> PutManifest(InstancePtr instance);
     int SyncModpack(InstancePtr instance);
+    std::pair<int, QByteArray> GetManifest(InstancePtr instance);
 };

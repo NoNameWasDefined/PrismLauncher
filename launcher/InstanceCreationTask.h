@@ -2,6 +2,8 @@
 
 #include "BaseVersion.h"
 #include "InstanceTask.h"
+#include "BaseInstance.h"
+#include "minecraft/MinecraftInstance.h"
 
 class InstanceCreationTask : public InstanceTask {
   Q_OBJECT
@@ -29,7 +31,9 @@ class InstanceCreationTask : public InstanceTask {
    *
    * Returns the created instance.
    */
-  virtual bool createInstance() { return false; };
+   InstancePtr createInstance() override {
+       return std::make_shared<MinecraftInstance>(m_globalSettings, m_globalSettings, m_stagingPath);
+   }
 
   QString getError() const { return m_error_message; }
 

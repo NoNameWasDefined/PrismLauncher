@@ -96,7 +96,7 @@ else()
         # -mguard=cf enables Control Flow Guard
         # TODO: Look into -gc-sections to further reduce binary size
         foreach(lang C CXX)
-            set("CMAKE_${lang}_FLAGS_RELEASE" "-ffunction-sections -fdata-sections -mguard=cf")
+            set("CMAKE_${lang}_FLAGS_RELEASE" "-ffunction-sections -fdata-sections")
         endforeach()
     endif()
 endif()

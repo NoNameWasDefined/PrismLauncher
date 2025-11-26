@@ -316,7 +316,7 @@ QString FlameCreationTask::getVersionForLoader(QString uid, QString loaderType, 
     return loaderVersion;
 }
 
-bool FlameCreationTask::createInstance()
+std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
 {
     QEventLoop loop;
 
@@ -387,7 +387,7 @@ bool FlameCreationTask::createInstance()
 
     QString configPath = FS::PathCombine(m_stagingPath, "instance.cfg");
     auto instanceSettings = std::make_shared<INISettingsObject>(configPath);
-    MinecraftInstance instance(m_globalSettings, instanceSettings, m_stagingPath);
+    std::make_shared instance(m_globalSettings, instanceSettings, m_stagingPath);
     auto mcVersion = m_pack.minecraft.version;
 
     // Hack to correct some 'special sauce'...
@@ -488,7 +488,7 @@ bool FlameCreationTask::createInstance()
         inst->copyManagedPack(instance);
     }
 
-    return did_succeed;
+    return instance;
 }
 
 void FlameCreationTask::idResolverSucceeded(QEventLoop& loop)

@@ -8,9 +8,6 @@
 void InstanceCreationTask::executeTask() {
   setAbortable(true);
 
- protected:
-  virtual std::shared_ptr<MinecraftInstance> createInstance() = 0;
-
   if (updateInstance()) {
     emitSucceeded();
     return;
@@ -67,7 +64,7 @@ void InstanceCreationTask::executeTask() {
     }
   }
   if (!m_abort) {
-    ServerUtils::PostManifest(createdInstance);
+    ServerUtils::PutManifest(createdInstance);
     emitSucceeded();
   }
 }

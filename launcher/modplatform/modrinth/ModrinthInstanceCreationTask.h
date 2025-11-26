@@ -27,7 +27,7 @@ class ModrinthCreationTask final : public InstanceCreationTask {
     bool abort() override;
 
     bool updateInstance() override;
-    bool createInstance() override;
+    InstancePtr createInstance() override;
 
    private:
     bool parseManifest(const QString&, std::vector<Modrinth::File>&, bool set_internal_data = true, bool show_optional_dialog = true);
