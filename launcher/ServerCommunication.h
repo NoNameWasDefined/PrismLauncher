@@ -5,8 +5,8 @@
 // Should not be a BaseInstance, because BaseInstance is for Minecraft instances
 class ServerUtils{ // Communication with sync server
    public:
-    QByteArray CreateManifest(InstancePtr instance);
-    std::pair<int, QByteArray> PutManifest(InstancePtr instance);
-    int SyncModpack(InstancePtr instance);
-    std::pair<int, QByteArray> GetManifest(InstancePtr instance);
+    static QByteArray CreateManifest(InstancePtr instance);
+    static std::pair<int, QByteArray> PutManifest(InstancePtr instance);
+    static int SyncModpack(InstancePtr instance);
+    static std::pair<int, QByteArray> GetManifest(InstancePtr instance);
 };

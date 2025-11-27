@@ -31,7 +31,7 @@ class InstanceCreationTask : public InstanceTask {
    *
    * Returns the created instance.
    */
-   InstancePtr createInstance() override {
+   virtual InstancePtr createInstance() {
        return std::make_shared<MinecraftInstance>(m_globalSettings, m_globalSettings, m_stagingPath);
    }
 

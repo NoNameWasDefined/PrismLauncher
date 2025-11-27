@@ -46,6 +46,7 @@
 #include "FileSystem.h"
 #include "InstanceList.h"
 #include "Json.h"
+#include "BaseInstance.h"
 
 #include "minecraft/MinecraftInstance.h"
 #include "minecraft/PackProfile.h"
@@ -316,7 +317,7 @@ QString FlameCreationTask::getVersionForLoader(QString uid, QString loaderType, 
     return loaderVersion;
 }
 
-std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
+InstancePtr FlameCreationTask::createInstance()
 {
     QEventLoop loop;
 
@@ -334,7 +335,7 @@ std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
 
     } catch (const JSONValidationError& e) {
         setError(tr("Could not understand pack manifest:\n") + e.cause());
-        return false;
+        return nullptr;
     }
 
     if (!m_pack.overrides.isEmpty()) {
@@ -346,7 +347,7 @@ std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
             QString mcPath = FS::PathCombine(m_stagingPath, "minecraft");
             if (!FS::move(overridePath, mcPath)) {
                 setError(tr("Could not rename the overrides folder:\n") + m_pack.overrides);
-                return false;
+                return nullptr;
             }
         } else {
             logWarning(
@@ -387,7 +388,7 @@ std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
 
     QString configPath = FS::PathCombine(m_stagingPath, "instance.cfg");
     auto instanceSettings = std::make_shared<INISettingsObject>(configPath);
-    std::make_shared instance(m_globalSettings, instanceSettings, m_stagingPath);
+    MinecraftInstance instance(m_globalSettings, instanceSettings, m_stagingPath);
     auto mcVersion = m_pack.minecraft.version;
 
     // Hack to correct some 'special sauce'...
@@ -403,7 +404,7 @@ std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
     if (!loaderType.isEmpty()) {
         auto version = getVersionForLoader(loaderUid, loaderType, loaderVersion, mcVersion);
         if (version.isEmpty())
-            return false;
+            return nullptr;
         components->setComponentVersion(loaderUid, version);
     }
 
@@ -488,7 +489,7 @@ std::shared_ptr<MinecraftInstance> FlameCreationTask::createInstance()
         inst->copyManagedPack(instance);
     }
 
-    return instance;
+    return std::make_shared(instance);
 }
 
 void FlameCreationTask::idResolverSucceeded(QEventLoop& loop)

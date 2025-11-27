@@ -36,6 +36,7 @@
 #pragma once
 
 #include "InstanceCreationTask.h"
+#include "BaseInstance.h"
 
 #include <optional>
 
@@ -68,7 +69,7 @@ class FlameCreationTask final : public InstanceCreationTask {
     bool abort() override;
 
     bool updateInstance() override;
-    std::shared_ptr<MinecraftInstance> createInstance() override;
+    InstancePtr createInstance() override;
 
    private slots:
     void idResolverSucceeded(QEventLoop&);

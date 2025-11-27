@@ -2,6 +2,8 @@
 
 #include <utility>
 
+#include "BaseVersion.h"
+
 #include "FileSystem.h"
 #include "minecraft/MinecraftInstance.h"
 #include "minecraft/PackProfile.h"
@@ -16,14 +18,14 @@ VanillaCreationTask::VanillaCreationTask(BaseVersion::Ptr version,
       m_loader(std::move(loader)),
       m_loader_version(std::move(loader_version)) {}
 
-std::shared_ptr<MinecraftInstance> VanillaCreationTask::createInstance() {
+InstancePtr VanillaCreationTask::createInstance() {
   setStatus(tr("Creating instance from version %1").arg(m_version->name()));
 
   auto instance_settings = std::make_shared<INISettingsObject>(
       FS::PathCombine(m_stagingPath, "instance.cfg"));
   instance_settings->suspendSave();
 
-  auto inst = std::make_shared<MinecraftInstance>(
+  auto inst = MinecraftInstance(
       m_globalSettings, instance_settings, m_stagingPath);
   auto components = inst.getPackProfile();
   components->buildingFromScratch();
@@ -36,5 +38,5 @@ std::shared_ptr<MinecraftInstance> VanillaCreationTask::createInstance() {
   inst.setIconKey(m_instIcon);
   instance_settings->resumeSave();
 
-  return inst;
+  return std::make_shared(inst);
 }
