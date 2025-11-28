@@ -25,18 +25,17 @@ InstancePtr VanillaCreationTask::createInstance() {
       FS::PathCombine(m_stagingPath, "instance.cfg"));
   instance_settings->suspendSave();
 
-  auto inst = MinecraftInstance(
-      m_globalSettings, instance_settings, m_stagingPath);
-  auto components = inst.getPackProfile();
+  auto inst = std::make_shared<MinecraftInstance>(m_globalSettings, instance_settings, m_stagingPath);
+  auto components = inst->getPackProfile();
   components->buildingFromScratch();
   components->setComponentVersion("net.minecraft", m_version->descriptor(),
                                   true);
   if (m_using_loader)
     components->setComponentVersion(m_loader, m_loader_version->descriptor());
 
-  inst.setName(name());
-  inst.setIconKey(m_instIcon);
+  inst->setName(name());
+  inst->setIconKey(m_instIcon);
   instance_settings->resumeSave();
 
-  return std::make_shared(inst);
+  return inst;
 }

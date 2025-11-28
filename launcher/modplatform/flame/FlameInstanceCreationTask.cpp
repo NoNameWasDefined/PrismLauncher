@@ -388,7 +388,7 @@ InstancePtr FlameCreationTask::createInstance()
 
     QString configPath = FS::PathCombine(m_stagingPath, "instance.cfg");
     auto instanceSettings = std::make_shared<INISettingsObject>(configPath);
-    MinecraftInstance instance(m_globalSettings, instanceSettings, m_stagingPath);
+    auto instance = std::make_shared<MinecraftInstance>(m_globalSettings, instanceSettings, m_stagingPath);
     auto mcVersion = m_pack.minecraft.version;
 
     // Hack to correct some 'special sauce'...
@@ -398,7 +398,7 @@ InstancePtr FlameCreationTask::createInstance()
         logWarning(tr("Mysterious trailing dots removed from Minecraft version while importing pack."));
     }
 
-    auto components = instance.getPackProfile();
+    auto components = instance->getPackProfile();
     components->buildingFromScratch();
     components->setComponentVersion("net.minecraft", mcVersion, true);
     if (!loaderType.isEmpty()) {
@@ -409,14 +409,14 @@ InstancePtr FlameCreationTask::createInstance()
     }
 
     if (m_instIcon != "default") {
-        instance.setIconKey(m_instIcon);
+        instance->setIconKey(m_instIcon);
     } else {
         if (m_pack.name.contains("Direwolf20")) {
-            instance.setIconKey("steve");
+            instance->setIconKey("steve");
         } else if (m_pack.name.contains("FTB") || m_pack.name.contains("Feed The Beast")) {
-            instance.setIconKey("ftb_logo");
+            instance->setIconKey("ftb_logo");
         } else {
-            instance.setIconKey("flame");
+            instance->setIconKey("flame");
         }
     }
 
@@ -434,8 +434,8 @@ InstancePtr FlameCreationTask::createInstance()
             recommendedRAM = max;
         }
 
-        instance.settings()->set("OverrideMemory", true);
-        instance.settings()->set("MaxMemAlloc", recommendedRAM);
+        instance->settings()->set("OverrideMemory", true);
+        instance->settings()->set("MaxMemAlloc", recommendedRAM);
     }
 
     QString jarmodsPath = FS::PathCombine(m_stagingPath, "minecraft", "jarmods");
@@ -449,7 +449,7 @@ InstancePtr FlameCreationTask::createInstance()
             qDebug() << info.fileName();
             jarMods.push_back(info.absoluteFilePath());
         }
-        auto profile = instance.getPackProfile();
+        auto profile = instance->getPackProfile();
         profile->installJarMods(jarMods);
         // nuke the original files
         FS::deletePath(jarmodsPath);
@@ -457,11 +457,11 @@ InstancePtr FlameCreationTask::createInstance()
 
     // Don't add managed info to packs without an ID (most likely imported from ZIP)
     if (!m_managedId.isEmpty())
-        instance.setManagedPack("flame", m_managedId, m_pack.name, m_managedVersionId, m_pack.version);
+        instance->setManagedPack("flame", m_managedId, m_pack.name, m_managedVersionId, m_pack.version);
     else
-        instance.setManagedPack("flame", "", name(), "", "");
+        instance->setManagedPack("flame", "", name(), "", "");
 
-    instance.setName(name());
+    instance->setName(name());
 
     m_modIdResolver.reset(new Flame::FileResolvingTask(m_pack));
     connect(m_modIdResolver.get(), &Flame::FileResolvingTask::succeeded, this, [this, &loop] { idResolverSucceeded(loop); });
@@ -486,10 +486,10 @@ InstancePtr FlameCreationTask::createInstance()
         setAbortable(false);
         auto inst = m_instance.value();
 
-        inst->copyManagedPack(instance);
+        inst->copyManagedPack(*instance);
     }
 
-    return std::make_shared(instance);
+    return instance;
 }
 
 void FlameCreationTask::idResolverSucceeded(QEventLoop& loop)

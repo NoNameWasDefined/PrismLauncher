@@ -115,7 +115,7 @@ void ImportPage::updateState()
             // mrpack is a modrinth pack
             bool isMRPack = fi.suffix() == "mrpack";
             // json is a custom pack
-            bool isJSON = fi.suffix() == "json"
+            bool isJSON = fi.suffix() == "json";
 
             if (fi.exists() && (isZip || isMRPack || isJSON)) {
                 auto extra_info = QMap(m_extra_info);

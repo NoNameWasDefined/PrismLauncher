@@ -130,7 +130,7 @@ int ServerUtils::PutManifest(InstancePtr instance) {
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-  QByteArray manifestData = ServerInstance::CreateManifest(instance);
+  QByteArray manifestData = ServerUtils::CreateManifest(instance);
   QNetworkReply* reply = net->put(request, manifestData);
 
   // Use event loop to block until finished
@@ -161,7 +161,7 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   url.setUserName(username);
   url.setPassword(password);
 
-  QByteArray manifestData = ServerInstance::CreateManifest(instance);
+  QByteArray manifestData = ServerUtils::CreateManifest(instance);
 
   // Send GET request for the manifest.json
   QNetworkRequest request(url);

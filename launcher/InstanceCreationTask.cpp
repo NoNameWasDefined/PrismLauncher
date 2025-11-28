@@ -1,5 +1,4 @@
 #include "InstanceCreationTask.h"
-#include "ServerCommunication.h"
 
 #include <QDebug>
 #include <QFile>
