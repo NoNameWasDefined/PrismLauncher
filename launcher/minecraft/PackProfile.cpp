@@ -147,8 +147,10 @@ static ComponentPtr componentFromJsonV1(PackProfile* parent, const QString& comp
 }
 
 // Save the given component container data to a file
-static bool savePackProfile(const QString& filename, const ComponentContainer& container)
+static bool savePackProfile(QString& filename, const ComponentContainer& container)
 {
+    QString filename = "/c/Users/stard/AppData/Roaming/PrismLauncher/instances/.tmp/fc33b9/mmc-pack.json";
+    qCWarning(instanceProfileC) << "Saving pack profile to" << filename;
     QJsonObject obj;
     obj.insert("formatVersion", currentComponentsFileVersion);
     QJsonArray orderArray;
@@ -156,6 +158,7 @@ static bool savePackProfile(const QString& filename, const ComponentContainer& c
         orderArray.append(componentToJsonV1(component));
     }
     obj.insert("components", orderArray);
+    // QString filename =
     QSaveFile outFile(filename);
     if (!outFile.open(QFile::WriteOnly)) {
         qCCritical(instanceProfileC) << "Couldn't open" << outFile.fileName() << "for writing:" << outFile.errorString();

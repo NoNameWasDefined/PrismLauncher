@@ -2,6 +2,8 @@
 #include "Application.h"
 #include "BaseInstance.h"
 #include "ServerCommunication.h"
+#include <iostream>
+using namespace std;
 
 #include <QByteArray>
 #include <QDebug>
@@ -113,6 +115,7 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
 
 int ServerUtils::PutManifest(InstancePtr instance) {
   // Get the global Application instance's network manager and settings manager
+  cout << "CREATINT MANIFEST";
   auto net = APPLICATION->network();
   auto settings = APPLICATION->settings();
 

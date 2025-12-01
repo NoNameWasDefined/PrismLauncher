@@ -1530,7 +1530,16 @@ bool Application::launch(InstancePtr instance,
         if (settings()->get("AutoSyncModpack").toBool()) {
             if (!ServerUtils::SyncModpack(instance)) {
                 qWarning() << "Modpack sync failed, aborting launch.";
-                return false;
+                auto result = QMessageBox::warning(
+                    nullptr,
+                    "Warning",
+                    tr("La synchronisation du modpack a échoué. Voulez-vous vraiment continuer ?"),
+                    QMessageBox::Yes | QMessageBox::No,
+                    QMessageBox::No // default
+                );
+                if (result == QMessageBox::No) {
+                    return false;
+                }
             }
         }
         QMutexLocker locker(&m_instanceExtrasMutex);
