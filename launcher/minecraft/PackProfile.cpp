@@ -149,7 +149,7 @@ static ComponentPtr componentFromJsonV1(PackProfile* parent, const QString& comp
 // Save the given component container data to a file
 static bool savePackProfile(QString& filename, const ComponentContainer& container)
 {
-    QString filename = "/c/Users/stard/AppData/Roaming/PrismLauncher/instances/.tmp/fc33b9/mmc-pack.json";
+
     qCWarning(instanceProfileC) << "Saving pack profile to" << filename;
     QJsonObject obj;
     obj.insert("formatVersion", currentComponentsFileVersion);
