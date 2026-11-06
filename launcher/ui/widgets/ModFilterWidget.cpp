@@ -114,7 +114,7 @@ ModFilterWidget::ModFilterWidget(MinecraftInstance* instance, bool extended)
     ui->setupUi(this);
 
     m_versions_proxy = new VersionProxyModel(this);
-    m_versions_proxy->setFilter(BaseVersionList::TypeRole, new ExactFilter("release"));
+    m_versions_proxy->setFilter(BaseVersionList::TypeRole, Filters::equals("release"));
 
     QAbstractProxyModel* proxy = new VersionBasicModel(this);
     proxy->setSourceModel(m_versions_proxy);
@@ -256,7 +256,7 @@ void ModFilterWidget::onShowAllVersionsChanged()
     if (ui->showAllVersions->isChecked())
         m_versions_proxy->clearFilters();
     else
-        m_versions_proxy->setFilter(BaseVersionList::TypeRole, new ExactFilter("release"));
+        m_versions_proxy->setFilter(BaseVersionList::TypeRole, Filters::equals("release"));
 }
 
 void ModFilterWidget::onVersionFilterChanged(int)
@@ -387,13 +387,13 @@ void ModFilterWidget::onReleaseFilterChanged()
 {
     std::list<ModPlatform::IndexedVersionType> releases;
     if (ui->releaseCb->isChecked())
-        releases.push_back(ModPlatform::IndexedVersionType(ModPlatform::IndexedVersionType::VersionType::Release));
+        releases.push_back(ModPlatform::IndexedVersionType::Release);
     if (ui->betaCb->isChecked())
-        releases.push_back(ModPlatform::IndexedVersionType(ModPlatform::IndexedVersionType::VersionType::Beta));
+        releases.push_back(ModPlatform::IndexedVersionType::Beta);
     if (ui->alphaCb->isChecked())
-        releases.push_back(ModPlatform::IndexedVersionType(ModPlatform::IndexedVersionType::VersionType::Alpha));
+        releases.push_back(ModPlatform::IndexedVersionType::Alpha);
     if (ui->unknownCb->isChecked())
-        releases.push_back(ModPlatform::IndexedVersionType(ModPlatform::IndexedVersionType::VersionType::Unknown));
+        releases.push_back(ModPlatform::IndexedVersionType::Unknown);
     m_filter_changed = releases != m_filter->releases;
     m_filter->releases = releases;
     if (m_filter_changed)

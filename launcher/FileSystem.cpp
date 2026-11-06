@@ -59,10 +59,8 @@
 #if defined Q_OS_WIN32
 #define NOMINMAX
 #define WIN32_LEAN_AND_MEAN
-#include <objbase.h>
 #include <objidl.h>
 #include <shlguid.h>
-#include <shlobj.h>
 #include <shobjidl.h>
 #include <sys/utime.h>
 #include <versionhelpers.h>
@@ -331,7 +329,7 @@ bool copy::operator()(const QString& offset, bool dryRun)
 
     // Function that'll do the actual copying
     auto copy_file = [this, dryRun, src, dst, opt, &err](QString src_path, QString relative_dst_path) {
-        if (m_matcher && (m_matcher->matches(relative_dst_path) != m_whitelist))
+        if (m_matcher && (m_matcher(relative_dst_path) != m_whitelist))
             return;
 
         auto dst_path = PathCombine(dst, relative_dst_path);
@@ -418,7 +416,7 @@ void create_link::make_link_list(const QString& offset)
 
         // Function that'll do the actual linking
         auto link_file = [this, dst](QString src_path, QString relative_dst_path) {
-            if (m_matcher && (m_matcher->matches(relative_dst_path) != m_whitelist)) {
+            if (m_matcher && (m_matcher(relative_dst_path) != m_whitelist)) {
                 qDebug() << "path" << relative_dst_path << "in black list or not in whitelist";
                 return;
             }
@@ -1002,7 +1000,10 @@ QString createShortcut(QString destination, QString target, QStringList args, QS
     if (!destination.endsWith(".desktop"))  // in case of isFlatpak destination is already populated
         destination += ".desktop";
     QFile f(destination);
-    f.open(QIODevice::WriteOnly | QIODevice::Text);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qWarning() << "Failed to open file '" << f.fileName() << "' for writing!";
+        return QString();
+    }
     QTextStream stream(&f);
 
     auto argstring = quoteArgs(args, "'", "'\\''");
@@ -1277,7 +1278,7 @@ bool clone::operator()(const QString& offset, bool dryRun)
 
     // Function that'll do the actual cloneing
     auto cloneFile = [this, dryRun, dst, &err](QString src_path, QString relative_dst_path) {
-        if (m_matcher && (m_matcher->matches(relative_dst_path) != m_whitelist))
+        if (m_matcher && (m_matcher(relative_dst_path) != m_whitelist))
             return;
 
         auto dst_path = PathCombine(dst, relative_dst_path);
@@ -1700,5 +1701,15 @@ QString getUniqueResourceName(const QString& filePath)
     } while (QFile::exists(newFileName));
 
     return newFileName;
+}
+bool removeFiles(QStringList listFile)
+{
+    bool ret = true;
+    // For each file
+    for (int i = 0; i < listFile.count(); i++) {
+        // Remove
+        ret = ret && QFile::remove(listFile.at(i));
+    }
+    return ret;
 }
 }  // namespace FS

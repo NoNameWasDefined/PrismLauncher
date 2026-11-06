@@ -38,10 +38,11 @@
 
 #include "Application.h"
 #include "FileSystem.h"
-#include "MMCZip.h"
 #include "NullInstance.h"
 
 #include "QObjectPtr.h"
+#include "archive/ArchiveReader.h"
+#include "archive/ExtractZipTask.h"
 #include "icons/IconList.h"
 #include "icons/IconUtils.h"
 
@@ -54,11 +55,9 @@
 
 #include "net/ApiDownload.h"
 
+#include <QFileInfo>
 #include <QtConcurrentRun>
-#include <algorithm>
 #include <memory>
-
-#include <quazip/quazipdir.h>
 
 InstanceImportTask::InstanceImportTask(const QUrl& sourceUrl, QWidget* parent, QMap<QString, QString>&& extra_info)
     : m_sourceUrl(sourceUrl), m_extra_info(extra_info), m_parent(parent)
@@ -109,38 +108,34 @@ void InstanceImportTask::downloadFromUrl()
     filesNetJob->start();
 }
 
-QString InstanceImportTask::getRootFromZip(QuaZip* zip, const QString& root)
+QString InstanceImportTask::getRootFromZip(QStringList files)
 {
     if (!isRunning()) {
         return {};
     }
-    QuaZipDir rootDir(zip, root);
-    for (auto&& fileName : rootDir.entryList(QDir::Files)) {
+    auto cleanPath = [](QString path) {
+        if (path == ".")
+            return QString();
+        QString result = path;
+        if (result.startsWith("./"))
+            result = result.mid(2);
+        return result;
+    };
+    for (auto&& fileName : files) {
         setDetails(fileName);
-        if (fileName == "instance.cfg") {
+        QFileInfo fileInfo(fileName);
+        if (fileInfo.fileName() == "instance.cfg") {
             qDebug() << "MultiMC:" << true;
             m_modpackType = ModpackType::MultiMC;
-            return root;
+            return cleanPath(fileInfo.path());
         }
-        if (fileName == "manifest.json") {
+        if (fileInfo.fileName() == "manifest.json") {
             qDebug() << "Flame:" << true;
             m_modpackType = ModpackType::Flame;
-            return root;
+            return cleanPath(fileInfo.path());
         }
-
         QCoreApplication::processEvents();
     }
-
-    // Recurse the search to non-ignored subfolders
-    for (auto&& fileName : rootDir.entryList(QDir::Dirs)) {
-        if ("overrides/" == fileName)
-            continue;
-
-        QString result = getRootFromZip(zip, root + fileName);
-        if (!result.isEmpty())
-            return result;
-    }
-
     return {};
 }
 
@@ -151,11 +146,10 @@ void InstanceImportTask::processPack()
     qDebug() << "Attempting to determine instance type";
 
     // open the zip and find relevant files in it
-    auto packZip = std::make_shared<QuaZip>(m_json_or_archivePath);
-    if (packZip->open(QuaZip::mdUnzip)) {
-        InstanceImportTask::processZipPack(packZip);
+    MMCZip::ArchiveReader packZip(m_json_or_archivePath);
+    if (packZip.collectFiles()) {
+        processZipPack(packZip);
     } else {
-        packZip->close();
         QFile file(m_json_or_archivePath);
         if (file.open(QIODevice::ReadOnly)) {
             QByteArray data = file.read(16);
@@ -180,28 +174,27 @@ void InstanceImportTask::processJSONPack(QJsonDocument packJson)
     // process JSON file at `m_json_or_archive_path`
 }
 
-void InstanceImportTask::processZipPack(std::shared_ptr<QuaZip> packZip)
+void InstanceImportTask::processZipPack(MMCZip::ArchiveReader& packZip)
 {
     QDir extractDir(m_stagingPath);
-    QuaZipDir packZipDir(packZip.get());
 
     QString root;
 
     // NOTE: Prioritize modpack platforms that aren't searched for recursively.
     // Especially Flame has a very common filename for its manifest, which may appear inside overrides for example
     // https://docs.modrinth.com/docs/modpacks/format_definition/#storage
-    if (packZipDir.exists("/modrinth.index.json")) {
+    if (packZip.exists("/modrinth.index.json")) {
         // process as Modrinth pack
         qDebug() << "Modrinth:" << true;
         m_modpackType = ModpackType::Modrinth;
-    } else if (packZipDir.exists("/bin/modpack.jar") || packZipDir.exists("/bin/version.json")) {
+    } else if (packZip.exists("/bin/modpack.jar") || packZip.exists("/bin/version.json")) {
         // process as Technic pack
         qDebug() << "Technic:" << true;
         extractDir.mkpath("minecraft");
         extractDir.cd("minecraft");
         m_modpackType = ModpackType::Technic;
     } else {
-        root = getRootFromZip(packZip.get());
+        root = getRootFromZip(packZip.getFiles());
         setDetails("");
     }
     if (m_modpackType == ModpackType::Unknown) {
@@ -211,7 +204,7 @@ void InstanceImportTask::processZipPack(std::shared_ptr<QuaZip> packZip)
     setStatus(tr("Extracting modpack"));
 
     // make sure we extract just the pack
-    auto zipTask = makeShared<MMCZip::ExtractZipTask>(packZip, extractDir, root);
+    auto zipTask = makeShared<MMCZip::ExtractZipTask>(m_json_or_archivePath, extractDir, root);
 
     auto progressStep = std::make_shared<TaskStepProgress>();
     connect(zipTask.get(), &Task::finished, this, [this, progressStep] {

@@ -35,13 +35,12 @@
 
 #pragma once
 
-#include <quazip/quazip.h>
 #include <QFuture>
 #include <QFutureWatcher>
+#include <QJsonDocument>
 #include <QUrl>
 #include "InstanceTask.h"
-
-class QuaZip;
+#include "archive/ArchiveReader.h"
 
 class InstanceImportTask : public InstanceTask {
     Q_OBJECT
@@ -59,12 +58,12 @@ class InstanceImportTask : public InstanceTask {
     void processTechnic();
     void processFlame();
     void processModrinth();
-    QString getRootFromZip(QuaZip* zip, const QString& root = "");
+    QString getRootFromZip(QStringList files);
+    void processJSONPack(QJsonDocument packJson);
+    void processZipPack(MMCZip::ArchiveReader& packZip);
 
    private slots:
     void processPack();
-    void processJSONPack(QJsonDocument packJson);
-    void processZipPack(std::shared_ptr<QuaZip> packZip);
     void extractFinished();
 
    private: /* data */

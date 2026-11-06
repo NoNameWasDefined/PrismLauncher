@@ -38,7 +38,7 @@
 #pragma once
 
 #include "Exception.h"
-#include "pathmatcher/IPathMatcher.h"
+#include "Filter.h"
 
 #include <system_error>
 
@@ -115,9 +115,9 @@ class copy : public QObject {
         m_followSymlinks = follow;
         return *this;
     }
-    copy& matcher(IPathMatcher::Ptr filter)
+    copy& matcher(Filter filter)
     {
-        m_matcher = filter;
+        m_matcher = std::move(filter);
         return *this;
     }
     copy& whitelist(bool whitelist)
@@ -147,7 +147,7 @@ class copy : public QObject {
 
    private:
     bool m_followSymlinks = true;
-    IPathMatcher::Ptr m_matcher = nullptr;
+    Filter m_matcher = nullptr;
     bool m_whitelist = false;
     bool m_overwrite = false;
     QDir m_src;
@@ -209,9 +209,9 @@ class create_link : public QObject {
         m_useHardLinks = useHard;
         return *this;
     }
-    create_link& matcher(IPathMatcher::Ptr filter)
+    create_link& matcher(Filter filter)
     {
-        m_matcher = filter;
+        m_matcher = std::move(filter);
         return *this;
     }
     create_link& whitelist(bool whitelist)
@@ -260,7 +260,7 @@ class create_link : public QObject {
 
    private:
     bool m_useHardLinks = false;
-    IPathMatcher::Ptr m_matcher = nullptr;
+    Filter m_matcher = nullptr;
     bool m_whitelist = false;
     bool m_recursive = true;
 
@@ -290,6 +290,8 @@ bool move(const QString& source, const QString& dest);
  * Delete a folder recursively
  */
 bool deletePath(QString path);
+
+bool removeFiles(QStringList listFile);
 
 /**
  * Trash a folder / file
@@ -492,9 +494,9 @@ class clone : public QObject {
         m_src.setPath(src);
         m_dst.setPath(dst);
     }
-    clone& matcher(IPathMatcher::Ptr filter)
+    clone& matcher(Filter filter)
     {
-        m_matcher = filter;
+        m_matcher = std::move(filter);
         return *this;
     }
     clone& whitelist(bool whitelist)
@@ -518,7 +520,7 @@ class clone : public QObject {
     bool operator()(const QString& offset, bool dryRun = false);
 
    private:
-    IPathMatcher::Ptr m_matcher = nullptr;
+    Filter m_matcher = nullptr;
     bool m_whitelist = false;
     QDir m_src;
     QDir m_dst;

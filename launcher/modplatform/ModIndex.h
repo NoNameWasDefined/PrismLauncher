@@ -74,33 +74,9 @@ struct DonationData {
     QString url;
 };
 
-struct IndexedVersionType {
-    enum class VersionType { Release = 1, Beta, Alpha, Unknown };
-    IndexedVersionType(const QString& type);
-    IndexedVersionType(const IndexedVersionType::VersionType& type);
-    IndexedVersionType(const IndexedVersionType& type);
-    IndexedVersionType() : IndexedVersionType(IndexedVersionType::VersionType::Unknown) {}
-    static const QString toString(const IndexedVersionType::VersionType& type);
-    static IndexedVersionType::VersionType enumFromString(const QString& type);
-    bool isValid() const { return m_type != IndexedVersionType::VersionType::Unknown; }
-    IndexedVersionType& operator=(const IndexedVersionType& other);
-    bool operator==(const IndexedVersionType& other) const { return m_type == other.m_type; }
-    bool operator==(const IndexedVersionType::VersionType& type) const { return m_type == type; }
-    bool operator!=(const IndexedVersionType& other) const { return m_type != other.m_type; }
-    bool operator!=(const IndexedVersionType::VersionType& type) const { return m_type != type; }
-    bool operator<(const IndexedVersionType& other) const { return m_type < other.m_type; }
-    bool operator<(const IndexedVersionType::VersionType& type) const { return m_type < type; }
-    bool operator<=(const IndexedVersionType& other) const { return m_type <= other.m_type; }
-    bool operator<=(const IndexedVersionType::VersionType& type) const { return m_type <= type; }
-    bool operator>(const IndexedVersionType& other) const { return m_type > other.m_type; }
-    bool operator>(const IndexedVersionType::VersionType& type) const { return m_type > type; }
-    bool operator>=(const IndexedVersionType& other) const { return m_type >= other.m_type; }
-    bool operator>=(const IndexedVersionType::VersionType& type) const { return m_type >= type; }
-
-    QString toString() const { return toString(m_type); }
-
-    IndexedVersionType::VersionType m_type;
-};
+enum class IndexedVersionType { Unknown, Release = 1, Beta, Alpha };
+IndexedVersionType indexedVersionTypeFromString(const QString& type);
+QString indexedVersionTypeToString(IndexedVersionType type);
 
 struct Dependency {
     QVariant addonId;
@@ -128,6 +104,23 @@ struct IndexedVersion {
 
     // For internal use, not provided by APIs
     bool is_currently_selected = false;
+
+    QString getVersionDisplayString() const
+    {
+        auto release_type = version_type != IndexedVersionType::Unknown ? QString(" [%1]").arg(indexedVersionTypeToString(version_type)) : "";
+        auto versionStr = !version.contains(version_number) ? version_number : "";
+        QString gameVersion = "";
+        for (auto v : mcVersion) {
+            if (version.contains(v)) {
+                gameVersion = "";
+                break;
+            }
+            if (gameVersion.isEmpty()) {
+                gameVersion = QObject::tr(" for %1").arg(v);
+            }
+        }
+        return QString("%1%2 — %3%4").arg(version, gameVersion, versionStr, release_type);
+    }
 };
 
 struct ExtraPackData {

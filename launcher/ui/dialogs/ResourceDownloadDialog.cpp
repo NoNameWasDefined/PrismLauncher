@@ -59,7 +59,7 @@ ResourceDownloadDialog::ResourceDownloadDialog(QWidget* parent, const std::share
 
     resize(static_cast<int>(std::max(0.5 * parent->width(), 400.0)), static_cast<int>(std::max(0.75 * parent->height(), 400.0)));
 
-    setWindowIcon(APPLICATION->getThemedIcon("new"));
+    setWindowIcon(QIcon::fromTheme("new"));
 
     // Bonk Qt over its stupid head and make sure it understands which button is the default one...
     // See: https://stackoverflow.com/questions/24556831/qbuttonbox-set-default-button
@@ -187,7 +187,8 @@ void ResourceDownloadDialog::confirm()
         auto extraInfo = dependencyExtraInfo.value(task->getPack()->addonId.toString());
         confirm_dialog->appendResource({ task->getName(), task->getFilename(), task->getCustomPath(),
                                          ModPlatform::ProviderCapabilities::name(task->getProvider()), extraInfo.required_by,
-                                         task->getVersion().version_type.toString(), !extraInfo.maybe_installed });
+                                         ModPlatform::indexedVersionTypeToString(task->getVersion().version_type),
+                                         !extraInfo.maybe_installed });
     }
 
     if (confirm_dialog->exec()) {

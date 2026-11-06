@@ -26,8 +26,14 @@ set(CORE_SOURCES
     NullInstance.h
     MMCZip.h
     MMCZip.cpp
-    Untar.h
-    Untar.cpp
+    archive/ArchiveReader.cpp  
+    archive/ArchiveReader.h  
+    archive/ArchiveWriter.cpp  
+    archive/ArchiveWriter.h  
+    archive/ExportToZipTask.cpp  
+    archive/ExportToZipTask.h
+    archive/ExtractZipTask.cpp  
+    archive/ExtractZipTask.h
     StringUtils.h
     StringUtils.cpp
     QVariantUtils.h
@@ -56,7 +62,6 @@ set(CORE_SOURCES
 
     # String filters
     Filter.h
-    Filter.cpp
 
     # JSON parsing helpers
     Json.h
@@ -111,15 +116,6 @@ if (UNIX AND NOT CYGWIN AND NOT APPLE)
     MangoHud.cpp
     )
 endif()
-
-set(PATHMATCHER_SOURCES
-    # Path matchers
-    pathmatcher/FSTreeMatcher.h
-    pathmatcher/IPathMatcher.h
-    pathmatcher/MultiMatcher.h
-    pathmatcher/RegexpMatcher.h
-    pathmatcher/SimplePrefixMatcher.h
-)
 
 set(NET_SOURCES
     # network stuffs
@@ -255,9 +251,6 @@ set(MINECRAFT_SOURCES
     minecraft/auth/steps/XboxProfileStep.h
     minecraft/auth/steps/XboxUserStep.cpp
     minecraft/auth/steps/XboxUserStep.h
-
-    minecraft/gameoptions/GameOptions.h
-    minecraft/gameoptions/GameOptions.cpp
 
     minecraft/update/AssetUpdateTask.h
     minecraft/update/AssetUpdateTask.cpp
@@ -502,6 +495,7 @@ set(API_SOURCES
     modplatform/ResourceType.cpp
 
     modplatform/ResourceAPI.h
+    modplatform/ResourceAPI.cpp
 
     modplatform/EnsureMetadataTask.h
     modplatform/EnsureMetadataTask.cpp
@@ -512,8 +506,6 @@ set(API_SOURCES
     modplatform/flame/FlameAPI.cpp
     modplatform/modrinth/ModrinthAPI.h
     modplatform/modrinth/ModrinthAPI.cpp
-    modplatform/helpers/NetworkResourceAPI.h
-    modplatform/helpers/NetworkResourceAPI.cpp
     modplatform/helpers/HashUtils.h
     modplatform/helpers/HashUtils.cpp
     modplatform/helpers/OverrideUtils.h
@@ -541,8 +533,6 @@ set(FTB_SOURCES
 
 set(FLAME_SOURCES
     # Flame
-    modplatform/flame/FlamePackIndex.cpp
-    modplatform/flame/FlamePackIndex.h
     modplatform/flame/FlameModIndex.cpp
     modplatform/flame/FlameModIndex.h
     modplatform/flame/PackManifest.h
@@ -560,8 +550,6 @@ set(FLAME_SOURCES
 set(MODRINTH_SOURCES
     modplatform/modrinth/ModrinthPackIndex.cpp
     modplatform/modrinth/ModrinthPackIndex.h
-    modplatform/modrinth/ModrinthPackManifest.cpp
-    modplatform/modrinth/ModrinthPackManifest.h
     modplatform/modrinth/ModrinthCheckUpdate.cpp
     modplatform/modrinth/ModrinthCheckUpdate.h
     modplatform/modrinth/ModrinthInstanceCreationTask.cpp
@@ -637,6 +625,10 @@ set(PRISMUPDATER_SOURCES
     # Zip
     MMCZip.h
     MMCZip.cpp
+    archive/ArchiveReader.cpp  
+    archive/ArchiveReader.h  
+    archive/ArchiveWriter.cpp  
+    archive/ArchiveWriter.h  
 
     # Time
     MMCTime.h
@@ -764,7 +756,6 @@ endif()
 
 set(LOGIC_SOURCES
     ${CORE_SOURCES}
-    ${PATHMATCHER_SOURCES}
     ${NET_SOURCES}
     ${LAUNCH_SOURCES}
     ${UPDATE_SOURCES}
@@ -921,8 +912,6 @@ SET(LAUNCHER_SOURCES
     # GUI - instance pages
     ui/pages/instance/ExternalResourcesPage.cpp
     ui/pages/instance/ExternalResourcesPage.h
-    ui/pages/instance/GameOptionsPage.cpp
-    ui/pages/instance/GameOptionsPage.h
     ui/pages/instance/VersionPage.cpp
     ui/pages/instance/VersionPage.h
     ui/pages/instance/ManagedPackPage.cpp
@@ -1050,8 +1039,6 @@ SET(LAUNCHER_SOURCES
     ui/pages/modplatform/OptionalModDialog.cpp
     ui/pages/modplatform/OptionalModDialog.h
 
-    ui/pages/modplatform/modrinth/ModrinthResourceModels.cpp
-    ui/pages/modplatform/modrinth/ModrinthResourceModels.h
     ui/pages/modplatform/modrinth/ModrinthResourcePages.cpp
     ui/pages/modplatform/modrinth/ModrinthResourcePages.h
 
@@ -1080,8 +1067,6 @@ SET(LAUNCHER_SOURCES
     ui/dialogs/ImportResourceDialog.h
     ui/dialogs/MSALoginDialog.cpp
     ui/dialogs/MSALoginDialog.h
-    ui/dialogs/OfflineLoginDialog.cpp
-    ui/dialogs/OfflineLoginDialog.h
     ui/dialogs/NewComponentDialog.cpp
     ui/dialogs/NewComponentDialog.h
     ui/dialogs/NewInstanceDialog.cpp
@@ -1108,6 +1093,8 @@ SET(LAUNCHER_SOURCES
     ui/dialogs/ResourceUpdateDialog.h
     ui/dialogs/InstallLoaderDialog.cpp
     ui/dialogs/InstallLoaderDialog.h
+    ui/dialogs/ChooseOfflineNameDialog.cpp
+    ui/dialogs/ChooseOfflineNameDialog.h
 
     ui/dialogs/skins/SkinManageDialog.cpp
     ui/dialogs/skins/SkinManageDialog.h
@@ -1200,6 +1187,15 @@ if (NOT Apple)
 )
 endif()
 
+if (APPLE)
+    set(LAUNCHER_SOURCES
+        ${LAUNCHER_SOURCES}
+
+        macsandbox/SecurityBookmarkFileAccess.h
+        macsandbox/SecurityBookmarkFileAccess.mm
+    )
+endif()
+
 if(WIN32)
     set(LAUNCHER_SOURCES
         console/WindowsConsole.h
@@ -1223,7 +1219,6 @@ qt_wrap_ui(LAUNCHER_UI
     ui/pages/instance/NotesPage.ui
     ui/pages/instance/LogPage.ui
     ui/pages/instance/ServersPage.ui
-    ui/pages/instance/GameOptionsPage.ui
     ui/pages/instance/OtherLogsPage.ui
     ui/pages/instance/VersionPage.ui
     ui/pages/instance/ManagedPackPage.ui
@@ -1262,13 +1257,13 @@ qt_wrap_ui(LAUNCHER_UI
     ui/dialogs/IconPickerDialog.ui
     ui/dialogs/ImportResourceDialog.ui
     ui/dialogs/MSALoginDialog.ui
-    ui/dialogs/OfflineLoginDialog.ui
     ui/dialogs/AboutDialog.ui
     ui/dialogs/ReviewMessageBox.ui
     ui/dialogs/ScrollMessageBox.ui
     ui/dialogs/BlockedModsDialog.ui
     ui/dialogs/ChooseProviderDialog.ui
     ui/dialogs/skins/SkinManageDialog.ui
+    ui/dialogs/ChooseOfflineNameDialog.ui
 )
 
 qt_wrap_ui(PRISM_UPDATE_UI
@@ -1325,15 +1320,27 @@ target_link_libraries(Launcher_logic
     qdcss
     BuildConfig
     Qt${QT_VERSION_MAJOR}::Widgets
-    qrcodegenerator
 )
+
+if(TARGET PkgConfig::libqrencode)
+    target_link_libraries(Launcher_logic PkgConfig::libqrencode)
+else()
+    target_include_directories(Launcher_logic PRIVATE ${LIBQRENCODE_INCLUDE_DIR})
+    target_link_libraries(Launcher_logic ${LIBQRENCODE_LIBRARIES})
+endif()
+
 if(TARGET PkgConfig::tomlplusplus)
     target_link_libraries(Launcher_logic PkgConfig::tomlplusplus)
 else()
     target_link_libraries(Launcher_logic tomlplusplus::tomlplusplus)
 endif()
+if(TARGET PkgConfig::libarchive)
+    target_link_libraries(Launcher_logic PkgConfig::libarchive)
+else()
+    target_link_libraries(Launcher_logic LibArchive::LibArchive)
+endif()
 
-if (UNIX AND NOT CYGWIN AND NOT APPLE)
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     target_link_libraries(Launcher_logic
         gamemode
     )
@@ -1352,7 +1359,6 @@ target_link_libraries(Launcher_logic
     ${Launcher_QT_LIBS}
 )
 target_link_libraries(Launcher_logic
-    QuaZip::QuaZip
     cmark::cmark
     LocalPeer
     Launcher_rainbow
@@ -1419,7 +1425,6 @@ if(Launcher_BUILD_UPDATER)
     add_library(prism_updater_logic STATIC ${PRISMUPDATER_SOURCES} ${TASKS_SOURCES} ${PRISMUPDATER_UI})
     target_include_directories(prism_updater_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
     target_link_libraries(prism_updater_logic
-        QuaZip::QuaZip
         ${ZLIB_LIBRARIES}
         systeminfo
         BuildConfig
@@ -1429,6 +1434,11 @@ if(Launcher_BUILD_UPDATER)
         ${Launcher_QT_LIBS}
         cmark::cmark
     )
+    if(TARGET PkgConfig::libarchive)
+        target_link_libraries(prism_updater_logic PkgConfig::libarchive)
+    else()
+        target_link_libraries(prism_updater_logic LibArchive::LibArchive)
+    endif()
 
     add_executable("${Launcher_Name}_updater" WIN32 updater/prismupdater/updater_main.cpp)
     target_sources("${Launcher_Name}_updater" PRIVATE updater/prismupdater/updater.exe.manifest)
