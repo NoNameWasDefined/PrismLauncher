@@ -1122,6 +1122,9 @@ shared_qobject_ptr<LaunchTask> MinecraftInstance::createLaunchTask(AuthSessionPt
         process->appendStep(step);
     }
 
+    // Here should be the place to sync modpack.
+    // Should call a python script as of @NoNameForIdea's suggestion
+
     // load meta
     {
         auto mode = session->status != AuthSession::PlayableOffline ? Net::Mode::Online : Net::Mode::Offline;
