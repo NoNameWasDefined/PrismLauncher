@@ -1,3 +1,5 @@
+// File overview: Setup wizard page asking whether Java should be downloaded automatically.
+
 #pragma once
 #include <QWidget>
 #include "BaseWizardPage.h"

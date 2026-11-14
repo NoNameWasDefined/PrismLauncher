@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of LookupServerAddress.h. Launch step that resolves a Minecraft server address (SRV DNS
+// record) for "join server on launch".
+
 #include "LookupServerAddress.h"
 
 #include <launch/LaunchTask.h>

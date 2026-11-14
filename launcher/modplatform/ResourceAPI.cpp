@@ -1,3 +1,6 @@
+// File overview: Implementation of ResourceAPI.h. Abstract interface every mod platform API implements (search
+// projects, get project info, list versions, get dependencies), with the search/version argument structs and callbacks.
+
 #include "modplatform/ResourceAPI.h"
 
 #include "Application.h"

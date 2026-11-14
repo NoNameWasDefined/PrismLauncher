@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: One saved skin (texture file, classic/slim model, chosen cape) with preview rendering.
+
 #pragma once
 
 #include <QDir>

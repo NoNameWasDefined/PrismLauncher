@@ -35,6 +35,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Interface for a game launcher implementation (standard or legacy).
+
 package org.prismlauncher.launcher;
 
 public interface Launcher {

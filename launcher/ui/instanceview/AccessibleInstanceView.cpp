@@ -1,3 +1,6 @@
+// File overview: Implementation of AccessibleInstanceView.h. Accessibility (screen reader) support for the instance
+// view.
+
 #include "AccessibleInstanceView.h"
 #include "AccessibleInstanceView_p.h"
 #include "InstanceView.h"

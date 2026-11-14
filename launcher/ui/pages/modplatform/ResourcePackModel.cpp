@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ResourcePackModel.h. Search result model for resource packs.
+
 #include "ResourcePackModel.h"
 
 #include <QMessageBox>

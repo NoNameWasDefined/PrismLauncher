@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Minecraft asset index handling: parses the assets index JSON, computes object paths/URLs and builds
+// the download job for missing assets; also reconstructs legacy "virtual" asset folders.
+
 #pragma once
 
 #include <QMap>

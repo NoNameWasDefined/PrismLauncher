@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page "Worlds": list, copy, rename, delete and open worlds; join singleplayer world on launch.
+
 #pragma once
 
 #include <QMainWindow>

@@ -1,3 +1,6 @@
+// File overview: Implementation of WideBar.h. Toolbar used across pages that can be customised (hide actions via right-
+// click).
+
 #include "WideBar.h"
 
 #include <QContextMenuEvent>

@@ -1,3 +1,6 @@
+// File overview: Implementation of EnsureMetadataTask.h. Task that hashes local mod files and looks them up on
+// Modrinth/CurseForge to create missing platform metadata (so they can be updated later).
+
 #include "EnsureMetadataTask.h"
 
 #include <MurmurHash2.h>

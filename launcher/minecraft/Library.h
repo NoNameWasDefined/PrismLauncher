@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: One Java library from a version file (Maven coordinates, download info, natives, OS rules) and the
+// logic to find which files it needs locally and from where to download them.
+
 #pragma once
 #include <QDir>
 #include <QList>

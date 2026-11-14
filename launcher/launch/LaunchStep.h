@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Base class for one step of a LaunchTask (check Java, run pre-launch command, start game...). Steps can
+// log lines, pause the launch and clean up in finalize().
+
 #pragma once
 
 #include "MessageLevel.h"
@@ -21,6 +24,24 @@
 #include <QStringList>
 
 class LaunchTask;
+/*
+ * One step of a launch. Implement executeTask() like any Task and finish with emitSucceeded()/emitFailed();
+ * a failed step stops the whole launch. Use emit logLine(...) to write to the instance's log window,
+ * and m_parent->instance() to reach the instance being launched.
+ *
+ * Minimal example:
+ *
+ *     class SayHello : public LaunchStep {
+ *         Q_OBJECT
+ *       public:
+ *         explicit SayHello(LaunchTask* parent) : LaunchStep(parent) {}
+ *         void executeTask() override {
+ *             emit logLine("Hello from " + m_parent->instance()->name(), MessageLevel::Launcher);
+ *             emitSucceeded();
+ *         }
+ *         bool canAbort() const override { return false; }
+ *     };
+ */
 class LaunchStep : public Task {
     Q_OBJECT
    public: /* methods */
@@ -28,8 +49,10 @@ class LaunchStep : public Task {
     virtual ~LaunchStep() = default;
 
    signals:
+    // Lines sent to the LaunchTask's log (shown in the instance log page, coloured by level).
     void logLines(QStringList lines, MessageLevel level);
     void logLine(QString line, MessageLevel level);
+    // Pause the launch chain until LaunchTask::proceed() is called (see proceed()).
     void readyForLaunch();
     void progressReportingRequest();
 

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Dialog to choose ATLauncher optional mods (with share code support).
+
 #pragma once
 
 #include <QAbstractListModel>

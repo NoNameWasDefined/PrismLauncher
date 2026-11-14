@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ExportInstanceDialog.h. Dialog to export an instance as a launcher zip, with a file
+// tree to choose what is included.
+
 #include "ExportInstanceDialog.h"
 #include <BaseInstance.h>
 #include <MMCZip.h>

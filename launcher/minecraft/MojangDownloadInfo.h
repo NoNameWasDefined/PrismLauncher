@@ -1,3 +1,6 @@
+// File overview: Download info structures (url, sha1, size) from Mojang version JSON files, for libraries, client jar
+// and asset index.
+
 #pragma once
 #include <QMap>
 #include <QString>

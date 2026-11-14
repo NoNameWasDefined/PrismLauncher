@@ -1,3 +1,6 @@
+// File overview: Implementation of AuthSession.h. The data handed to the game at launch: player name, uuid, access
+// token, user type; also offline/demo variants.
+
 #include "AuthSession.h"
 #include <QJsonArray>
 #include <QJsonDocument>

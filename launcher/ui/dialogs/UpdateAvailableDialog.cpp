@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: Implementation of UpdateAvailableDialog.h. Dialog telling the user a launcher update is available,
+// with release notes.
+
 #include "UpdateAvailableDialog.h"
 #include <QPushButton>
 #include "BuildConfig.h"

@@ -1,3 +1,5 @@
+// File overview: Text view that renders a LogModel with colours per message level.
+
 #pragma once
 #include <QAbstractItemView>
 #include <QPlainTextEdit>

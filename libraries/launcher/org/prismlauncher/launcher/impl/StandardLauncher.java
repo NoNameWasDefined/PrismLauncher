@@ -52,6 +52,8 @@
  *      limitations under the License.
  */
 
+// File overview: Launches modern Minecraft by calling the main class's main() with the game arguments.
+
 package org.prismlauncher.launcher.impl;
 
 import org.prismlauncher.utils.Parameters;

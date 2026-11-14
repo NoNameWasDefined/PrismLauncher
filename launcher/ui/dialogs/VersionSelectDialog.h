@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Generic dialog to pick a version from a BaseVersionList (Minecraft versions, loader versions,
+// Java...).
+
 #pragma once
 
 #include <QDialog>

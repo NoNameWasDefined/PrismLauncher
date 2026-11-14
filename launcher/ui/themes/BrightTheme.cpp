@@ -32,6 +32,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of BrightTheme.h. Built-in light Fusion-based theme.
+
 #include "BrightTheme.h"
 
 #include <QObject>

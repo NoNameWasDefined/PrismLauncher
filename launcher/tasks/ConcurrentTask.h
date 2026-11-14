@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Task that runs a list of sub-tasks with a maximum parallelism and aggregates their progress.
+
 #pragma once
 
 #include <QHash>

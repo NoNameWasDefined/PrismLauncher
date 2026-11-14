@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AccountData.h. Serializable state of an account: tokens (MSA, Xbox, Minecraft),
+// profile, skins/capes, entitlements and validity.
+
 #include "AccountData.h"
 #include <QDebug>
 #include <QJsonArray>

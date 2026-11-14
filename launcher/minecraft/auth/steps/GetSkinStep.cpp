@@ -1,3 +1,4 @@
+// File overview: Implementation of GetSkinStep.h. Auth step that downloads the player's current skin image.
 
 #include "GetSkinStep.h"
 

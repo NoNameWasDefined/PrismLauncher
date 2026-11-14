@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of FlameResourceModels.h. CurseForge-specific search models for mods/resource
+// packs/shaders/data packs.
+
 #include "FlameResourceModels.h"
 
 #include "Json.h"

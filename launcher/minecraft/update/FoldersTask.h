@@ -1,3 +1,5 @@
+// File overview: Update task that makes sure the instance's game folders exist.
+
 #pragma once
 
 #include "tasks/Task.h"

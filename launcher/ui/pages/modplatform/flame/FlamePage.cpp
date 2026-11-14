@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FlamePage.h. New-instance page "CurseForge": browse modpacks and create an
+// InstanceImportTask for the chosen file.
+
 #include "FlamePage.h"
 #include "Version.h"
 #include "modplatform/ModIndex.h"

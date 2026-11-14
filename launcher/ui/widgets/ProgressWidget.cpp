@@ -1,5 +1,7 @@
 // Licensed under the Apache-2.0 license. See README.md for details.
 
+// File overview: Implementation of ProgressWidget.h. Inline progress bar + label bound to a Task.
+
 #include "ProgressWidget.h"
 #include <QEventLoop>
 #include <QLabel>

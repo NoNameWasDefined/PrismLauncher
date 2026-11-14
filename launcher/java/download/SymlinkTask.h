@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Task that creates symlinks needed by a downloaded Java runtime (mostly macOS bundles).
+
 #pragma once
 
 #include "tasks/Task.h"

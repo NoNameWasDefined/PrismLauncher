@@ -1,3 +1,6 @@
+// File overview: Task that hashes local mod files and looks them up on Modrinth/CurseForge to create missing platform
+// metadata (so they can be updated later).
+
 #pragma once
 
 #include "ModIndex.h"

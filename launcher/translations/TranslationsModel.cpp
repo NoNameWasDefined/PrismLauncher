@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of TranslationsModel.h. List model of available UI languages; downloads translation
+// files and switches the app language.
+
 #include "TranslationsModel.h"
 
 #include <QCoreApplication>

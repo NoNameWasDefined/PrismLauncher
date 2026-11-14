@@ -1,3 +1,5 @@
+// File overview: Implementation of POTranslator.h. QTranslator that reads gettext .po translation files.
+
 #include "POTranslator.h"
 
 #include <QDebug>

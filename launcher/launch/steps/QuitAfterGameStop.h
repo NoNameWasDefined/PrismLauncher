@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Launch step that quits the launcher once the game exits (when that option is enabled).
+
 #pragma once
 
 #include <launch/LaunchStep.h>

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of JavaPage.h. Settings page "Java": global Java path, memory, JVM arguments, managed
+// Java downloads.
+
 #include "JavaPage.h"
 #include "BuildConfig.h"
 #include "JavaCommon.h"

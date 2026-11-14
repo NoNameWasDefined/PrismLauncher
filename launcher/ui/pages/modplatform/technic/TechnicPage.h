@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "Technic": browse Technic packs and create the matching install task.
+
 #pragma once
 
 #include <QTimer>

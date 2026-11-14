@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Task that imports a modpack from a file or URL (zip, .mrpack, CurseForge, MultiMC, Technic; in this
+// fork also .json packs), detects its type, extracts it and hands off to the platform-specific creation task.
+
 #pragma once
 
 #include <QFuture>

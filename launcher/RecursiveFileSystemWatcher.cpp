@@ -1,3 +1,6 @@
+// File overview: Implementation of RecursiveFileSystemWatcher.h. Watches a directory tree recursively and emits signals
+// when files change (used for screenshots, mods...).
+
 #include "RecursiveFileSystemWatcher.h"
 
 #include <QDebug>

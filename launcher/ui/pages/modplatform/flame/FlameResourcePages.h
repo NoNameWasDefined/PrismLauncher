@@ -37,6 +37,8 @@
  *      limitations under the License.
  */
 
+// File overview: CurseForge pages of the resource download dialog.
+
 #pragma once
 
 #include <ui/pages/modplatform/DataPackPage.h>

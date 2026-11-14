@@ -1,3 +1,6 @@
+// File overview: Implementation of VersionFilterData.h. Hardcoded compatibility data (e.g. which FML libraries old
+// Forge versions need, which versions use LWJGL 3).
+
 #include "VersionFilterData.h"
 #include "ParseUtils.h"
 

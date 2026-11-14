@@ -1,3 +1,5 @@
+// File overview: Installs a legacy FTB pack (download zip, unzip, set up version).
+
 #pragma once
 #include "InstanceTask.h"
 #include "PackHelpers.h"

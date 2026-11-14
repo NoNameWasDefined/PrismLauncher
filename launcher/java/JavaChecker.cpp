@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of JavaChecker.h. Task that runs the javacheck helper jar with a given Java binary to
+// read its version, architecture and vendor.
+
 #include "JavaChecker.h"
 
 #include <QDebug>

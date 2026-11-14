@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Combo box whose items are checkboxes (multi-select).
+
 #pragma once
 
 #include <QComboBox>

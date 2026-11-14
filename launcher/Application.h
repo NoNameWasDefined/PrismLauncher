@@ -35,6 +35,10 @@
  *      limitations under the License.
  */
 
+// File overview: The global application object (reach it anywhere via the APPLICATION macro). Owns settings, network
+// manager, instance list, accounts, themes, translations, Java list, metadata index and caches, and is the entry point
+// for launching instances. See launcher/README.md.
+
 #pragma once
 
 #include <QApplication>
@@ -91,6 +95,27 @@ class Index;
 #endif
 #define APPLICATION_DYN (dynamic_cast<Application*>(QCoreApplication::instance()))
 
+/*
+ * The one global object of the launcher. `APPLICATION` (defined below) is a cast of qApp, so from any
+ * file that includes "Application.h" you can do e.g.:
+ *
+ *     APPLICATION->settings()->get("MaxMemAlloc")      // launcher-wide settings (prismlauncher.cfg)
+ *     APPLICATION->instances()->getInstanceById(id)    // all instances
+ *     APPLICATION->network()                           // shared QNetworkAccessManager (use with NetJob)
+ *     APPLICATION->accounts()->defaultAccount()        // Minecraft accounts
+ *     APPLICATION->metadataIndex()                     // Prism meta server (versions of MC, loaders...)
+ *     APPLICATION->launch(instance)                    // start an instance like the Launch button does
+ *
+ * Startup (Application::Application in Application.cpp), roughly in order:
+ *   parse command line -> pick data folder (portable or user dir) -> single-instance check via LocalPeer
+ *   (a second launcher process just forwards its request and exits) -> logging -> register ALL launcher
+ *   settings (look for registerSetting) -> network/proxy -> translations, themes, icons, Java list,
+ *   instances, accounts, profilers, meta cache -> setup wizard if needed -> performMainStartupAction()
+ *   (show main window, or directly launch/import what was asked on the command line).
+ *
+ * This fork registers its sync settings (ModpackSyncServerURL, AutoSyncModpack, ServerId, ServerPsswd)
+ * in the constructor and calls ServerUtils::SyncModpack() at the start of launch().
+ */
 class Application : public QApplication {
     // friends for the purpose of limiting access to deprecated stuff
     Q_OBJECT
@@ -113,6 +138,9 @@ class Application : public QApplication {
 
     bool event(QEvent* event) override;
 
+    // ---- Global services (all created in the constructor, valid once status() == Initialized) ----
+
+    // Launcher-wide settings stored in prismlauncher.cfg. See settings/SettingsObject.h for how to add one.
     std::shared_ptr<SettingsObject> settings() const { return m_settings; }
 
     qint64 timeSinceStart() const { return m_startTime.msecsTo(QDateTime::currentDateTime()); }
@@ -129,12 +157,14 @@ class Application : public QApplication {
 
     std::shared_ptr<JavaInstallList> javalist();
 
+    // Every instance in the instances folder (also a Qt model used by the main window).
     std::shared_ptr<InstanceList> instances() const { return m_instances; }
 
     std::shared_ptr<IconList> icons() const { return m_icons; }
 
     MCEditTool* mcedit() const { return m_mcedit.get(); }
 
+    // Microsoft/offline accounts (accounts.json).
     shared_qobject_ptr<AccountList> accounts() const { return m_accounts; }
 
     Status status() const { return m_status; }
@@ -143,10 +173,13 @@ class Application : public QApplication {
 
     void updateProxySettings(QString proxyTypeStr, QString addr, int port, QString user, QString password);
 
+    // The single QNetworkAccessManager (proxy-aware). Pass it to NetJob; raw use is fine for simple requests.
     shared_qobject_ptr<QNetworkAccessManager> network();
 
+    // On-disk HTTP cache for downloads (libraries, assets, modpack files...).
     shared_qobject_ptr<HttpMetaCache> metacache();
 
+    // Root of the Prism meta server data: versions of Minecraft, Forge, Fabric, LWJGL... (see meta/Index.h).
     shared_qobject_ptr<Meta::Index> metadataIndex();
 
     void updateCapabilities();
@@ -210,6 +243,8 @@ class Application : public QApplication {
 #endif
 
    public slots:
+    // Starts an instance: (this fork) syncs the modpack with the server first, then creates a LaunchController
+    // that picks the account and runs the instance's LaunchTask. Returns false if it could not start.
     bool launch(InstancePtr instance,
                 bool online = true,
                 bool demo = false,

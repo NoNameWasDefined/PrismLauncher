@@ -1,3 +1,5 @@
+// File overview: Update task that downloads all libraries (and the client jar) required by the LaunchProfile.
+
 #pragma once
 #include "net/NetJob.h"
 #include "tasks/Task.h"

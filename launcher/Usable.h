@@ -1,3 +1,6 @@
+// File overview: Use-count base class plus RAII UseLock, used to know when an object is in use (e.g. a MinecraftAccount
+// while a game runs with it).
+
 #pragma once
 
 #include <cstddef>

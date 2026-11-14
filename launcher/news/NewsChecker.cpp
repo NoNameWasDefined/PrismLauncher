@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of NewsChecker.h. Downloads and parses the launcher's RSS news feed shown in the main
+// window.
+
 #include "NewsChecker.h"
 
 #include <QByteArray>

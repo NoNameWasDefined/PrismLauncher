@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VisualGroup.h. Layout data for one group header and its rows in the InstanceView.
+
 #include "VisualGroup.h"
 
 #include <QApplication>

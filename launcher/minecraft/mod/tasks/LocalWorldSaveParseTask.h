@@ -19,6 +19,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Background task that checks whether a file/folder is a valid world save.
+
 #pragma once
 
 #include <QDebug>

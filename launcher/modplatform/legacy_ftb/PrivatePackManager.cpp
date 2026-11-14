@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PrivatePackManager.h. Stores the user's legacy FTB private pack codes.
+
 #include "PrivatePackManager.h"
 
 #include <QDebug>

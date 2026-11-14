@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AppearanceWidget.h. Widget with theme/icon/cat selection and preview, shared by the
+// settings page and setup wizard.
+
 #include "AppearanceWidget.h"
 #include "ui_AppearanceWidget.h"
 

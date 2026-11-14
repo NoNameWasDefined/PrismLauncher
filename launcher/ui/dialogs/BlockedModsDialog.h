@@ -23,6 +23,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Dialog shown when a CurseForge pack contains mods that can't be downloaded automatically: lists them
+// with links and watches the Downloads folder until the user has fetched them.
+
 #pragma once
 
 #include <QDialog>

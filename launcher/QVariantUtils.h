@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Helpers to convert between QVariant and lists.
+
 #pragma once
 
 #include <QList>

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Instance page listing data packs (per world or global), with download/enable/disable actions.
+
 #pragma once
 
 #include <QVBoxLayout>

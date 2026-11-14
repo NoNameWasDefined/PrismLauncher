@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Implementation of ArchiveWriter.h. Writes archives (zip) through libarchive: add files from disk or
+// memory.
+
 #include "ArchiveWriter.h"
 #include <archive.h>
 #include <archive_entry.h>

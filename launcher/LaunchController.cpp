@@ -34,6 +34,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LaunchController.h. Orchestrates launching an instance from the UI: picks/validates
+// the account, handles offline mode and demo, asks for missing info, then creates and runs the instance's LaunchTask
+// and opens the log window.
+
 #include "LaunchController.h"
 #include "Application.h"
 #include "launch/steps/PrintServers.h"

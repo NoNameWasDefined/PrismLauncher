@@ -52,6 +52,9 @@
  *      limitations under the License.
  */
 
+// File overview: Shared parsing of launch parameters (main class, game args, window size...) for launcher
+// implementations.
+
 package org.prismlauncher.launcher.impl;
 
 import org.prismlauncher.exception.ParseException;

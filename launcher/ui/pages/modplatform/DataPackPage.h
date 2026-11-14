@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Download dialog page base for data packs.
+
 #pragma once
 
 #include "ui/pages/modplatform/DataPackModel.h"

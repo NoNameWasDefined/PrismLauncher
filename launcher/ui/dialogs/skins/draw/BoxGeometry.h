@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: OpenGL geometry for one textured box (a body part of the skin preview).
+
 #pragma once
 
 #include <QMatrix4x4>

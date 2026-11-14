@@ -1,3 +1,5 @@
+// File overview: Simple thread-safe key/value cache protected by a read-write lock.
+
 #pragma once
 #include <QMap>
 #include <QReadLocker>

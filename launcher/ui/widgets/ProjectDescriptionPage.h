@@ -1,3 +1,5 @@
+// File overview: Text browser for project descriptions (HTML/Markdown) with image loading.
+
 #pragma once
 
 #include <QTextBrowser>

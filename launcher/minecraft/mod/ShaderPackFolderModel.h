@@ -1,3 +1,5 @@
+// File overview: Folder model for the shaderpacks folder.
+
 #pragma once
 
 #include "ResourceFolderModel.h"

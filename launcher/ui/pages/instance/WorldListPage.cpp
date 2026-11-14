@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of WorldListPage.h. Instance page "Worlds": list, copy, rename, delete and open worlds;
+// join singleplayer world on launch.
+
 #include "WorldListPage.h"
 #include "minecraft/WorldList.h"
 #include "ui/dialogs/CustomMessageBox.h"

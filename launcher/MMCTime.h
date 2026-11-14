@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// File overview: Formatting helpers for durations (play time display).
+
 #pragma once
 
 #include <QString>

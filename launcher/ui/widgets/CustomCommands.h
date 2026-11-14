@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Widget for pre-launch, wrapper and post-exit commands (used in global and instance settings).
+
 #pragma once
 
 #include <QWidget>

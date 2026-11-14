@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: One icon theme (folder of icons) the launcher can use.
+
 #pragma once
 
 #include <QString>

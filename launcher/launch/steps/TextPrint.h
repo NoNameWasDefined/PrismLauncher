@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that just prints some text into the log.
+
 #pragma once
 
 #include <LoggedProcess.h>

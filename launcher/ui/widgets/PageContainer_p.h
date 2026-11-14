@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Private models/views/delegates of PageContainer.
+
 #pragma once
 
 #include <QEvent>

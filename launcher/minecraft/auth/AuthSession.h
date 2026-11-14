@@ -1,3 +1,6 @@
+// File overview: The data handed to the game at launch: player name, uuid, access token, user type; also offline/demo
+// variants.
+
 #pragma once
 
 #include <QString>

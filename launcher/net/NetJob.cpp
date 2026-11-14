@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of NetJob.h. A ConcurrentTask that runs several NetRequests in parallel
+// (downloads/uploads) with retry support. The usual way to download things. See launcher/net/README.md.
+
 #include "NetJob.h"
 #include <QNetworkReply>
 #include "net/NetRequest.h"

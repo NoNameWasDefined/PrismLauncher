@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Validator that hashes downloaded data and fails the download if it doesn't match the expected
+// checksum.
+
 #pragma once
 
 #include "Validator.h"

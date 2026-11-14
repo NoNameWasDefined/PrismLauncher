@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: The separate updater program: finds the latest GitHub release, downloads the right asset and replaces
+// the launcher files.
+
 #pragma once
 
 #include <QtCore>

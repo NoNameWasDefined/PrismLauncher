@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "Import": pick a local file or URL (zip, .mrpack, and in this fork .json) and create
+// an InstanceImportTask.
+
 #pragma once
 
 #include <QWidget>

@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of LocalShaderPackParseTask.h. Background task that checks whether a file is a valid
+// shader pack.
+
 #include "LocalShaderPackParseTask.h"
 
 #include "FileSystem.h"

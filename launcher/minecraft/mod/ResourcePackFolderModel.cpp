@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ResourcePackFolderModel.h. Folder model for the resourcepacks folder.
+
 #include "ResourcePackFolderModel.h"
 #include <qnamespace.h>
 #include <qsize.h>

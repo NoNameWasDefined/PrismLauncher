@@ -1,3 +1,6 @@
+// File overview: Implementation of AutoJavaWizardPage.h. Setup wizard page asking whether Java should be downloaded
+// automatically.
+
 #include "AutoJavaWizardPage.h"
 #include "ui_AutoJavaWizardPage.h"
 

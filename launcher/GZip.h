@@ -1,3 +1,5 @@
+// File overview: In-memory gzip compress/uncompress helpers built on zlib.
+
 #pragma once
 #include <QByteArray>
 #include <QFile>

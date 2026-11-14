@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of JavaInstall.h. One detected Java installation (path, version, architecture), shown
+// in Java selection lists.
+
 #include "JavaInstall.h"
 
 #include "BaseVersion.h"

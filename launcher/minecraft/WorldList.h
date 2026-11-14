@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: List model of an instance's worlds (saves folder), shown on the Worlds page; watches the folder for
+// changes.
+
 #pragma once
 
 #include <QAbstractListModel>

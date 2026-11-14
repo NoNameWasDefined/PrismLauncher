@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Widget for Java path, memory and JVM arguments (global and instance settings).
+
 #pragma once
 
 #include <QWidget>

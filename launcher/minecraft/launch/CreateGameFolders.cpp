@@ -1,3 +1,6 @@
+// File overview: Implementation of CreateGameFolders.h. Launch step that creates the instance's .minecraft folder and
+// other folders the game expects.
+
 #include "CreateGameFolders.h"
 #include "FileSystem.h"
 #include "launch/LaunchTask.h"

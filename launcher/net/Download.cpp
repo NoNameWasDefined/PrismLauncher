@@ -36,6 +36,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Download.h. A NetRequest that downloads (GET) a URL into a Sink (file, memory,
+// cache).
+
 #include "Download.h"
 #include <QUrl>
 

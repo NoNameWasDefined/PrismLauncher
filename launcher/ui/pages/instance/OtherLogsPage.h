@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page listing log files in the instance's logs folder (and crash reports), with viewer and
+// upload.
+
 #pragma once
 
 #include <QWidget>

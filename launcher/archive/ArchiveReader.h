@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Reads archives (zip, tar, etc.) through libarchive: list files, check existence, read single entries
+// or iterate over entries.
+
 #pragma once
 
 #include <QByteArray>

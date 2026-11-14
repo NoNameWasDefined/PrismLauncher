@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of FileResolvingTask.h. Resolves the files listed in a CurseForge manifest
+// (project/file ids) to download URLs via the CurseForge API, falling back to Modrinth for blocked files.
+
 #include "FileResolvingTask.h"
 #include <algorithm>
 

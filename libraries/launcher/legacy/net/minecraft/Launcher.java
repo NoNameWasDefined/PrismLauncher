@@ -52,6 +52,8 @@
  *      limitations under the License.
  */
 
+// File overview: Applet stub that hosts very old (applet-based) Minecraft versions inside a frame.
+
 package net.minecraft;
 
 import java.applet.Applet;

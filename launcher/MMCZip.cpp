@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MMCZip.h. Zip helpers (namespace MMCZip): merging jars, extracting files/dirs from
+// archives, collecting file lists. Built on the archive/ readers.
+
 #include "MMCZip.h"
 #include <archive.h>
 #include "FileSystem.h"

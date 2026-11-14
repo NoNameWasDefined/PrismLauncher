@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: A NetRequest that uploads (POST) data.
+
 #pragma once
 
 #include "net/NetRequest.h"

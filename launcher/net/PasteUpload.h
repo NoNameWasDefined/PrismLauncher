@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Uploads text (logs) to paste services (mclo.gs, paste.ee, 0x0.st...) and returns the link.
+
 #pragma once
 
 #include "net/ByteArraySink.h"

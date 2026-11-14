@@ -1,3 +1,5 @@
+// File overview: Implementation of ParseUtils.h. Timestamp parsing helpers for Mojang/S3 date formats.
+
 #include "ParseUtils.h"
 #include <QDateTime>
 #include <QDebug>

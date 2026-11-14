@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ModrinthPackExportTask.h. Exports an instance as a Modrinth .mrpack.
+
 #include "ModrinthPackExportTask.h"
 
 #include <QCoreApplication>

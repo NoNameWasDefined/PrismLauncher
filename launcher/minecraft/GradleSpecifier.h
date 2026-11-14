@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Parses Maven/Gradle coordinates like "group:artifact:version:classifier@ext" and turns them into
+// repository paths and file names.
+
 #pragma once
 
 #include <QRegularExpression>

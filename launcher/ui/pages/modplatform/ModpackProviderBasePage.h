@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Base for new-instance pages that browse a modpack platform (allows setting the search term
+// programmatically).
+
 #pragma once
 
 #include "ui/pages/BasePage.h"

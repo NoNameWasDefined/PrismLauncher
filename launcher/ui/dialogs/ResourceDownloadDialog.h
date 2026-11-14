@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: The "Download mods/resource packs/shaders/data packs" dialog: hosts one page per platform, collects
+// selected versions and creates ResourceDownloadTasks.
+
 #pragma once
 
 #include <QDialog>

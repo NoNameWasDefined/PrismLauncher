@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: SettingsObject stored in an INI file (prismlauncher.cfg, instance.cfg); saves automatically on change.
+
 #pragma once
 
 #include <QObject>

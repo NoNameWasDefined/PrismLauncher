@@ -1,3 +1,5 @@
+// File overview: Remembers which files came from a modpack's overrides folder, so an update can remove them first.
+
 #pragma once
 
 #include <QString>

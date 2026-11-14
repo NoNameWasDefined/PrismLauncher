@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Interface for "something that provides a list of pages" (global settings, an instance, the new-
+// instance dialog) plus GenericPageProvider helper.
+
 #pragma once
 
 #include <functional>

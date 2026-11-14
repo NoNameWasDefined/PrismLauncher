@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Text object that loads and scales images inside rich text descriptions.
+
 #pragma once
 
 #include <QObject>

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of ModListView.h. Tree view used by resource folder pages (column resizing, drag &
+// drop).
+
 #include "ModListView.h"
 #include <QDrag>
 #include <QHeaderView>

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LogView.h. Text view that renders a LogModel with colours per message level.
+
 #include "LogView.h"
 #include <QScrollBar>
 #include <QTextBlock>

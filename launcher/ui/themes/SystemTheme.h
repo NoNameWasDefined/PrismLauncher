@@ -32,6 +32,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Theme that uses the system's native style.
+
 #pragma once
 
 #include "ITheme.h"

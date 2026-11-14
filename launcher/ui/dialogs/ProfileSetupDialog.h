@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Dialog to create a Minecraft profile name for a newly bought account.
+
 #pragma once
 
 #include <QDialog>

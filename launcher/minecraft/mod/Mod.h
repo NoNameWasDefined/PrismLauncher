@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: One mod file in the mods folder: its details (id, name, version, authors, loaders) parsed from the
+// jar, its icon, and its platform metadata.
+
 #pragma once
 
 #include <QDateTime>

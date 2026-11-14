@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Base list model for searching a platform (via ResourceAPI): paging, search, project info/versions
+// loading, logos. Used by every download page.
+
 #pragma once
 
 #include <optional>

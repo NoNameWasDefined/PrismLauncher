@@ -1,3 +1,6 @@
+// File overview: Implementation of ProjectItem.h. Delegate that paints search results (logo, title, description,
+// checkbox).
+
 #include "ProjectItem.h"
 
 #include <QApplication>

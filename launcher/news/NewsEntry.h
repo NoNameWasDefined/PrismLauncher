@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: One news item from the RSS feed (title, content, link).
+
 #pragma once
 
 #include <QDomElement>

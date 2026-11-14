@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PasteUpload.h. Uploads text (logs) to paste services (mclo.gs, paste.ee, 0x0.st...)
+// and returns the link.
+
 #include "PasteUpload.h"
 #include <qobject.h>
 

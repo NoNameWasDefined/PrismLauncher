@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "ATLauncher": browse packs and create a PackInstallTask.
+
 #pragma once
 
 #include "AtlFilterModel.h"

@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Commandline.h. Helpers for splitting command lines into arguments (used for custom
+// launch/wrapper commands).
+
 #include "Commandline.h"
 
 /**

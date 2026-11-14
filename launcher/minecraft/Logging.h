@@ -18,6 +18,8 @@
  *
  */
 
+// File overview: Qt logging categories for Minecraft-related code.
+
 #pragma once
 
 #include <QLoggingCategory>

@@ -1,3 +1,5 @@
+// File overview: List and filter models of legacy FTB packs.
+
 #pragma once
 
 #include <RWStorage.h>

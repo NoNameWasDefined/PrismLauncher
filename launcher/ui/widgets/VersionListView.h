@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Tree view for version lists, with empty/error messages.
+
 #pragma once
 #include <QTreeView>
 

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AboutDialog.h. The "About" dialog (version, credits, license).
+
 #include "AboutDialog.h"
 #include <QIcon>
 #include "Application.h"

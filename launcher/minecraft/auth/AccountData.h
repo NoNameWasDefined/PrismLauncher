@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Serializable state of an account: tokens (MSA, Xbox, Minecraft), profile, skins/capes, entitlements
+// and validity.
+
 #pragma once
 #include <QByteArray>
 #include <QJsonObject>

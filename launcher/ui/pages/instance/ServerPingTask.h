@@ -1,3 +1,5 @@
+// File overview: Task that pings a Minecraft server and returns its online player count.
+
 #pragma once
 
 #include <QObject>

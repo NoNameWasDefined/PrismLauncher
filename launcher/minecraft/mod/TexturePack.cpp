@@ -17,6 +17,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of TexturePack.h. A legacy texture pack (pre-1.6), with description and image.
+
 #include "TexturePack.h"
 
 #include <QDebug>

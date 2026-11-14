@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of PageDialog.h. Dialog that shows a BasePageProvider's pages in a PageContainer (used
+// for global Settings and other multi-page dialogs).
+
 #include "PageDialog.h"
 
 #include <QDialogButtonBox>

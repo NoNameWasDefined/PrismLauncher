@@ -1,3 +1,5 @@
+// File overview: Implementation of XboxUserStep.h. Auth step that exchanges the MSA token for an Xbox Live user token.
+
 #include "XboxUserStep.h"
 
 #include <QNetworkRequest>

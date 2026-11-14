@@ -1,3 +1,5 @@
+// File overview: Parsers that turn CurseForge API JSON into ModPlatform::IndexedPack/IndexedVersion.
+
 //
 // Created by timoreo on 16/01/2022.
 //

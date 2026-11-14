@@ -1,3 +1,6 @@
+// File overview: Implementation of MessageLevel.h. Enum of log message levels (Launcher, Info, Warning, Error,
+// Fatal...) used for colouring game and launcher logs.
+
 #include "MessageLevel.h"
 
 MessageLevel messageLevelFromName(const QString& levelName)

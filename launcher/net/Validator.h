@@ -32,6 +32,8 @@
  *      limitations under the License.
  */
 
+// File overview: Interface for checks run on downloaded data while it streams (checksums...).
+
 #pragma once
 
 #include <QNetworkReply>

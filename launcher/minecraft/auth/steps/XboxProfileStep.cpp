@@ -1,3 +1,6 @@
+// File overview: Implementation of XboxProfileStep.h. Auth step that fetches the Xbox profile (gamertag), mostly for
+// display.
+
 #include "XboxProfileStep.h"
 
 #include <QNetworkRequest>

@@ -1,3 +1,5 @@
+// File overview: Base class for pages of the first-run setup wizard.
+
 #pragma once
 
 #include <QEvent>

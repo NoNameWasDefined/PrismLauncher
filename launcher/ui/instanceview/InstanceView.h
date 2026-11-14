@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Custom item view that shows instances as an icon grid split into collapsible groups.
+
 #pragma once
 
 #include <QCache>

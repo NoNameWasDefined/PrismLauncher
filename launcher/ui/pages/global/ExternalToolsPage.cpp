@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ExternalToolsPage.h. Settings page "Tools": profilers (JProfiler, VisualVM), MCEdit
+// and external editor paths.
+
 #include "ExternalToolsPage.h"
 #include "ui_ExternalToolsPage.h"
 

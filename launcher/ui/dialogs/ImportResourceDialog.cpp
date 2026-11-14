@@ -1,3 +1,6 @@
+// File overview: Implementation of ImportResourceDialog.h. Dialog asking which instance to import a dropped/opened
+// resource (mod, pack...) into.
+
 #include "ImportResourceDialog.h"
 #include "ui_ImportResourceDialog.h"
 

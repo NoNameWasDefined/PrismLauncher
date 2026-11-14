@@ -1,3 +1,5 @@
+// File overview: Detects whether the launcher is attached to a console (to decide where to print logs).
+
 #pragma once
 
 #include <QString>

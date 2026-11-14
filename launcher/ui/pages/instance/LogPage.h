@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page "Minecraft Log": live game log with search, copy, upload, wrap and colouring.
+
 #pragma once
 
 #include <QIdentityProxyModel>

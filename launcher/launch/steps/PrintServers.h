@@ -15,6 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Launch step that prints debug info about network servers (DNS resolution) into the log.
+
 #pragma once
 
 #include <LoggedProcess.h>

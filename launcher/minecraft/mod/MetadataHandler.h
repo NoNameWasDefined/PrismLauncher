@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Read/write/delete the per-mod metadata files (packwiz .toml in mods/.index) that remember which
+// platform/version a mod came from; used for updates.
+
 #pragma once
 
 #include "modplatform/packwiz/Packwiz.h"

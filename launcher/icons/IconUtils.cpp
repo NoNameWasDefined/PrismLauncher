@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of IconUtils.h. Helpers for finding icon files by key and checking supported icon
+// extensions.
+
 #include "IconUtils.h"
 
 #include <QDirIterator>

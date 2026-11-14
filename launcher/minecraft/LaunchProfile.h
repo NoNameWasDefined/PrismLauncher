@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: The final, merged result of applying all components in order: main class, libraries, JVM/game
+// arguments, assets, traits, tweakers. This is what the launch steps actually use.
+
 #pragma once
 #include <ProblemProvider.h>
 #include <QString>

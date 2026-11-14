@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ExportPackDialog.h. Dialog to export an instance as a Modrinth or CurseForge
+// modpack.
+
 #include "ExportPackDialog.h"
 #include "minecraft/mod/ResourceFolderModel.h"
 #include "modplatform/ModIndex.h"

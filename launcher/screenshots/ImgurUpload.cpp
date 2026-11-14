@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ImgurUpload.h. Net request that uploads one screenshot to Imgur.
+
 #include "ImgurUpload.h"
 #include "BuildConfig.h"
 #include "net/RawHeaderProxy.h"

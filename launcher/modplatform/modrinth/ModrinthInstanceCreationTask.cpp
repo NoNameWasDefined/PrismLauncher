@@ -1,3 +1,6 @@
+// File overview: Implementation of ModrinthInstanceCreationTask.h. InstanceCreationTask for Modrinth .mrpack modpacks:
+// reads modrinth.index.json, sets up loaders, downloads files, copies overrides. Can also update an existing pack.
+
 #include "ModrinthInstanceCreationTask.h"
 
 #include "Application.h"

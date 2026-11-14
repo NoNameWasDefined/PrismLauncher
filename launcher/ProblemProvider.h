@@ -1,3 +1,6 @@
+// File overview: Interface for objects that can report problems (warnings/errors), e.g. broken components in an
+// instance's version profile.
+
 #pragma once
 
 #include <QList>

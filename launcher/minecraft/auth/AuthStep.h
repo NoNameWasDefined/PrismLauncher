@@ -1,3 +1,6 @@
+// File overview: Base class for one step of an AuthFlow; reports a state (working, succeeded, failed, offline...) when
+// done.
+
 #pragma once
 #include <QList>
 #include <QNetworkReply>

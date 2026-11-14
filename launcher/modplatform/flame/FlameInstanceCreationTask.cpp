@@ -33,6 +33,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FlameInstanceCreationTask.h. InstanceCreationTask for CurseForge modpacks: reads
+// manifest.json, sets up loaders, resolves and downloads mod files (asking about blocked mods), copies overrides. Can
+// also update an existing pack.
+
 #include "FlameInstanceCreationTask.h"
 
 #include "QObjectPtr.h"

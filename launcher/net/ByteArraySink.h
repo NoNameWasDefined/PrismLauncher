@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Download sink that writes the response into a QByteArray in memory.
+
 #pragma once
 
 #include "Sink.h"

@@ -32,6 +32,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of MultipleOptionsTask.h. Task that tries its sub-tasks one by one until one succeeds
+// (e.g. fallback mirrors).
+
 #include "MultipleOptionsTask.h"
 
 #include <QDebug>

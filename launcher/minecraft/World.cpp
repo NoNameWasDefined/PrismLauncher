@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of World.h. One world save folder (name, seed, game type, last played, icon), read from
+// level.dat via NBT; supports rename/delete/install.
+
 #include "World.h"
 #include <QDebug>
 #include <QDir>

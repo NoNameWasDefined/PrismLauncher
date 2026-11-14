@@ -1,3 +1,6 @@
+// File overview: Implementation of LogModel.h. Circular-buffer list model holding log lines (with levels) shown in the
+// instance log window.
+
 #include "LogModel.h"
 
 LogModel::LogModel(QObject* parent) : QAbstractListModel(parent)

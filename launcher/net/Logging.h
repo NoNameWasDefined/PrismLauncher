@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Qt logging categories for network code.
+
 #pragma once
 
 #include <QLoggingCategory>

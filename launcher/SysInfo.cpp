@@ -1,3 +1,6 @@
+// File overview: Implementation of SysInfo.h. Basic system information (OS name, CPU architecture, total RAM) used for
+// logs and defaults.
+
 #include <QDebug>
 #include <QString>
 #include "sys.h"

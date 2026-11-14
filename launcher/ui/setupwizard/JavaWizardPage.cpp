@@ -1,3 +1,5 @@
+// File overview: Implementation of JavaWizardPage.h. Setup wizard page to choose Java and memory settings.
+
 #include "JavaWizardPage.h"
 #include "Application.h"
 

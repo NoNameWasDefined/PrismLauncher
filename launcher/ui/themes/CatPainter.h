@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Paints the cat background (including animated GIFs) on the instance view.
+
 #pragma once
 
 #include <QMovie>

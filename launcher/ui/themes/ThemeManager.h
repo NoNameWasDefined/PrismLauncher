@@ -16,6 +16,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Discovers and applies application themes, icon themes and cat packs. Reach it via
+// APPLICATION->themeManager().
+
 #pragma once
 
 #include <QDir>

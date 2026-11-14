@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of SystemTheme.h. Theme that uses the system's native style.
+
 #include "SystemTheme.h"
 #include <QApplication>
 #include <QStyle>

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FileSink.h. Download sink that writes the response to a file atomically.
+
 #include "FileSink.h"
 
 #include "FileSystem.h"

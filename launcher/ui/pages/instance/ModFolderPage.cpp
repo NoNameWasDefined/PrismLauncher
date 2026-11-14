@@ -36,6 +36,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModFolderPage.h. Instance pages for the mods, core mods and nil mods folders
+// (ExternalResourcesPage specialised for ModFolderModel).
+
 #include "ModFolderPage.h"
 #include "ui/dialogs/ExportToModListDialog.h"
 #include "ui/dialogs/InstallLoaderDialog.h"

@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of CustomTheme.h. A user theme loaded from the themes folder (theme.json + stylesheet).
+
 #include "CustomTheme.h"
 #include <FileSystem.h>
 #include <Json.h>

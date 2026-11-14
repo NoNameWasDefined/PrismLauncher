@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Implementation of ExportToModList.h. Exports the mod list of an instance as HTML/Markdown/CSV/custom
+// text.
+
 #include "ExportToModList.h"
 #include <QJsonArray>
 #include <QJsonDocument>

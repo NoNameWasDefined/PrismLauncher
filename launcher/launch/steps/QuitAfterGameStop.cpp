@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of QuitAfterGameStop.h. Launch step that quits the launcher once the game exits (when
+// that option is enabled).
+
 #include "QuitAfterGameStop.h"
 #include <launch/LaunchTask.h>
 #include "Application.h"

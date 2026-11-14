@@ -1,3 +1,5 @@
+// File overview: Implementation of JVisualVM.h. JVisualVM integration (opens VisualVM on the game process).
+
 #include "JVisualVM.h"
 
 #include <QDir>

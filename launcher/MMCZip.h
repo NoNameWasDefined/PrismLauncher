@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Zip helpers (namespace MMCZip): merging jars, extracting files/dirs from archives, collecting file
+// lists. Built on the archive/ readers.
+
 #pragma once
 
 #include <QDir>

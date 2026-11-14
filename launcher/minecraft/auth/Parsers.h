@@ -1,3 +1,5 @@
+// File overview: Parsers for Xbox/Minecraft authentication API responses.
+
 #pragma once
 
 #include "AccountData.h"

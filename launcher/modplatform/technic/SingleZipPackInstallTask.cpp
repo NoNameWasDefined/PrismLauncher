@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of SingleZipPackInstallTask.h. Installs a Technic pack distributed as a single zip.
+
 #include "SingleZipPackInstallTask.h"
 
 #include <QtConcurrent>

@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Download dialog page base for legacy texture packs.
+
 #pragma once
 
 #include "ui/dialogs/ResourceDownloadDialog.h"

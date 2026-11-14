@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of IconList.h. Qt list model of instance icons (built-in + user icons in the icons
+// folder); watches the folder and supports drag & drop of new icons.
+
 #include "IconList.h"
 #include <FileSystem.h>
 #include <QDebug>

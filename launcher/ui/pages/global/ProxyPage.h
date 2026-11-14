@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Proxy": network proxy configuration.
+
 #pragma once
 
 #include <QAbstractButton>

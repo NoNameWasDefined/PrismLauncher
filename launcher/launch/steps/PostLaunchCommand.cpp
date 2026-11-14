@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PostLaunchCommand.h. Launch step that runs the user's post-exit command after the
+// game closes.
+
 #include "PostLaunchCommand.h"
 #include <launch/LaunchTask.h>
 

@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LauncherPartLaunch.h. The launch step that actually starts the game: builds the Java
+// command line, runs the Java-side launcher (libraries/launcher) and feeds it the launch script over stdin.
+
 #include "LauncherPartLaunch.h"
 
 #include <QRegularExpression>

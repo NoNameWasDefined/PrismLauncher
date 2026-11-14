@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Widget with all Minecraft game settings (window, Java, commands, performance...), used by the global
+// Minecraft page and instance settings page.
+
 #pragma once
 
 #include <QWidget>

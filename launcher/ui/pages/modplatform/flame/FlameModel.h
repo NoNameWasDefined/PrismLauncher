@@ -1,3 +1,5 @@
+// File overview: List model of CurseForge modpack search results.
+
 #pragma once
 
 #include <RWStorage.h>

@@ -1,3 +1,6 @@
+// File overview: Implementation of SetupWizard.h. The first-run setup wizard shown when required settings are missing
+// (language, Java, theme...).
+
 #include "SetupWizard.h"
 
 #include "JavaWizardPage.h"

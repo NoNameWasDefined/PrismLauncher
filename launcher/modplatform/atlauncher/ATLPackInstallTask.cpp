@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ATLPackInstallTask.h. Installs an ATLauncher pack: downloads its version manifest,
+// lets the user pick optional mods, sets up loaders and downloads every file.
+
 #include "ATLPackInstallTask.h"
 
 #include <QtConcurrent>

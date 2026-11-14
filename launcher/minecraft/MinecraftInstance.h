@@ -34,6 +34,10 @@
  *      limitations under the License.
  */
 
+// File overview: The concrete Minecraft instance type. Knows the instance's folders (mods, resource packs, saves...),
+// owns its PackProfile and resource folder models, builds the launch command line and creates the LaunchTask/update
+// tasks. See launcher/minecraft/README.md.
+
 #pragma once
 #include <java/JavaVersion.h>
 #include <minecraft/mod/DataPackFolderModel.h>
@@ -73,6 +77,8 @@ class MinecraftInstance : public BaseInstance {
     void populateLaunchMenu(QMenu* menu) override;
 
     ////// Directories and files //////
+    // All paths are absolute. gameRoot() is <instance>/minecraft (or .minecraft for old instances);
+    // modsRoot() is gameRoot()/mods, resourcePacksDir() is gameRoot()/resourcepacks, and so on.
     QString jarModsDir() const;
     QString resourcePacksDir() const;
     QString texturePacksDir() const;
@@ -108,9 +114,13 @@ class MinecraftInstance : public BaseInstance {
     void updateRuntimeContext() override;
 
     //////  Profile management //////
+    // Component list (mmc-pack.json): Minecraft version, loaders... See PackProfile.h.
     std::shared_ptr<PackProfile> getPackProfile() const;
 
     //////  Mod Lists  //////
+    // Lazily-created Qt models over the instance's resource folders. They are what the instance pages show;
+    // call ->update() to rescan the folder (asynchronous, emits updateFinished()).
+    // loaderModList() is the normal mods/ folder; coreModList()/nilModList() are special legacy folders.
     std::shared_ptr<ModFolderModel> loaderModList();
     std::shared_ptr<ModFolderModel> coreModList();
     std::shared_ptr<ModFolderModel> nilModList();
@@ -122,11 +132,16 @@ class MinecraftInstance : public BaseInstance {
     std::shared_ptr<WorldList> worldList();
 
     //////  Launch stuff //////
+    // Tasks that download what the game needs (libraries, assets, FML libs...); run as launch steps when online.
     QList<Task::Ptr> createUpdateTask() override;
+    // Builds the full chain of launch steps (see the overview comment in launch/LaunchTask.h).
     shared_qobject_ptr<LaunchTask> createLaunchTask(AuthSessionPtr account, MinecraftTarget::Ptr targetToJoin) override;
     QStringList extraArguments() override;
     QStringList verboseDescription(AuthSessionPtr session, MinecraftTarget::Ptr targetToJoin) override;
     QList<Mod*> getJarMods() const;
+    // The text script sent on stdin to the Java-side launcher (libraries/launcher EntryPoint): one "key value"
+    // per line ("mainClass ...", "param <game arg>", "launcher standard|legacy", "serverAddress ...", ...).
+    // LauncherPartLaunch writes it, then sends "launch" (or "abort") to start or cancel.
     QString createLaunchScript(AuthSessionPtr session, MinecraftTarget::Ptr targetToJoin);
     /// get arguments passed to java
     QStringList javaArguments();

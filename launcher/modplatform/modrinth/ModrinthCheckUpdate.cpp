@@ -1,3 +1,6 @@
+// File overview: Implementation of ModrinthCheckUpdate.h. CheckUpdateTask for resources installed from Modrinth (batch
+// lookup by file hash).
+
 #include "ModrinthCheckUpdate.h"
 #include "Application.h"
 #include "ModrinthAPI.h"

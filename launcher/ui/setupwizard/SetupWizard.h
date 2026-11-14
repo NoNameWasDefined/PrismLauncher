@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: The first-run setup wizard shown when required settings are missing (language, Java, theme...).
+
 #pragma once
 
 #include <QWizard>

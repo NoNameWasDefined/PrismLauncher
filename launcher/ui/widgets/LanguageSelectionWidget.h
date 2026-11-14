@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Language picker widget.
+
 #pragma once
 
 #include <QWidget>

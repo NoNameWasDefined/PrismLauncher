@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of OtherLogsPage.h. Instance page listing log files in the instance's logs folder (and
+// crash reports), with viewer and upload.
+
 #include "OtherLogsPage.h"
 #include "ui_OtherLogsPage.h"
 

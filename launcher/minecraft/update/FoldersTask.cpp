@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FoldersTask.h. Update task that makes sure the instance's game folders exist.
+
 #include "FoldersTask.h"
 #include <QDir>
 #include "minecraft/MinecraftInstance.h"

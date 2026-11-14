@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of InstanceProxyModel.h. Sort/filter proxy over the InstanceList for the main window
+// (sort by name/last played, search filter).
+
 #include "InstanceProxyModel.h"
 
 #include <BaseInstance.h>

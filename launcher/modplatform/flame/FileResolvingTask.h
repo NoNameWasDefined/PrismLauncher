@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Resolves the files listed in a CurseForge manifest (project/file ids) to download URLs via the
+// CurseForge API, falling back to Modrinth for blocked files.
+
 #pragma once
 
 #include "PackManifest.h"

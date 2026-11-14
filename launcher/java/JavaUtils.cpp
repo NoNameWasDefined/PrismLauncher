@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of JavaUtils.h. Finds Java installations on the system (registry on Windows, common
+// paths elsewhere) and builds the default Java path.
+
 #include <QDir>
 #include <QFileInfo>
 #include <QString>

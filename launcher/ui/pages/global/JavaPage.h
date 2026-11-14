@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Java": global Java path, memory, JVM arguments, managed Java downloads.
+
 #pragma once
 
 #include <QObjectPtr.h>

@@ -1,3 +1,5 @@
+// File overview: Dialog asking which instance to import a dropped/opened resource (mod, pack...) into.
+
 #pragma once
 
 #include <QDialog>

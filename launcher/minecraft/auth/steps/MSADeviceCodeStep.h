@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Auth step for Microsoft login via device code (user types a code on microsoft.com/link).
+
 #pragma once
 #include <QObject>
 #include <QTimer>

@@ -19,6 +19,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Background task that reads a data pack's pack.mcmeta and pack.png.
+
 #pragma once
 
 #include <QDebug>

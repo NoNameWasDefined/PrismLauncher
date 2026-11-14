@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of CheckComboBox.h. Combo box whose items are checkboxes (multi-select).
+
 #include "CheckComboBox.h"
 
 #include <QAbstractItemView>

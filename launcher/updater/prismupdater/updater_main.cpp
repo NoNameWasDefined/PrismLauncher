@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Entry point of the prismlauncher_updater executable.
+
 #include "PrismUpdater.h"
 int main(int argc, char* argv[])
 {

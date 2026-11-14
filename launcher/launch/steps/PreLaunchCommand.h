@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that runs the user's pre-launch command before the game starts; failure aborts the launch.
+
 #pragma once
 
 #include "LoggedProcess.h"

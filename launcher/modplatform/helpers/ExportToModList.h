@@ -15,6 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Exports the mod list of an instance as HTML/Markdown/CSV/custom text.
+
 #pragma once
 #include <QList>
 #include <QString>

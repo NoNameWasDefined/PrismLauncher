@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Server/world to join directly on launch ("address:port" or a singleplayer world).
+
 #pragma once
 
 #include <memory>

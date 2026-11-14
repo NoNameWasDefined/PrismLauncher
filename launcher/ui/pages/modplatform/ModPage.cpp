@@ -37,6 +37,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModPage.h. Download dialog page base for mods (adds the mod filter widget).
+
 #include "ModPage.h"
 #include "ui_ResourcePage.h"
 

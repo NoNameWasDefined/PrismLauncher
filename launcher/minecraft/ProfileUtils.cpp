@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ProfileUtils.h. Helpers for reading/writing component order files and loading local
+// patch JSON files.
+
 #include "ProfileUtils.h"
 #include <QDebug>
 #include "Json.h"

@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: On-disk HTTP cache (ETag, md5, age) for downloaded files, organised in named bases ("general",
+// "libraries", "assets"...). Reach it via APPLICATION->metacache().
+
 #pragma once
 
 #include <QMap>

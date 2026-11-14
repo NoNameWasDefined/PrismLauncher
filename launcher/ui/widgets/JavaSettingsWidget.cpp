@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of JavaSettingsWidget.h. Widget for Java path, memory and JVM arguments (global and
+// instance settings).
+
 #include "JavaSettingsWidget.h"
 
 #include <QFileDialog>

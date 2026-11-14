@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Base class for all asynchronous work (downloads, installs, launches...): status text, progress, abort,
+// succeeded/failed/finished signals. See launcher/tasks/README.md.
+
 #pragma once
 
 #include <QLoggingCategory>
@@ -44,10 +47,14 @@
 
 Q_DECLARE_LOGGING_CATEGORY(taskLogC)
 
+// State of one sub-step, as shown in the ProgressDialog's list of sub-task progress bars.
 enum class TaskStepState { Waiting, Running, Failed, Succeeded };
 
 Q_DECLARE_METATYPE(TaskStepState)
 
+// Progress report of one sub-step of a bigger task (e.g. one file of a NetJob).
+// Tasks made of sub-tasks (ConcurrentTask, NetJob...) emit stepProgress() with one of these per child,
+// identified by `uid`, so the UI can draw one progress bar per running child.
 struct TaskStepProgress {
     QUuid uid;
     qint64 current = 0;
@@ -84,6 +91,31 @@ using TaskStepProgressList = QList<std::shared_ptr<TaskStepProgress>>;
  * To create a task, you need to subclass this class, implement the executeTask() method and call
  * emitSucceeded() or emitFailed() when the task is done.
  * the caller needs to call start() to start the task.
+ *
+ * Lifecycle: Inactive --start()--> Running --emitSucceeded()/emitFailed()/emitAborted()--> Succeeded/Failed/AbortedByUser.
+ * Every terminal transition also emits finished(), so connect to finished() for cleanup and to
+ * succeeded()/failed() for the outcome.
+ *
+ * Typical subclass:
+ *
+ *     class MyTask : public Task {
+ *         Q_OBJECT
+ *       protected:
+ *         void executeTask() override {
+ *             setStatus(tr("Doing the thing"));        // text shown in progress dialogs
+ *             // start async work here (e.g. a NetJob) and return immediately;
+ *             // when it ends call emitSucceeded() or emitFailed(tr("why"))
+ *         }
+ *     };
+ *
+ * Typical use from UI code:
+ *
+ *     auto task = makeShared<MyTask>();
+ *     ProgressDialog dialog(this);
+ *     dialog.execWithTask(task.get());   // starts the task and blocks with a progress bar
+ *
+ * or without UI: connect to the signals, then call task->start().
+ * Tasks run on the thread that started them; executeTask() must not block the event loop.
  */
 class Task : public QObject, public QRunnable {
     Q_OBJECT
@@ -134,7 +166,9 @@ class Task : public QObject, public QRunnable {
     QString describe();
 
    signals:
+    //! emitted by start(), right before executeTask() runs
     void started();
+    //! overall progress; total <= 0 means "unknown" (busy indicator)
     void progress(qint64 current, qint64 total);
     //! called when a task has either succeeded, aborted or failed.
     void finished();
@@ -142,10 +176,15 @@ class Task : public QObject, public QRunnable {
     void succeeded();
     //! called when a task has been aborted by calling abort()
     void aborted();
+    //! called when a task has failed; `reason` is user-facing text (also available later via failReason())
     void failed(QString reason);
+    //! main status line shown in progress dialogs (set via setStatus())
     void status(QString status);
+    //! secondary, more detailed line (e.g. current file name), set via setDetails()
     void details(QString details);
+    //! a non-fatal warning was recorded with logWarning(); collected in warnings()
     void warningLogged(const QString& warning);
+    //! progress of one sub-step (see TaskStepProgress); forwarded upwards by parent tasks
     void stepProgress(TaskStepProgress const& task_progress);
 
     //! Emitted when the canAbort() status has changed. */

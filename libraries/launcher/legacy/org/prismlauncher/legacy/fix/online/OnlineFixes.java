@@ -33,6 +33,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Installs URL handlers that keep old Minecraft versions' skins and online mode working against today's
+// Mojang services.
+
 package org.prismlauncher.legacy.fix.online;
 
 import org.prismlauncher.legacy.utils.Base64;

@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MinecraftSettingsWidget.h. Widget with all Minecraft game settings (window, Java,
+// commands, performance...), used by the global Minecraft page and instance settings page.
+
 #include "MinecraftSettingsWidget.h"
 #include "modplatform/ModIndex.h"
 #include "ui_MinecraftSettingsWidget.h"

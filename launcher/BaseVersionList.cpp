@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of BaseVersionList.h. Qt list model base for lists of BaseVersion objects (game
+// versions, Java installs...), used by version selection widgets. Provides a load task and role-based data.
+
 #include "BaseVersionList.h"
 #include "BaseVersion.h"
 

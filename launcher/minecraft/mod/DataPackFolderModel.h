@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Folder model for an instance's or world's datapacks folder.
+
 #pragma once
 
 #include "ResourceFolderModel.h"

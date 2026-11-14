@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Filter panel for mod search (Minecraft versions, loaders, side, categories, open source...).
+
 #pragma once
 
 #include <QButtonGroup>

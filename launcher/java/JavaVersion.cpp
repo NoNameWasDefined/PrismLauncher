@@ -1,3 +1,6 @@
+// File overview: Implementation of JavaVersion.h. Parses and compares Java version strings and answers feature
+// questions (needs PermGen? modular?).
+
 #include "JavaVersion.h"
 
 #include "StringUtils.h"

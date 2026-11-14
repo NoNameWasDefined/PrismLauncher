@@ -18,6 +18,8 @@
  *
  */
 
+// File overview: Implementation of Logging.h. Qt logging categories for Minecraft-related code.
+
 #include "minecraft/Logging.h"
 #include <qloggingcategory.h>
 

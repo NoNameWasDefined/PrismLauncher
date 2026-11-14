@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MSADeviceCodeStep.h. Auth step for Microsoft login via device code (user types a
+// code on microsoft.com/link).
+
 #include "MSADeviceCodeStep.h"
 
 #include <QDateTime>

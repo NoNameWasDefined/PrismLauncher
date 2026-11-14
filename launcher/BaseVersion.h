@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Minimal interface for anything that is a selectable "version" in a list (game versions, Java installs,
+// loader versions).
+
 #pragma once
 
 #include <QMetaType>

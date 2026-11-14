@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page "Notes": free text notes saved in the instance settings.
+
 #pragma once
 
 #include <QWidget>

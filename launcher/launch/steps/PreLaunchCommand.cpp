@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PreLaunchCommand.h. Launch step that runs the user's pre-launch command before the
+// game starts; failure aborts the launch.
+
 #include "PreLaunchCommand.h"
 #include <launch/LaunchTask.h>
 

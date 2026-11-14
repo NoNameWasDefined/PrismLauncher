@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AtlOptionalModDialog.h. Dialog to choose ATLauncher optional mods (with share code
+// support).
+
 #include "AtlOptionalModDialog.h"
 #include "ui_AtlOptionalModDialog.h"
 

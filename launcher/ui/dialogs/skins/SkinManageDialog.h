@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: The skin manager dialog: list saved skins, upload/select skins, choose capes, with 3D preview.
+
 #pragma once
 
 #include <QDialog>

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ListModel.h. List and filter models of legacy FTB packs.
+
 #include "ListModel.h"
 #include "Application.h"
 #include "net/ApiDownload.h"

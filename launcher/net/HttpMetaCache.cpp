@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of HttpMetaCache.h. On-disk HTTP cache (ETag, md5, age) for downloaded files, organised
+// in named bases ("general", "libraries", "assets"...). Reach it via APPLICATION->metacache().
+
 #include "HttpMetaCache.h"
 #include "FileSystem.h"
 #include "Json.h"

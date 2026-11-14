@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LogPage.h. Instance page "Minecraft Log": live game log with search, copy, upload,
+// wrap and colouring.
+
 #include "LogPage.h"
 #include "ui_LogPage.h"
 

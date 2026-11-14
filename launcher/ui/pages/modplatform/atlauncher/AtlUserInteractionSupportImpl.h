@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: UI implementation of the questions an ATLauncher install asks (optional mods, version choice,
+// messages).
+
 #pragma once
 
 #include <QObject>

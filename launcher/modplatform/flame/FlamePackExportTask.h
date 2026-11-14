@@ -17,6 +17,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Exports an instance as a CurseForge modpack zip (manifest.json + overrides).
+
 #pragma once
 
 #include "MMCZip.h"

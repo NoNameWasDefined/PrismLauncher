@@ -1,3 +1,5 @@
+// File overview: Task that duplicates an existing instance into a new one, honouring InstanceCopyPrefs.
+
 #pragma once
 
 #include <QFuture>

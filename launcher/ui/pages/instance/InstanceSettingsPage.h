@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page "Settings": per-instance overrides of Java, memory, window, commands, account (wraps
+// MinecraftSettingsWidget).
+
 #pragma once
 
 #include <QWidget>

@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModFolderModel.h. ResourceFolderModel for the mods (and core mods) folder; adds mod-
+// specific columns (version, loaders, provider).
+
 #include "ModFolderModel.h"
 
 #include <FileSystem.h>

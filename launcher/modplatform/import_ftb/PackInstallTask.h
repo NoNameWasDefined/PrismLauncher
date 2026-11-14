@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Imports an instance from the FTB App into this launcher.
+
 #pragma once
 
 #include <QFuture>

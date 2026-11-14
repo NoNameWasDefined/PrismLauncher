@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of CatPack.h. Cat packs: the background images ("cats") drawn behind the instance view,
+// possibly changing by date.
+
 #include "ui/themes/CatPack.h"
 #include <QDate>
 #include <QDir>

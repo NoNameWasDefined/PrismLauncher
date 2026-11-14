@@ -1,3 +1,5 @@
+// File overview: Parses and compares Java version strings and answers feature questions (needs PermGen? modular?).
+
 #pragma once
 
 #include <QString>

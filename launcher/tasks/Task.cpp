@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Task.h. Base class for all asynchronous work (downloads, installs, launches...):
+// status text, progress, abort, succeeded/failed/finished signals. See launcher/tasks/README.md.
+
 #include "Task.h"
 
 #include <QDebug>

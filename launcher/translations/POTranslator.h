@@ -1,3 +1,5 @@
+// File overview: QTranslator that reads gettext .po translation files.
+
 #pragma once
 
 #include <QTranslator>

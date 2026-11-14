@@ -1,3 +1,6 @@
+// File overview: Implementation of ChooseProviderDialog.h. Dialog asking which mod platform (Modrinth/CurseForge) to
+// use for a resource when it's ambiguous.
+
 #include "ChooseProviderDialog.h"
 #include "ui_ChooseProviderDialog.h"
 

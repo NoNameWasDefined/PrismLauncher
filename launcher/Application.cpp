@@ -40,6 +40,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Application.h. The global application object (reach it anywhere via the APPLICATION
+// macro). Owns settings, network manager, instance list, accounts, themes, translations, Java list, metadata index and
+// caches, and is the entry point for launching instances. See launcher/README.md.
+
 #include "Application.h"
 #include "BuildConfig.h"
 #include "ServerCommunication.h"
@@ -852,7 +856,13 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv)
         m_settings->registerSetting("ShaderDownloadGeometry", "");
         m_settings->registerSetting("DataPackDownloadGeometry", "");
 
-        // Online sync
+        // Online sync (this fork) — used by ServerCommunication.cpp:
+        //   ModpackSyncServerURL  base URL of the sync server, e.g. "https://example.org" (empty = not configured)
+        //   AutoSyncModpack       check the server before every launch (Application::launch)
+        //   ServerId/ServerPsswd  HTTP basic-auth credentials for the server
+        // NOTE: these defaults are compiled into the binary and visible in the public repository; the password
+        // default should not be a real secret. There is no settings page for them yet: edit prismlauncher.cfg
+        // or add fields to ui/pages/global/LauncherPage.
         m_settings->registerSetting("ModpackSyncServerURL", "");
         m_settings->registerSetting("AutoSyncModpack", true);
         m_settings->registerSetting("ServerId", "prism");
@@ -1562,6 +1572,11 @@ bool Application::launch(InstancePtr instance,
     if (m_updateRunning) {
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
+        // (This fork) Ask the sync server whether this modpack changed before launching.
+        // ServerUtils::SyncModpack() blocks the UI until the HTTP request returns (see ServerCommunication.cpp).
+        // NOTE: SyncModpack() currently always returns 0, so `!SyncModpack(...)` is always true and this
+        // warning is shown on every launch. Make SyncModpack() return non-zero on success (or compare to an
+        // explicit status) to fix it.
         if (settings()->get("AutoSyncModpack").toBool()) {
             if (!ServerUtils::SyncModpack(instance)) {
                 qWarning() << "Modpack sync failed, aborting launch.";
@@ -1577,14 +1592,18 @@ bool Application::launch(InstancePtr instance,
                 }
             }
         }
+        // Per-instance bookkeeping: its open window (if any) and its running LaunchController.
         QMutexLocker locker(&m_instanceExtrasMutex);
         auto& extras = m_instanceExtras[instance->id()];
         auto window = extras.window;
         if (window) {
+            // Save pending edits in the instance window (e.g. settings pages) before launching.
             if (!window->saveAll()) {
                 return false;
             }
         }
+        // The LaunchController does the rest: choose/refresh the account, ask for an offline name,
+        // then build and run the instance's LaunchTask (see LaunchController.cpp and launch/LaunchTask.h).
         auto& controller = extras.controller;
         controller.reset(new LaunchController());
         controller->setInstance(instance);
@@ -1603,9 +1622,11 @@ bool Application::launch(InstancePtr instance,
         connect(controller.get(), &LaunchController::failed, this, &Application::controllerFailed);
         connect(controller.get(), &LaunchController::aborted, this, [this] { controllerFailed(tr("Aborted")); });
         addRunningInstance();
+        // Start on the next event loop iteration, so this function returns before the launch begins.
         QMetaObject::invokeMethod(controller.get(), &Task::start, Qt::QueuedConnection);
         return true;
     } else if (instance->isRunning()) {
+        // Already running: just bring its console window up.
         showInstanceWindow(instance, "console");
         return true;
     } else if (instance->canEdit()) {

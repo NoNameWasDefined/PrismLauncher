@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Qt list model of all instances found in the instances folder. Loads them from disk, tracks groups,
+// handles adding/deleting/trashing instances and staging folders for creation tasks.
+
 #pragma once
 
 #include <QAbstractListModel>

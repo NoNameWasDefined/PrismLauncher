@@ -17,6 +17,10 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ModIndex.h. Platform-independent data model for mod platforms (namespace
+// ModPlatform): IndexedPack (a project), IndexedVersion (a file/version), dependencies, loaders, sides, hash types.
+// Shared by Modrinth and CurseForge code. See launcher/modplatform/README.md.
+
 #include "modplatform/ModIndex.h"
 
 #include <QCryptographicHash>

@@ -1,3 +1,5 @@
+// File overview: Message box with a scrollable text area for long messages.
+
 #pragma once
 
 #include <QDialog>

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Task that downloads a Java runtime archive and extracts it into the managed Java folder.
+
 #pragma once
 
 #include <QUrl>

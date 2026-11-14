@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Dialog to choose which account to launch with (and optionally make it the default).
+
 #pragma once
 
 #include <QDialog>

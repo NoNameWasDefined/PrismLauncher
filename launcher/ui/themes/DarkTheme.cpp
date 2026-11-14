@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of DarkTheme.h. Built-in dark Fusion-based theme.
+
 #include "DarkTheme.h"
 
 #include <QObject>

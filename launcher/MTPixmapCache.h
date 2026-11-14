@@ -1,3 +1,5 @@
+// File overview: Thread-safe wrapper around QPixmapCache that forwards calls to the main thread.
+
 #pragma once
 
 #include <QCoreApplication>

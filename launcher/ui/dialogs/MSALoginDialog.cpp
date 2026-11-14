@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MSALoginDialog.h. Microsoft account login dialog (browser OAuth or device code),
+// runs the AuthFlow.
+
 #include "MSALoginDialog.h"
 #include "Application.h"
 

@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Factory functions for uploads that add API headers.
+
 #pragma once
 
 #include "Upload.h"

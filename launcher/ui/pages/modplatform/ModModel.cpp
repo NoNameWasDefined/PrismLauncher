@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ModModel.h. Search result model for mods on a mod platform (with version/loader
+// filters).
+
 #include "ModModel.h"
 
 #include "minecraft/MinecraftInstance.h"

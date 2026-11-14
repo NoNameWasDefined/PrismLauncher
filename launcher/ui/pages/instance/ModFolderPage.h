@@ -36,6 +36,9 @@
  *      limitations under the License.
  */
 
+// File overview: Instance pages for the mods, core mods and nil mods folders (ExternalResourcesPage specialised for
+// ModFolderModel).
+
 #pragma once
 
 #include <QPointer>

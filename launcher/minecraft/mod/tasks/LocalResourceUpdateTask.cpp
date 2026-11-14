@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of LocalResourceUpdateTask.h. Task that writes/updates the metadata file of a resource
+// after it was downloaded from a platform.
+
 #include "LocalResourceUpdateTask.h"
 
 #include "FileSystem.h"

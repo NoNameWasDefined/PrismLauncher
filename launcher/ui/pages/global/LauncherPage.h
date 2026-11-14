@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Launcher": update checks, folders, mod management, cat, console behaviour... A good
+// place to add new launcher-wide options (e.g. the sync server URL).
+
 #pragma once
 
 #include <QDialog>

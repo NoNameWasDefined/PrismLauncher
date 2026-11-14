@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Describes the runtime (OS, Java architecture) so library rules in Minecraft version files can be
+// evaluated.
+
 #pragma once
 
 #include <QSet>

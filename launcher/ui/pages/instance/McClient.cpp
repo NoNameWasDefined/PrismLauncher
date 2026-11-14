@@ -1,3 +1,6 @@
+// File overview: Implementation of McClient.h. Minimal Minecraft protocol client used to ping a server for its status
+// (players, MOTD) on the Servers page.
+
 #include <qtconcurrentrun.h>
 #include <QJsonDocument>
 #include <QJsonObject>

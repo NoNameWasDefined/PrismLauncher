@@ -1,3 +1,6 @@
+// File overview: Implementation of ResourceUpdateDialog.h. Dialog that checks installed resources for updates (after
+// ensuring metadata) and lets the user review which to update.
+
 #include "ResourceUpdateDialog.h"
 #include "Application.h"
 #include "ChooseProviderDialog.h"

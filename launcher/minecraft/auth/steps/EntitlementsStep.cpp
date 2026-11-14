@@ -1,3 +1,6 @@
+// File overview: Implementation of EntitlementsStep.h. Auth step that checks whether the account owns Minecraft
+// (entitlements API).
+
 #include "EntitlementsStep.h"
 
 #include <QList>

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: List model of Technic pack search results.
+
 #pragma once
 
 #include <QModelIndex>

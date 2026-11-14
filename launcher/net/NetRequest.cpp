@@ -37,6 +37,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of NetRequest.h. Base task for one HTTP request: sends it through the
+// QNetworkAccessManager, streams the reply into a Sink, applies validators and header proxies.
+
 #include "NetRequest.h"
 
 #include <QDateTime>

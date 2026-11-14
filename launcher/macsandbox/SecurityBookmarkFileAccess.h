@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: macOS sandbox helper: stores and resolves security-scoped bookmarks so the app keeps access to user-
+// picked folders.
+
 #ifndef FILEACCESS_H
 #define FILEACCESS_H
 

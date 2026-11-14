@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Interface for objects that add headers to outgoing requests.
+
 #pragma once
 
 #include <QDebug>

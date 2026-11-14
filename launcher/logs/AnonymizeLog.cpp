@@ -33,6 +33,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of AnonymizeLog.h. Removes personal data (user names, tokens, paths) from logs before
+// they are uploaded.
+
 #include "AnonymizeLog.h"
 
 #include <QRegularExpression>

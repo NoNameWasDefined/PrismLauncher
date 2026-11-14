@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InstanceDelegate.h. Item delegate that paints instance icons/names in the main
+// window grid and handles renaming.
+
 #include "InstanceDelegate.h"
 #include <QApplication>
 #include <QDebug>

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Root of the Prism metadata (meta.prismlauncher.org): list of all component uids (net.minecraft,
+// net.minecraftforge...) and access to their VersionLists. Reach it via APPLICATION->metadataIndex().
+
 #pragma once
 
 #include <QAbstractListModel>

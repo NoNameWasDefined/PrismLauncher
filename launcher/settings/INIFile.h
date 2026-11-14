@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Sectionless INI file reader/writer used for launcher and instance .cfg files.
+
 #pragma once
 
 #include <QIODevice>

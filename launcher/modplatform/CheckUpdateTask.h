@@ -1,3 +1,6 @@
+// File overview: Base task for checking a list of installed resources for newer versions on a platform; produces a list
+// of available Updates.
+
 #pragma once
 
 #include "minecraft/mod/tasks/GetModDependenciesTask.h"

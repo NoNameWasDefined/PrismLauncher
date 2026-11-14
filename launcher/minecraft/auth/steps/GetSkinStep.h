@@ -1,3 +1,5 @@
+// File overview: Auth step that downloads the player's current skin image.
+
 #pragma once
 #include <QObject>
 #include <memory>

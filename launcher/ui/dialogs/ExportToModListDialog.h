@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Dialog to export the mod list as text (HTML, Markdown, CSV, custom template).
+
 #pragma once
 
 #include <QDialog>

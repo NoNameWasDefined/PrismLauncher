@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MinecraftAccount.h. One Minecraft account (Microsoft or offline): login/refresh,
+// current task, profile, skin, and JSON (de)serialization.
+
 #include "MinecraftAccount.h"
 
 #include <QColor>

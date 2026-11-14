@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of DataMigrationTask.h. Task that copies data from another MultiMC-like launcher
+// (MultiMC, PolyMC...) into this launcher's data folder on first run.
+
 #include "DataMigrationTask.h"
 
 #include "FileSystem.h"

@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Reflection helpers to open URL connections with the JDK's default handlers.
+
 package org.prismlauncher.legacy.utils.url;
 
 import org.prismlauncher.utils.logging.Log;

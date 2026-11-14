@@ -35,6 +35,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MinecraftInstance.h. The concrete Minecraft instance type. Knows the instance's
+// folders (mods, resource packs, saves...), owns its PackProfile and resource folder models, builds the launch command
+// line and creates the LaunchTask/update tasks. See launcher/minecraft/README.md.
+
 #include "MinecraftInstance.h"
 #include "Application.h"
 #include "BuildConfig.h"

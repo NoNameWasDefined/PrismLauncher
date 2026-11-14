@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Minimal JSON parser (no dependencies) for Mojang API responses.
+
 package org.prismlauncher.legacy.utils.json;
 
 import java.io.IOException;

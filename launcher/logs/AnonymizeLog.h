@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Removes personal data (user names, tokens, paths) from logs before they are uploaded.
+
 #pragma once
 
 #include <QString>

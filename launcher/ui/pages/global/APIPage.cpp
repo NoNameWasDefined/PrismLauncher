@@ -36,6 +36,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of APIPage.h. Settings page "Services": paste service, meta server URL, API keys, user
+// agent.
+
 #include "APIPage.h"
 #include "ui_APIPage.h"
 

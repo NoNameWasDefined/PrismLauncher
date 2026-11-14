@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Net request that uploads a skin image to the Minecraft services API.
+
 #pragma once
 
 #include "net/NetRequest.h"

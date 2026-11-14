@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ProgressDialog.h. Modal dialog that runs a Task and shows its status, progress bar
+// and sub-task progress; execWithTask() is the usual way to run a task with UI.
+
 #include "ProgressDialog.h"
 #include <QPoint>
 #include "ui_ProgressDialog.h"

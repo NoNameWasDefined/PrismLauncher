@@ -1,3 +1,5 @@
+// File overview: Locates the MCEdit world editor to open worlds with it.
+
 #pragma once
 
 #include <QString>

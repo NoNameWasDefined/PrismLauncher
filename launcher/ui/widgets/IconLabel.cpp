@@ -1,3 +1,5 @@
+// File overview: Implementation of IconLabel.h. Tiny widget that paints an icon.
+
 #include "IconLabel.h"
 
 #include <QLayout>

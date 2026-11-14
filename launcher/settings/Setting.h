@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: One named setting with a default value and synonyms (old key names); emits signals on change. See
+// launcher/settings/README.md.
+
 #pragma once
 
 #include <QObject>

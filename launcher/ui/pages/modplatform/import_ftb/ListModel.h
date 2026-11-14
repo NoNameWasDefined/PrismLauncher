@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: List and filter models of FTB App instances.
+
 #pragma once
 
 #include <QAbstractListModel>

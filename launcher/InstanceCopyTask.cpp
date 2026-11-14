@@ -1,3 +1,6 @@
+// File overview: Implementation of InstanceCopyTask.h. Task that duplicates an existing instance into a new one,
+// honouring InstanceCopyPrefs.
+
 #include "InstanceCopyTask.h"
 #include <QDebug>
 #include <QtConcurrentRun>

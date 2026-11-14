@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Dialog that shows a BasePageProvider's pages in a PageContainer (used for global Settings and other
+// multi-page dialogs).
+
 #pragma once
 
 #include <QDialog>

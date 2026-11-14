@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of IconTheme.h. One icon theme (folder of icons) the launcher can use.
+
 #include "IconTheme.h"
 
 #include <QFile>

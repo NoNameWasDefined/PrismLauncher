@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: List model of all Minecraft accounts (accounts.json): add/remove, default account, background token
+// refresh. Reach it via APPLICATION->accounts().
+
 #pragma once
 
 #include "MinecraftAccount.h"

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that runs the user's post-exit command after the game closes.
+
 #pragma once
 
 #include <LoggedProcess.h>

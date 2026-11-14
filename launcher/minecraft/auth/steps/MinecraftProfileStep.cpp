@@ -1,3 +1,6 @@
+// File overview: Implementation of MinecraftProfileStep.h. Auth step that fetches the Minecraft profile (name, uuid,
+// skins, capes).
+
 #include "MinecraftProfileStep.h"
 
 #include <QNetworkRequest>

@@ -50,6 +50,8 @@
  *      limitations under the License.
  */
 
+// File overview: Fix that redirects old skin/cape URLs to the current texture service.
+
 package org.prismlauncher.legacy.fix.online;
 
 import org.prismlauncher.legacy.utils.api.MojangApi;

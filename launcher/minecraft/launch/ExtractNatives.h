@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that extracts native libraries (LWJGL .dll/.so) into the instance's natives folder.
+
 #pragma once
 
 #include <launch/LaunchStep.h>

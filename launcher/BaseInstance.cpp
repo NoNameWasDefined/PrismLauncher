@@ -35,6 +35,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of BaseInstance.h. Abstract base for every instance (one folder under instances/).
+// Holds the instance settings, status, play time, group/name/icon and declares the factory methods (createLaunchTask,
+// createUpdateTask...) that concrete types like MinecraftInstance implement.
+
 #include "BaseInstance.h"
 
 #include <QDebug>

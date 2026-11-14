@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Header proxy that adds a fixed list of raw headers to requests.
+
 #pragma once
 
 #include "net/HeaderProxy.h"

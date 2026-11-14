@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PageContainer.h. Widget that shows a list of pages on the left and the selected page
+// on the right (used by Settings and instance windows).
+
 #include "PageContainer.h"
 #include "BuildConfig.h"
 #include "PageContainer_p.h"

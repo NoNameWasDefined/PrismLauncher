@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: CurseForge-specific search models for mods/resource packs/shaders/data packs.
+
 #pragma once
 
 #include "ui/pages/modplatform/ModModel.h"

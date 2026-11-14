@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Task that copies data from another MultiMC-like launcher (MultiMC, PolyMC...) into this launcher's
+// data folder on first run.
+
 #pragma once
 
 #include "FileSystem.h"

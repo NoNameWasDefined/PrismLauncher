@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InstanceList.h. Qt list model of all instances found in the instances folder. Loads
+// them from disk, tracks groups, handles adding/deleting/trashing instances and staging folders for creation tasks.
+
 #include <QDebug>
 #include <QDir>
 #include <QDirIterator>

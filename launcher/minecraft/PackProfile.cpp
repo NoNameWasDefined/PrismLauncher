@@ -37,6 +37,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PackProfile.h. The component stack of a Minecraft instance (mmc-pack.json): an
+// ordered, editable list of Components shown on the Version page. Saves/loads the file, adds/removes loaders and builds
+// the LaunchProfile. See launcher/minecraft/README.md.
+
 #include <Version.h>
 #include <qlogging.h>
 #include <QCryptographicHash>

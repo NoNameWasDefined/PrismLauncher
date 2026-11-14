@@ -1,3 +1,6 @@
+// File overview: Task that runs the javacheck helper jar with a given Java binary to read its version, architecture and
+// vendor.
+
 #pragma once
 #include <QProcess>
 #include <QTimer>

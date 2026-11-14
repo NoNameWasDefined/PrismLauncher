@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of PackHelpers.h. Reads installed FTB App instances from disk (for importing them).
+
 #include "modplatform/import_ftb/PackHelpers.h"
 
 #include <QIcon>

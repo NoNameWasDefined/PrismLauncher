@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of LaunchStep.h. Base class for one step of a LaunchTask (check Java, run pre-launch
+// command, start game...). Steps can log lines, pause the launch and clean up in finalize().
+
 #include "LaunchStep.h"
 #include "LaunchTask.h"
 

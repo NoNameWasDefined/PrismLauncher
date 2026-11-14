@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AutoInstallJava.h. Launch step that, when enabled, finds or downloads a Java version
+// matching the game's requirement before launching.
+
 #include "AutoInstallJava.h"
 #include <QDir>
 #include <QFileInfo>

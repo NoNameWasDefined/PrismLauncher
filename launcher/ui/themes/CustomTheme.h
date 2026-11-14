@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: A user theme loaded from the themes folder (theme.json + stylesheet).
+
 #pragma once
 
 #include <QFileInfo>

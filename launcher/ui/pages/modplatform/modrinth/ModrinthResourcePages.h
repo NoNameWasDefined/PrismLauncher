@@ -36,6 +36,8 @@
  *      limitations under the License.
  */
 
+// File overview: Modrinth pages of the resource download dialog.
+
 #pragma once
 
 #include "modplatform/ResourceAPI.h"

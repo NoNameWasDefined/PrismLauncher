@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of INISettingsObject.h. SettingsObject stored in an INI file (prismlauncher.cfg,
+// instance.cfg); saves automatically on change.
+
 #include "INISettingsObject.h"
 #include "Setting.h"
 

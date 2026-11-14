@@ -1,3 +1,5 @@
+// File overview: Implementation of JProfiler.h. JProfiler integration (attaches JProfiler to the game process).
+
 #include "JProfiler.h"
 
 #include <QDir>

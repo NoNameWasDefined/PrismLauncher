@@ -17,6 +17,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Widget with theme/icon/cat selection and preview, shared by the settings page and setup wizard.
+
 #pragma once
 
 #include <QDialog>

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of HintOverrideProxyStyle.h. Proxy style that overrides some platform style hints.
+
 #include "HintOverrideProxyStyle.h"
 
 HintOverrideProxyStyle::HintOverrideProxyStyle(QStyle* style) : QProxyStyle(style)

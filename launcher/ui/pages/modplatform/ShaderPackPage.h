@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Download dialog page base for shader packs.
+
 #pragma once
 
 #include "ui/pages/modplatform/ResourcePage.h"

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of CustomMessageBox.h. Helper to build QMessageBoxes with selectable text.
+
 #include "CustomMessageBox.h"
 
 namespace CustomMessageBox {

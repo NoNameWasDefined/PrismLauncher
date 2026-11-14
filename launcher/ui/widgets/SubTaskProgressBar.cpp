@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Implementation of SubTaskProgressBar.h. Progress bar for one sub-task inside ProgressDialog.
+
 #include "SubTaskProgressBar.h"
 #include "ui_SubTaskProgressBar.h"
 

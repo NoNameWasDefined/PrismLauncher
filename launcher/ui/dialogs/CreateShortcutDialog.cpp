@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of CreateShortcutDialog.h. Dialog for creating a desktop/menu shortcut that launches an
+// instance (optionally with a specific account or server).
+
 #include <QLayout>
 #include <QPushButton>
 

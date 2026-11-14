@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Launch step that, when enabled, finds or downloads a Java version matching the game's requirement
+// before launching.
+
 #pragma once
 
 #include <launch/LaunchStep.h>

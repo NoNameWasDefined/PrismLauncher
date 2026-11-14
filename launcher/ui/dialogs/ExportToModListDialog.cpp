@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ExportToModListDialog.h. Dialog to export the mod list as text (HTML, Markdown, CSV,
+// custom template).
+
 #include "ExportToModListDialog.h"
 #include <QCheckBox>
 #include <QComboBox>

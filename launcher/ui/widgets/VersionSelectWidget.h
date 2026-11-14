@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Embeddable version picker (list + filters) over a BaseVersionList.
+
 #pragma once
 
 #include <QLineEdit>

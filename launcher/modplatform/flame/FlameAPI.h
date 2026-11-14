@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: CurseForge ("Flame") API client implementing ResourceAPI: search, files, fingerprint matching,
+// categories, changelogs.
+
 #pragma once
 
 #include <QList>

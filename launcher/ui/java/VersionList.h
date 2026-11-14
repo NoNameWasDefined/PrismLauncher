@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: List model of downloadable Java versions for the Java install dialog.
+
 #pragma once
 
 #include "BaseVersionList.h"

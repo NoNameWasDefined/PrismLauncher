@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Helper to build QMessageBoxes with selectable text.
+
 #pragma once
 
 #include <QMessageBox>

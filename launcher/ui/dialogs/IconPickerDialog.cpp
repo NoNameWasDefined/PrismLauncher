@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of IconPickerDialog.h. Dialog to choose an instance icon or add new icon files.
+
 #include <QFileDialog>
 #include <QKeyEvent>
 #include <QLineEdit>

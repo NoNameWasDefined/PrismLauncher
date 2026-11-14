@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of VariableSizedImageObject.h. Text object that loads and scales images inside rich
+// text descriptions.
+
 #include "VariableSizedImageObject.h"
 
 #include <QAbstractTextDocumentLayout>

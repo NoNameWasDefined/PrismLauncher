@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Data structures and parser for a CurseForge modpack manifest.json.
+
 #pragma once
 
 #include <QJsonObject>

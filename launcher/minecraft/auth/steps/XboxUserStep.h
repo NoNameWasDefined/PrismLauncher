@@ -1,3 +1,5 @@
+// File overview: Auth step that exchanges the MSA token for an Xbox Live user token.
+
 #pragma once
 #include <QObject>
 #include <memory>

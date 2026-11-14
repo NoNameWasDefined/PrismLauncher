@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LaunchTask.h. Runs the ordered chain of LaunchSteps that starts an instance,
+// collects the log into a LogModel and manages the game process lifetime. See launcher/launch/README.md.
+
 #include "launch/LaunchTask.h"
 #include <assert.h>
 #include <QAnyStringView>

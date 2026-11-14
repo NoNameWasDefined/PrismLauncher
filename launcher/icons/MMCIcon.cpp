@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MMCIcon.h. One instance icon, possibly available from several sources (built-in,
+// theme, file), with the best one picked.
+
 #include "MMCIcon.h"
 #include <QFileInfo>
 #include <QIcon>

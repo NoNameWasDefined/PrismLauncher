@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of SkinOpenGLWindow.h. OpenGL window rendering the 3D skin preview, with mouse
+// rotation.
+
 #include "ui/dialogs/skins/draw/SkinOpenGLWindow.h"
 
 #include <QMouseEvent>

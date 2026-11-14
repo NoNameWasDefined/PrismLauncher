@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of CatPainter.h. Paints the cat background (including animated GIFs) on the instance
+// view.
+
 #include "ui/themes/CatPainter.h"
 #include <QPixmap>
 #include "Application.h"

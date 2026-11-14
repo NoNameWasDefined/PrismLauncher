@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Dialog to choose an instance icon or add new icon files.
+
 #pragma once
 #include <QDialog>
 #include <QItemSelection>

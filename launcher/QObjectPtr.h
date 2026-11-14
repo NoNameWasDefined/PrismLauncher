@@ -1,3 +1,6 @@
+// File overview: shared_qobject_ptr: shared pointer for QObjects that deletes via deleteLater(). Also defines
+// makeShared<>() used everywhere for tasks.
+
 #pragma once
 
 #include <QObject>

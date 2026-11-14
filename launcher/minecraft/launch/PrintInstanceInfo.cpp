@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of PrintInstanceInfo.h. Launch step that prints instance, system and mod information at
+// the top of the game log.
+
 #include <fstream>
 #include <string>
 

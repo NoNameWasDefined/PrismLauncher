@@ -34,6 +34,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of NewInstanceDialog.h. The "Add Instance" dialog: hosts the creation pages (Custom,
+// Import, Modrinth, CurseForge, ATLauncher, Technic, FTB...) and returns the InstanceTask chosen by the selected page.
+// See launcher/ui/README.md.
+
 #include "NewInstanceDialog.h"
 #include "Application.h"
 #include "ui/pages/modplatform/ModpackProviderBasePage.h"

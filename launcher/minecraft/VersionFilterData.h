@@ -1,3 +1,6 @@
+// File overview: Hardcoded compatibility data (e.g. which FML libraries old Forge versions need, which versions use
+// LWJGL 3).
+
 #pragma once
 #include <QDateTime>
 #include <QMap>

@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of TexturePackPage.h. Instance page for the legacy texturepacks folder.
+
 #include "TexturePackPage.h"
 
 #include "ResourceDownloadTask.h"

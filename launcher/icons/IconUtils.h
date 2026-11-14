@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Helpers for finding icon files by key and checking supported icon extensions.
+
 #pragma once
 
 #include <QString>

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that rebuilds legacy asset folders for old Minecraft versions.
+
 #pragma once
 
 #include <launch/LaunchStep.h>

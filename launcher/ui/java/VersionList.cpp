@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of VersionList.h. List model of downloadable Java versions for the Java install dialog.
+
 #include "VersionList.h"
 
 #include <memory>

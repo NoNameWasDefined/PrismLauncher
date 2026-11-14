@@ -1,3 +1,5 @@
+// File overview: Implementation of MCEditTool.h. Locates the MCEdit world editor to open worlds with it.
+
 #include "MCEditTool.h"
 
 #include <QDir>

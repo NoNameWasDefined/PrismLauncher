@@ -15,6 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: QSaveFile replacement that avoids temporary-file problems on Windows; used for atomic file writes.
+
 #pragma once
 
 #include <QFileInfo>

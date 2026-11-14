@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ImportFTBPage.h. New-instance page "FTB App Import": lists FTB App instances to
+// import.
+
 #include "ImportFTBPage.h"
 #include "ui/widgets/ProjectItem.h"
 #include "ui_ImportFTBPage.h"

@@ -1,3 +1,6 @@
+// File overview: Task that resolves a PackProfile: loads every component's version data (meta server or local),
+// resolves dependencies (e.g. Fabric needs intermediary) and applies requested version changes.
+
 #pragma once
 
 #include "minecraft/Component.h"

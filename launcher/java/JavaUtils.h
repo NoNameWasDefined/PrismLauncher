@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Finds Java installations on the system (registry on Windows, common paths elsewhere) and builds the
+// default Java path.
+
 #pragma once
 
 #include <QProcess>

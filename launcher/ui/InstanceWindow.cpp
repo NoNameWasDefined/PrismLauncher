@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InstanceWindow.h. The per-instance window that shows the console/log while the game
+// runs, wrapping the instance's pages (log, mods, worlds...) with Launch/Kill buttons.
+
 #include "InstanceWindow.h"
 #include "Application.h"
 

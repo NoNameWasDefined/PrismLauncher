@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Parsers for the meta server JSON formats (index, version list, version).
+
 #pragma once
 
 #include <QJsonObject>

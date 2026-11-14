@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ShaderPackPage.h. Instance page for the shaderpacks folder.
+
 #include "ShaderPackPage.h"
 #include "ui_ExternalResourcesPage.h"
 

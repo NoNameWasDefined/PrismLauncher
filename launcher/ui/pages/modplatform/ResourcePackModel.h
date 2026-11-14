@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Search result model for resource packs.
+
 #pragma once
 
 #include <QAbstractListModel>

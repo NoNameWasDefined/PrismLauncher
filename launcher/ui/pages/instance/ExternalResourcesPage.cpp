@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ExternalResourcesPage.h. Base page for instance resource folders (mods, resource
+// packs, shaders...): list view over a ResourceFolderModel plus add/remove/enable/update/download toolbar.
+
 #include "ExternalResourcesPage.h"
 #include "ui/dialogs/CustomMessageBox.h"
 #include "ui_ExternalResourcesPage.h"

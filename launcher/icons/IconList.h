@@ -32,6 +32,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Qt list model of instance icons (built-in + user icons in the icons folder); watches the folder and
+// supports drag & drop of new icons.
+
 #pragma once
 
 #include <QAbstractListModel>

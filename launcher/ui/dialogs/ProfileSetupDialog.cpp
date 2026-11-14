@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ProfileSetupDialog.h. Dialog to create a Minecraft profile name for a newly bought
+// account.
+
 #include "ProfileSetupDialog.h"
 #include "net/RawHeaderProxy.h"
 #include "ui_ProfileSetupDialog.h"

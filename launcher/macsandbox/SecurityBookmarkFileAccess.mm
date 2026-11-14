@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of SecurityBookmarkFileAccess.h. macOS sandbox helper: stores and resolves security-
+// scoped bookmarks so the app keeps access to user-picked folders.
+
 #include "SecurityBookmarkFileAccess.h"
 
 #include <Foundation/Foundation.h>

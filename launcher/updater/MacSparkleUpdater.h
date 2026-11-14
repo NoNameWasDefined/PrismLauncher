@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: macOS self-updater implementation using the Sparkle framework.
+
 #ifndef LAUNCHER_MACSPARKLEUPDATER_H
 #define LAUNCHER_MACSPARKLEUPDATER_H
 

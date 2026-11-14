@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AccountList.h. List model of all Minecraft accounts (accounts.json): add/remove,
+// default account, background token refresh. Reach it via APPLICATION->accounts().
+
 #include "AccountList.h"
 #include "AccountData.h"
 #include "tasks/Task.h"

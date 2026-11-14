@@ -15,6 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Setup wizard page to choose the app theme, icon theme and cat.
+
 #pragma once
 
 #include <ui/widgets/AppearanceWidget.h>

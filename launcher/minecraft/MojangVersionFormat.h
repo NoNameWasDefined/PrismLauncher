@@ -1,3 +1,5 @@
+// File overview: Reader/writer for Mojang's official version JSON format (the files in version_manifest).
+
 #pragma once
 
 #include <ProblemProvider.h>

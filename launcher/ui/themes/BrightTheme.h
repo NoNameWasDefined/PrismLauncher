@@ -32,6 +32,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Built-in light Fusion-based theme.
+
 #pragma once
 
 #include "FusionTheme.h"

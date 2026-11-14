@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Language".
+
 #pragma once
 
 #include <QWidget>

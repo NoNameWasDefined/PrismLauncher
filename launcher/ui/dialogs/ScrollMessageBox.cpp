@@ -1,3 +1,5 @@
+// File overview: Implementation of ScrollMessageBox.h. Message box with a scrollable text area for long messages.
+
 #include "ScrollMessageBox.h"
 #include <QPushButton>
 #include "ui_ScrollMessageBox.h"

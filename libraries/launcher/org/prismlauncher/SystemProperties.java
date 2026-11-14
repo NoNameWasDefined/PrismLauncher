@@ -1,3 +1,5 @@
+// File overview: Sets system properties useful for mods before the game starts.
+
 package org.prismlauncher;
 
 import org.prismlauncher.utils.Parameters;

@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Search result model for legacy texture packs (resource packs filtered to old versions).
+
 #pragma once
 
 #include "meta/VersionList.h"

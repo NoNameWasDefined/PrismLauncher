@@ -1,3 +1,6 @@
+// File overview: Dialog that checks installed resources for updates (after ensuring metadata) and lets the user review
+// which to update.
+
 #pragma once
 
 #include "BaseInstance.h"

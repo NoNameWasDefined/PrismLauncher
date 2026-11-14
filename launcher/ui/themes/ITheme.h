@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Theme interface: palette, stylesheet, log colours, Qt style to apply.
+
 #pragma once
 #include <MessageLevel.h>
 #include <QMap>

@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of DataPackFolderModel.h. Folder model for an instance's or world's datapacks folder.
+
 #include "DataPackFolderModel.h"
 #include <qnamespace.h>
 #include <qsize.h>

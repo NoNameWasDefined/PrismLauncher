@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Search result model for mods on a mod platform (with version/loader filters).
+
 #pragma once
 
 #include <QAbstractListModel>

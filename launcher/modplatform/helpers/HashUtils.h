@@ -1,3 +1,5 @@
+// File overview: Hashing helpers and Hasher tasks (sha1, sha512, murmur2 for CurseForge fingerprints) for files.
+
 #pragma once
 
 #include <QCryptographicHash>

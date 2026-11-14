@@ -1,3 +1,6 @@
+// File overview: Enum of log message levels (Launcher, Info, Warning, Error, Fatal...) used for colouring game and
+// launcher logs.
+
 #pragma once
 
 #include <qlogging.h>

@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: URL handler that intercepts old Minecraft web requests and applies the online fixes.
+
 package org.prismlauncher.legacy.fix.online;
 
 import org.prismlauncher.legacy.utils.url.UrlUtils;

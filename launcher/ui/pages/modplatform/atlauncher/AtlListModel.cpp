@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of AtlListModel.h. List model of ATLauncher packs.
+
 #include "AtlListModel.h"
 
 #include <Application.h>

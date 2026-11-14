@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ScreenshotsPage.h. Instance page showing screenshots with thumbnails, upload to
+// Imgur, rename and delete.
+
 #include "ScreenshotsPage.h"
 #include "BuildConfig.h"
 #include "ui_ScreenshotsPage.h"

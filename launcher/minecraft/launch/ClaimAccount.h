@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that marks the account as in use while the game runs (and releases it in finalize()).
+
 #pragma once
 
 #include <launch/LaunchStep.h>

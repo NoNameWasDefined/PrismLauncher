@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Version string parser and comparator (handles numeric parts, pre-releases...). Used to compare game,
+// mod and Java versions.
+
 #pragma once
 
 #include <QDebug>

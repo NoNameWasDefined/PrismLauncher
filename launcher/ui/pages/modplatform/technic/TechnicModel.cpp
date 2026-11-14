@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of TechnicModel.h. List model of Technic pack search results.
+
 #include "TechnicModel.h"
 #include "Application.h"
 #include "BuildConfig.h"

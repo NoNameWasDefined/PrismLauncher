@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that validates the configured Java binary (runs JavaChecker if needed) and prints
+// Java/system info to the log.
+
 #pragma once
 
 #include <LoggedProcess.h>

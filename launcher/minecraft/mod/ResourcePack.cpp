@@ -1,3 +1,6 @@
+// File overview: Implementation of ResourcePack.h. A resource pack (pack format, description, image, compatible
+// Minecraft versions).
+
 #include "ResourcePack.h"
 
 #include <QCoreApplication>

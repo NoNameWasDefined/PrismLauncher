@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ScanModFolders.h. Launch step that refreshes the mods, core mods and nil mods folder
+// models before launch, so later steps see the current mod files.
+
 #include "ScanModFolders.h"
 #include "FileSystem.h"
 #include "MMCZip.h"

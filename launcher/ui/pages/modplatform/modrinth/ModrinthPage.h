@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "Modrinth": browse modpacks and create an InstanceImportTask for the chosen version.
+
 #pragma once
 
 #include "modplatform/ModIndex.h"

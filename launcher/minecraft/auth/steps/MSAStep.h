@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Auth step for Microsoft OAuth login in the browser (or silent refresh with the stored refresh token).
+
 #pragma once
 #include <QObject>
 

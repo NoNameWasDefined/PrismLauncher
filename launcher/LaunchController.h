@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Orchestrates launching an instance from the UI: picks/validates the account, handles offline mode and
+// demo, asks for missing info, then creates and runs the instance's LaunchTask and opens the log window.
+
 #pragma once
 #include <BaseInstance.h>
 #include <tools/BaseProfiler.h>
@@ -42,6 +45,19 @@
 #include "minecraft/launch/MinecraftTarget.h"
 
 class InstanceWindow;
+/*
+ * UI-side launch orchestration, created by Application::launch():
+ *
+ *   executeTask()     validate JVM args, then login()
+ *   login()           decideAccount() (default account, or ask with ProfileSelectDialog), refresh the
+ *                     Microsoft tokens if needed, handle offline mode / demo / missing profile, which builds
+ *                     an AuthSession (m_session)
+ *   launchInstance()  m_instance->createLaunchTask(m_session, m_targetToJoin), open the instance window
+ *                     (console) if the settings say so, connect signals, start the LaunchTask
+ *   readyForLaunch()  called when a step paused the launch (profiler attach...), then resumes it
+ *
+ * The controller lives as long as the launch (it is stored in Application's per-instance extras).
+ */
 class LaunchController : public Task {
     Q_OBJECT
    public:

@@ -15,6 +15,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of ATLPackIndex.h. ATLauncher pack list entries (name, versions) parsed from the
+// ATLauncher API.
+
 #include "ATLPackIndex.h"
 
 #include <QRegularExpression>

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Task that downloads a Java runtime file by file from a Mojang-style manifest.
+
 #pragma once
 
 #include <QUrl>

@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+// File overview: Helpers for splitting command lines into arguments (used for custom launch/wrapper commands).
+
 #pragma once
 
 #include <QString>

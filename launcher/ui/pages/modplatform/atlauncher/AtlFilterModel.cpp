@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of AtlFilterModel.h. Sort/filter proxy for the ATLauncher pack list.
+
 #include "AtlFilterModel.h"
 
 #include <QDebug>

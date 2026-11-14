@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ThemeManager.h. Discovers and applies application themes, icon themes and cat packs.
+// Reach it via APPLICATION->themeManager().
+
 #include "ThemeManager.h"
 
 #include <AppKit/AppKit.h>

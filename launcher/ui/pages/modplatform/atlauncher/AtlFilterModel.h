@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// File overview: Sort/filter proxy for the ATLauncher pack list.
+
 #pragma once
 
 #include <QtCore/QSortFilterProxyModel>

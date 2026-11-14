@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: Implementation of FileLink.h. Small helper program (FileLinkApp) run with elevated rights on Windows
+// to create symlinks/hard links on behalf of the launcher.
+
 #include "FileLink.h"
 #include "BuildConfig.h"
 

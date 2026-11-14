@@ -37,6 +37,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ResourcePage.h. Base page of the resource download dialog: search box, results list,
+// description, version picker and "select for download" button.
+
 #include "ResourcePage.h"
 #include "modplatform/ModIndex.h"
 #include "ui/dialogs/CustomMessageBox.h"

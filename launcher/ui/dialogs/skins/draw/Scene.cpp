@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of Scene.h. OpenGL scene of the 3D player model (body parts, cape, elytra) for the skin
+// preview.
+
 #include "ui/dialogs/skins/draw/Scene.h"
 
 #include <QOpenGLFunctions>

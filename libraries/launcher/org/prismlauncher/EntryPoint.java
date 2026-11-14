@@ -52,6 +52,9 @@
  *      limitations under the License.
  */
 
+// File overview: Main class of the Java-side launcher (NewLaunch.jar). Reads the launch script sent by the C++ launcher
+// on stdin line by line ("param ...", "launch"), then starts Minecraft. See the "launcher" section of libraries/README.md.
+
 package org.prismlauncher;
 
 import org.prismlauncher.exception.ParseException;

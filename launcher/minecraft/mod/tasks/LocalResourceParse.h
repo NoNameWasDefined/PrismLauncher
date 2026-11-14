@@ -19,6 +19,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Detects what kind of resource a file is (mod, resource pack, shader, world...) by looking inside it.
+
 #pragma once
 
 #include <QFileInfo>

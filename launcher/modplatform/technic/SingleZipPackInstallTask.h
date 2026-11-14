@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Installs a Technic pack distributed as a single zip.
+
 #pragma once
 
 #include "InstanceTask.h"

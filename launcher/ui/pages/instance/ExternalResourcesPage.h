@@ -1,3 +1,6 @@
+// File overview: Base page for instance resource folders (mods, resource packs, shaders...): list view over a
+// ResourceFolderModel plus add/remove/enable/update/download toolbar.
+
 #pragma once
 
 #include <QMainWindow>

@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of PrintServers.h. Launch step that prints debug info about network servers (DNS
+// resolution) into the log.
+
 #include "PrintServers.h"
 #include "QHostInfo"
 

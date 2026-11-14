@@ -1,3 +1,5 @@
+// File overview: Value wrapper that remembers whether it is still the default or was set explicitly.
+
 #pragma once
 
 template <typename T>

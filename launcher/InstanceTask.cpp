@@ -1,3 +1,6 @@
+// File overview: Implementation of InstanceTask.h. Base for tasks that produce an instance: carries the target name,
+// icon, group, staging path and how to handle name conflicts.
+
 #include "InstanceTask.h"
 
 #include "Application.h"

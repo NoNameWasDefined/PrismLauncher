@@ -1,3 +1,7 @@
+// File overview: Generic list model over a folder of resources (mods, packs...): watches the folder, loads/parses
+// entries in background tasks, enables/disables/installs/removes files. Base of all *FolderModel classes. See
+// launcher/minecraft/mod/README.md.
+
 #pragma once
 
 #include <QAbstractListModel>

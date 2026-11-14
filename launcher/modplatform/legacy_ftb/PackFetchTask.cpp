@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PackFetchTask.h. Fetches the legacy FTB pack lists (public, third-party, private
+// codes).
+
 #include "PackFetchTask.h"
 #include "PrivatePackManager.h"
 

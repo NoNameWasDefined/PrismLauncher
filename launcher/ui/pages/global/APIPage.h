@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Services": paste service, meta server URL, API keys, user agent.
+
 #pragma once
 
 #include <QWidget>

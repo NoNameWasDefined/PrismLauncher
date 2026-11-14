@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: A world save used as a resource (e.g. when a modpack contains worlds): detects its format and folder
+// name.
+
 #pragma once
 
 #include "Resource.h"

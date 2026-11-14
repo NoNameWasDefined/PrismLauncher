@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: QProcess wrapper that splits stdout/stderr into lines and emits them as log lines with a MessageLevel;
+// used to run the game and pre/post launch commands.
+
 #pragma once
 
 #include <QProcess>

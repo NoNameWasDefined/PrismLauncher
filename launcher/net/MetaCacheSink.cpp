@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MetaCacheSink.h. File sink that also updates the HttpMetaCache entry for the
+// downloaded file.
+
 #include "MetaCacheSink.h"
 #include <QFile>
 #include <QFileInfo>

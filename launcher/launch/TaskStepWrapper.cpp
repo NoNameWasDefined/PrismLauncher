@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of TaskStepWrapper.h. Adapts any Task into a LaunchStep, so ordinary tasks (e.g.
+// updates) can run inside a launch.
+
 #include "TaskStepWrapper.h"
 #include "tasks/Task.h"
 

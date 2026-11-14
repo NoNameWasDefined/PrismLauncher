@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "FTB Legacy": browse legacy FTB packs (public, third-party, private).
+
 #pragma once
 
 #include <QTextBrowser>

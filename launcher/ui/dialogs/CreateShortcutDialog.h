@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Dialog for creating a desktop/menu shortcut that launches an instance (optionally with a specific
+// account or server).
+
 #pragma once
 
 #include <QDialog>

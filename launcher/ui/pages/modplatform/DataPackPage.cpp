@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of DataPackPage.h. Download dialog page base for data packs.
+
 #include "DataPackPage.h"
 #include "ui_ResourcePage.h"
 

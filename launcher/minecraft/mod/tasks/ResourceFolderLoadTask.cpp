@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ResourceFolderLoadTask.h. Background task that lists a resource folder and creates
+// Resource objects (plus their metadata) for ResourceFolderModel.
+
 #include "ResourceFolderLoadTask.h"
 
 #include "Application.h"

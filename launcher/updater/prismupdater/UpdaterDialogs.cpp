@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Implementation of UpdaterDialogs.h. Dialogs of the updater program for picking a release or an asset.
+
 #include "UpdaterDialogs.h"
 
 #include "ui_SelectReleaseDialog.h"

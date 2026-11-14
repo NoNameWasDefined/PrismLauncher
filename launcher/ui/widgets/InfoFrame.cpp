@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InfoFrame.h. Panel under resource lists that shows details of the selected mod/pack
+// (name, description, image).
+
 #include <QLabel>
 #include <QMessageBox>
 #include <QTextCursor>

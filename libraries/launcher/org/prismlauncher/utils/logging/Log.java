@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Prints prefixed log lines (with levels) that the C++ launcher parses and colours.
+
 package org.prismlauncher.utils.logging;
 
 import java.io.PrintStream;

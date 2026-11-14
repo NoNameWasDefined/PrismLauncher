@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of SkinList.h. List model of skins saved for an account (skins folder), used by the
+// Skin manager dialog.
+
 #include "SkinList.h"
 
 #include <QFileInfo>

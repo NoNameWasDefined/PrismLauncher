@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of BoxGeometry.h. OpenGL geometry for one textured box (a body part of the skin
+// preview).
+
 #include "BoxGeometry.h"
 
 #include <QList>

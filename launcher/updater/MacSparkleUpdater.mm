@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of MacSparkleUpdater.h. macOS self-updater implementation using the Sparkle framework.
+
 #include "MacSparkleUpdater.h"
 
 #include "Application.h"

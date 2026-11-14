@@ -1,3 +1,6 @@
+// File overview: Implementation of LauncherLoginStep.h. Auth step that exchanges the XSTS token for a Minecraft access
+// token (login_with_xbox).
+
 #include "LauncherLoginStep.h"
 
 #include <QNetworkRequest>

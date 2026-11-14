@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of JsonFormat.h. Parsers for the meta server JSON formats (index, version list,
+// version).
+
 #include "JsonFormat.h"
 
 // FIXME: remove this from here... somehow

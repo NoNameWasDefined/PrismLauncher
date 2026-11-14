@@ -1,3 +1,5 @@
+// File overview: Implementation of LanguageWizardPage.h. Setup wizard page to choose the UI language.
+
 #include "LanguageWizardPage.h"
 #include <Application.h>
 #include <translations/TranslationsModel.h>

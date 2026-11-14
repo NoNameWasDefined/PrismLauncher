@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FileIgnoreProxy.h. Filter proxy model over a file system model that lets users
+// tick/untick files (used by export and copy dialogs to exclude files).
+
 #include "FileIgnoreProxy.h"
 
 #include <QDebug>

@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AtlUserInteractionSupportImpl.h. UI implementation of the questions an ATLauncher
+// install asks (optional mods, version choice, messages).
+
 #include "AtlUserInteractionSupportImpl.h"
 #include <QMessageBox>
 

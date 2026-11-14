@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of PackInstallTask.h. Installs a legacy FTB pack (download zip, unzip, set up version).
+
 #include "PackInstallTask.h"
 
 #include <QtConcurrent>

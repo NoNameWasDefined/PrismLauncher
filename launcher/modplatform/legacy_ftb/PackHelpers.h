@@ -1,3 +1,5 @@
+// File overview: Data structures for legacy FTB packs.
+
 #pragma once
 
 #include <QList>

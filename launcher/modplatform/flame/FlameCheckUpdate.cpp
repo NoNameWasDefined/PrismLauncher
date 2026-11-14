@@ -1,3 +1,5 @@
+// File overview: Implementation of FlameCheckUpdate.h. CheckUpdateTask for resources installed from CurseForge.
+
 #include "FlameCheckUpdate.h"
 #include "Application.h"
 #include "FlameAPI.h"

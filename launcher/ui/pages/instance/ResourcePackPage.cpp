@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ResourcePackPage.h. Instance page for the resourcepacks folder.
+
 #include "ResourcePackPage.h"
 
 #include "ui/dialogs/CustomMessageBox.h"

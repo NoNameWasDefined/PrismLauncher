@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LaunchProfile.h. The final, merged result of applying all components in order: main
+// class, libraries, JVM/game arguments, assets, traits, tweakers. This is what the launch steps actually use.
+
 #include "LaunchProfile.h"
 #include <Version.h>
 

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Cat packs: the background images ("cats") drawn behind the instance view, possibly changing by date.
+
 #pragma once
 
 #include <QDate>

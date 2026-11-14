@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ListModel.h. List and filter models of FTB App instances.
+
 #include "ListModel.h"
 #include <QDir>
 #include <QDirIterator>

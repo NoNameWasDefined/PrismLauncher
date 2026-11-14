@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Data structures for GitHub releases and their assets, parsed from the GitHub API.
+
 #pragma once
 #include <QDateTime>
 #include <QList>

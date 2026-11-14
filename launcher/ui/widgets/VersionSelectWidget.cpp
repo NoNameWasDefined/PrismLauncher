@@ -1,3 +1,6 @@
+// File overview: Implementation of VersionSelectWidget.h. Embeddable version picker (list + filters) over a
+// BaseVersionList.
+
 #include "VersionSelectWidget.h"
 
 #include <QApplication>

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of OverrideSetting.h. Setting whose default comes from another setting (instance
+// setting falling back to the global one).
+
 #include "OverrideSetting.h"
 
 OverrideSetting::OverrideSetting(std::shared_ptr<Setting> other, std::shared_ptr<Setting> gate) : Setting(other->configKeys(), QVariant())

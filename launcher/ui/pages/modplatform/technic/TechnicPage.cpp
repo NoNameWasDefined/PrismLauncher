@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of TechnicPage.h. New-instance page "Technic": browse Technic packs and create the
+// matching install task.
+
 #include "TechnicPage.h"
 #include "ui/dialogs/CustomMessageBox.h"
 #include "ui/widgets/ProjectItem.h"

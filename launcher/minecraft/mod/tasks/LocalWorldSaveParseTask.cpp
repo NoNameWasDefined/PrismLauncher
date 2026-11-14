@@ -20,6 +20,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of LocalWorldSaveParseTask.h. Background task that checks whether a file/folder is a
+// valid world save.
+
 #include "LocalWorldSaveParseTask.h"
 
 #include "FileSystem.h"

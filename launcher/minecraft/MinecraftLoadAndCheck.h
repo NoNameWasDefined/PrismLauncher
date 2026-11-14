@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Task that reloads an instance's PackProfile and checks it is valid, without downloading anything.
+
 #pragma once
 
 #include "net/Mode.h"

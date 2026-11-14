@@ -1,3 +1,5 @@
+// File overview: Private state of ComponentUpdateTask (per-component load status).
+
 #pragma once
 
 #include <QList>

@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Log levels understood by the C++ launcher's log colouring.
+
 package org.prismlauncher.utils.logging;
 
 public enum Level {

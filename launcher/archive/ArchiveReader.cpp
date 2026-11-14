@@ -18,6 +18,10 @@
  *  Additional note: Portions of this file are released into the public domain
  *  under LicenseRef-PublicDomain.
  */
+
+// File overview: Implementation of ArchiveReader.h. Reads archives (zip, tar, etc.) through libarchive: list files,
+// check existence, read single entries or iterate over entries.
+
 #include "ArchiveReader.h"
 #include <archive.h>
 #include <archive_entry.h>

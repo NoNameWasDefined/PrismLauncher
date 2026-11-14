@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of CustomCommands.h. Widget for pre-launch, wrapper and post-exit commands (used in
+// global and instance settings).
+
 #include "CustomCommands.h"
 #include "ui_CustomCommands.h"
 

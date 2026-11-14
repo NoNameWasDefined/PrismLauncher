@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Base page of the resource download dialog: search box, results list, description, version picker and
+// "select for download" button.
+
 #pragma once
 
 #include <QTimer>

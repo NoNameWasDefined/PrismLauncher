@@ -33,6 +33,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Component.h. One entry of an instance's component stack (Minecraft, LWJGL, Forge,
+// Fabric, a custom jar mod...). Knows its uid/version, whether it can be disabled/moved/removed, and loads its
+// VersionFile from the meta server or a local patch. See launcher/minecraft/README.md.
+
 #include "Component.h"
 #include <meta/Index.h>
 #include <meta/VersionList.h>

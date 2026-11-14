@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page for the legacy texturepacks folder.
+
 #pragma once
 
 #include <QPointer>

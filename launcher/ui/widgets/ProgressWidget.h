@@ -1,5 +1,7 @@
 // Licensed under the Apache-2.0 license. See README.md for details.
 
+// File overview: Inline progress bar + label bound to a Task.
+
 #pragma once
 
 #include <QWidget>

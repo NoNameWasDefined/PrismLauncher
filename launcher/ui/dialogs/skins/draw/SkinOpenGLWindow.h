@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: OpenGL window rendering the 3D skin preview, with mouse rotation.
+
 #pragma once
 
 #include <QMatrix4x4>

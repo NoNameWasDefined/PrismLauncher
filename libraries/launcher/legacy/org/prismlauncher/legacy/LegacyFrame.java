@@ -52,6 +52,8 @@
  *      limitations under the License.
  */
 
+// File overview: Window (JFrame) used to run applet-era Minecraft, with support for joining a server.
+
 package org.prismlauncher.legacy;
 
 import org.prismlauncher.utils.logging.Log;

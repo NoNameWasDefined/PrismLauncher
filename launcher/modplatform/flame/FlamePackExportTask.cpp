@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of FlamePackExportTask.h. Exports an instance as a CurseForge modpack zip
+// (manifest.json + overrides).
+
 #include "FlamePackExportTask.h"
 #include <QJsonArray>
 #include <QJsonObject>

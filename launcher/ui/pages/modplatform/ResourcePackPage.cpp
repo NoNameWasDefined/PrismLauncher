@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ResourcePackPage.h. Download dialog page base for resource packs.
+
 #include "ResourcePackPage.h"
 #include "ui_ResourcePage.h"
 

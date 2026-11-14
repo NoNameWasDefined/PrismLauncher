@@ -1,3 +1,5 @@
+// File overview: A Java agent (-javaagent) declared by a component: the library jar that contains it plus its argument.
+
 #pragma once
 
 #include <QString>

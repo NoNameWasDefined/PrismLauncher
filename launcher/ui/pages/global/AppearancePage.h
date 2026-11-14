@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Appearance": theme, icon theme, cat, console colours (wraps AppearanceWidget).
+
 #pragma once
 
 #include <QDialog>

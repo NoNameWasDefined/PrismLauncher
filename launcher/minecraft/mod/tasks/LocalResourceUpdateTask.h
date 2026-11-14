@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Task that writes/updates the metadata file of a resource after it was downloaded from a platform.
+
 #pragma once
 
 #include <QDir>

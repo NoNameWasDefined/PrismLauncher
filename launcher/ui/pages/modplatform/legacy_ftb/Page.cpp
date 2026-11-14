@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Page.h. New-instance page "FTB Legacy": browse legacy FTB packs (public, third-
+// party, private).
+
 #include "Page.h"
 #include "StringUtils.h"
 #include "ui/widgets/ProjectItem.h"

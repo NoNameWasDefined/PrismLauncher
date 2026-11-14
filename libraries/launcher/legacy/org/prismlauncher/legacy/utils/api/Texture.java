@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: A skin/cape texture returned by the Mojang API.
+
 package org.prismlauncher.legacy.utils.api;
 
 import java.net.URL;

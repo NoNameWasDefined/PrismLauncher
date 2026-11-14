@@ -36,6 +36,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Upload.h. A NetRequest that uploads (POST) data.
+
 #include "Upload.h"
 
 #include <memory>

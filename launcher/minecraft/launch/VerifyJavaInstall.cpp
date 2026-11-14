@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VerifyJavaInstall.h. Launch step that checks the selected Java version is compatible
+// with the Minecraft version and warns/aborts otherwise.
+
 #include "VerifyJavaInstall.h"
 #include <memory>
 

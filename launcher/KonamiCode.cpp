@@ -1,3 +1,5 @@
+// File overview: Implementation of KonamiCode.h. Easter egg: detects the Konami code key sequence and emits a signal.
+
 #include "KonamiCode.h"
 
 #include <QDebug>

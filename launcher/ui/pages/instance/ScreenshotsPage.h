@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page showing screenshots with thumbnails, upload to Imgur, rename and delete.
+
 #pragma once
 
 #include <QMainWindow>

@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of NotesPage.h. Instance page "Notes": free text notes saved in the instance settings.
+
 #include "NotesPage.h"
 #include <QTabBar>
 #include "ui_NotesPage.h"

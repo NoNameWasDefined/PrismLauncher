@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that creates the instance's .minecraft folder and other folders the game expects.
+
 #pragma once
 
 #include <LoggedProcess.h>

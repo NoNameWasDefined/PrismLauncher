@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ATLShareCode.h. ATLauncher share codes (a preset of optional mods) and their API
+// response.
+
 #include "ATLShareCode.h"
 
 #include "Json.h"

@@ -32,6 +32,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InstanceDirUpdate.h. Helper that renames an instance folder to match its new name,
+// if the user wants that.
+
 #include "InstanceDirUpdate.h"
 
 #include <QCheckBox>

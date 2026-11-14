@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Implementation of ArchiveDownloadTask.h. Task that downloads a Java runtime archive and extracts it
+// into the managed Java folder.
+
 #include "java/download/ArchiveDownloadTask.h"
 #include <memory>
 

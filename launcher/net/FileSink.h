@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Download sink that writes the response to a file atomically.
+
 #pragma once
 
 #include "PSaveFile.h"

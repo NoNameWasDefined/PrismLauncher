@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Proxy style that overrides some platform style hints.
+
 #pragma once
 
 #include <QProxyStyle>

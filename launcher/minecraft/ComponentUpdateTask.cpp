@@ -1,3 +1,7 @@
+// File overview: Implementation of ComponentUpdateTask.h. Task that resolves a PackProfile: loads every component's
+// version data (meta server or local), resolves dependencies (e.g. Fabric needs intermediary) and applies requested
+// version changes.
+
 #include "ComponentUpdateTask.h"
 #include <algorithm>
 

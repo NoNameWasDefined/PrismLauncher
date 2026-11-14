@@ -1,3 +1,6 @@
+// File overview: Minimal Minecraft protocol client used to ping a server for its status (players, MOTD) on the Servers
+// page.
+
 #pragma once
 #include <QFuture>
 #include <QJsonDocument>

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: All versions of one meta component (e.g. every Forge version), with recommended/latest lookups; also a
+// list model for UI.
+
 #pragma once
 
 #include <QJsonObject>

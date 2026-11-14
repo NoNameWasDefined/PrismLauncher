@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ModrinthPackIndex.h. Parsers that turn Modrinth API JSON into
+// ModPlatform::IndexedPack/IndexedVersion.
+
 #include "ModrinthPackIndex.h"
 #include "FileSystem.h"
 #include "ModrinthAPI.h"

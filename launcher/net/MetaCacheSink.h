@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: File sink that also updates the HttpMetaCache entry for the downloaded file.
+
 #pragma once
 
 #include "ChecksumValidator.h"

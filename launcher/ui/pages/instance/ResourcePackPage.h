@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page for the resourcepacks folder.
+
 #pragma once
 
 #include <QPointer>

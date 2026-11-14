@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: ATLauncher share codes (a preset of optional mods) and their API response.
+
 #pragma once
 
 #include <QJsonObject>

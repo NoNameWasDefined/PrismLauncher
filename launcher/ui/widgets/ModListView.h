@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Tree view used by resource folder pages (column resizing, drag & drop).
+
 #pragma once
 #include <QHeaderView>
 #include <QTreeView>

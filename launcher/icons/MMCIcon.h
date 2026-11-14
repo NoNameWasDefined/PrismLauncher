@@ -32,6 +32,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: One instance icon, possibly available from several sources (built-in, theme, file), with the best one
+// picked.
+
 #pragma once
 #include <QDateTime>
 #include <QIcon>

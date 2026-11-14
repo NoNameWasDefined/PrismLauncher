@@ -1,3 +1,4 @@
+// File overview: RAII helper that temporarily removes a path from a QFileSystemWatcher while the launcher modifies it.
 
 #pragma once
 

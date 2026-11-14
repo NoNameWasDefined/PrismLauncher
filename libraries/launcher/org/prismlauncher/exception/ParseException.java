@@ -35,6 +35,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Thrown when the launch script can't be parsed.
+
 package org.prismlauncher.exception;
 
 public final class ParseException extends IllegalArgumentException {

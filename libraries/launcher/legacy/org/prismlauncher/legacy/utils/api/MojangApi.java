@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Minimal Mojang API client (uuid lookup, textures) used by the skin fix.
+
 package org.prismlauncher.legacy.utils.api;
 
 import org.prismlauncher.legacy.utils.Base64;

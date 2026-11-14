@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Reads/writes packwiz-style .pw.toml metadata files (mods/.index/*.pw.toml) that record a resource's
+// platform, project/file id, hash and download URL. Your sync code reads these.
+
 #pragma once
 
 #include "modplatform/ModIndex.h"

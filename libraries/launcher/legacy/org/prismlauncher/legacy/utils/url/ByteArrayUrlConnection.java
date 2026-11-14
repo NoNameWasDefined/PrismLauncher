@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Fake HTTP connection that returns in-memory bytes (used to answer intercepted requests).
+
 package org.prismlauncher.legacy.utils.url;
 
 import java.io.ByteArrayInputStream;

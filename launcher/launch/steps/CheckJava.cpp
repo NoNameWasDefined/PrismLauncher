@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of CheckJava.h. Launch step that validates the configured Java binary (runs JavaChecker
+// if needed) and prints Java/system info to the log.
+
 #include "CheckJava.h"
 #include <FileSystem.h>
 #include <launch/LaunchTask.h>

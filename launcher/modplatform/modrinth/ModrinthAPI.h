@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Modrinth API client implementing ResourceAPI: search, versions, version lookup by hash, latest
+// versions, categories.
+
 #pragma once
 
 #include "BuildConfig.h"

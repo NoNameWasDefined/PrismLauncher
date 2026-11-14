@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: List model of Modrinth modpack search results.
+
 #pragma once
 
 #include <QAbstractListModel>

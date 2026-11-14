@@ -32,6 +32,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of DesktopServices.h. Wrapper around QDesktopServices (open files, folders, URLs) with
+// platform workarounds (Flatpak, Snap...). Use this instead of QDesktopServices directly.
+
 #include "DesktopServices.h"
 #include <QDebug>
 #include <QDesktopServices>

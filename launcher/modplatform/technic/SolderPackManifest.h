@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Data structures and parser for Technic Solder API responses.
+
 #pragma once
 
 #include <QJsonObject>

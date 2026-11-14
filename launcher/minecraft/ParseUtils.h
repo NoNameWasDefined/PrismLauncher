@@ -1,3 +1,5 @@
+// File overview: Timestamp parsing helpers for Mojang/S3 date formats.
+
 #pragma once
 #include <QDateTime>
 #include <QString>

@@ -1,3 +1,6 @@
+// File overview: Implementation of Version.h. Version string parser and comparator (handles numeric parts, pre-
+// releases...). Used to compare game, mod and Java versions.
+
 #include "Version.h"
 
 #include <QDebug>

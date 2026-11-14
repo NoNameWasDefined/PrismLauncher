@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Base exception type used across the launcher (carries a QString message).
+
 #pragma once
 
 #include <QDebug>

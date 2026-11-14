@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: One world save folder (name, seed, game type, last played, icon), read from level.dat via NBT;
+// supports rename/delete/install.
+
 #pragma once
 #include <QDateTime>
 #include <QFileInfo>

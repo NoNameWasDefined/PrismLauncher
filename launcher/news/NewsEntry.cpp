@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of NewsEntry.h. One news item from the RSS feed (title, content, link).
+
 #include "NewsEntry.h"
 
 #include <QDomNodeList>

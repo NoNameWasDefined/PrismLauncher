@@ -1,3 +1,6 @@
+// File overview: Watches a directory tree recursively and emits signals when files change (used for screenshots,
+// mods...).
+
 #pragma once
 
 #include <QDir>

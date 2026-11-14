@@ -1,3 +1,5 @@
+// File overview: JVisualVM integration (opens VisualVM on the game process).
+
 #pragma once
 
 #include "BaseProfiler.h"

@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Launch step that checks the selected Java version is compatible with the Minecraft version and
+// warns/aborts otherwise.
+
 #pragma once
 
 #include <launch/LaunchStep.h>

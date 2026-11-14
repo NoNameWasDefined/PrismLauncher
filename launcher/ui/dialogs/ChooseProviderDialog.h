@@ -1,3 +1,5 @@
+// File overview: Dialog asking which mod platform (Modrinth/CurseForge) to use for a resource when it's ambiguous.
+
 #pragma once
 
 #include <QButtonGroup>

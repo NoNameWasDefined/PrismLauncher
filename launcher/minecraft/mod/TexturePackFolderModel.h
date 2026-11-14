@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Folder model for the legacy texturepacks folder.
+
 #pragma once
 
 #include "ResourceFolderModel.h"

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: List model of skins saved for an account (skins folder), used by the Skin manager dialog.
+
 #pragma once
 
 #include <QAbstractListModel>

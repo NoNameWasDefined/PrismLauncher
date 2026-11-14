@@ -53,6 +53,8 @@
  *      limitations under the License.
  */
 
+// File overview: Launcher implementation for legacy applet-based Minecraft versions.
+
 package org.prismlauncher.legacy;
 
 import org.prismlauncher.launcher.impl.AbstractLauncher;

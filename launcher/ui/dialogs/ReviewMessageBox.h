@@ -1,3 +1,5 @@
+// File overview: Dialog that lists resources (and their dependencies) for the user to confirm before downloading.
+
 #pragma once
 
 #include <QDialog>

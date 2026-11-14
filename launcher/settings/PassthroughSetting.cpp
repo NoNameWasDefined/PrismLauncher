@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of PassthroughSetting.h. Setting that stores its own value only while a "gate" setting
+// is on (e.g. "override Java settings" checkbox), otherwise passes through to the global setting.
+
 #include "PassthroughSetting.h"
 
 PassthroughSetting::PassthroughSetting(std::shared_ptr<Setting> other, std::shared_ptr<Setting> gate)

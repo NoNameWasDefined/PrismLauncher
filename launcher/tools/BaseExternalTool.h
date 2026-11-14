@@ -1,3 +1,6 @@
+// File overview: Base classes for external tools (profilers, MCEdit) that can be attached to a running instance or
+// launched detached.
+
 #pragma once
 
 #include <BaseInstance.h>

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: A ConcurrentTask that runs several NetRequests in parallel (downloads/uploads) with retry support. The
+// usual way to download things. See launcher/net/README.md.
+
 #pragma once
 
 #include <QtNetwork>
@@ -46,6 +49,25 @@
 #include "net/Download.h"
 #include "net/HttpMetaCache.h"
 
+/*
+ * The standard way to do HTTP in the launcher (asynchronous, with progress, retry and abort).
+ *
+ *     auto output = std::make_shared<QByteArray>();
+ *     auto job = makeShared<NetJob>(tr("Fetch something"), APPLICATION->network());
+ *     job->addNetAction(Net::ApiDownload::makeByteArray(QUrl("https://example.org/data.json"), output));
+ *     // or Net::ApiDownload::makeFile(url, "/path/to/file")
+ *     // or Net::ApiDownload::makeCached(url, APPLICATION->metacache()->resolveEntry("general", "relative/path"))
+ *     connect(job.get(), &NetJob::succeeded, this, [output] { auto doc = QJsonDocument::fromJson(*output); ... });
+ *     connect(job.get(), &NetJob::failed, this, [](QString reason) { qWarning() << reason; });
+ *     job->start();   // keep `job` alive (e.g. store it in a member) until it finishes
+ *
+ * Use Net::ApiDownload/ApiUpload (adds API keys + user agent) for platform APIs, Net::Download/Upload otherwise.
+ * Several actions added to one job run in parallel (max_concurrent, default from settings). When some fail,
+ * the user may be asked whether to retry (setAskRetry(false) disables that).
+ *
+ * Prefer this over blocking QEventLoop code in the UI thread: the UI stays responsive and the task can be
+ * shown in a ProgressDialog.
+ */
 class NetJob : public ConcurrentTask {
     Q_OBJECT
 

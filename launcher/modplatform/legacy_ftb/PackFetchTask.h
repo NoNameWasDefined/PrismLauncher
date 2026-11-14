@@ -1,3 +1,5 @@
+// File overview: Fetches the legacy FTB pack lists (public, third-party, private codes).
+
 #pragma once
 
 #include <QByteArray>

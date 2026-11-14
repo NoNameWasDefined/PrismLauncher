@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of EnvironmentVariables.h. Widget for editing environment variables passed to the game.
+
 #include <QKeyEvent>
 
 #include "Application.h"

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: The launch step that actually starts the game: builds the Java command line, runs the Java-side
+// launcher (libraries/launcher) and feeds it the launch script over stdin.
+
 #pragma once
 
 #include <LoggedProcess.h>

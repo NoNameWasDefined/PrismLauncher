@@ -1,3 +1,5 @@
+// File overview: Implementation of ServerCommunication.h. (This fork) Client for the modpack sync server: builds a
+// manifest of an instance (loaders + mods) and uploads/downloads it. See the detailed comments inside.
 
 #include "Application.h"
 #include "BaseInstance.h"
@@ -21,6 +23,9 @@ using namespace std;
 #include <QRegularExpressionMatch>
 #include <QUrl>
 
+// Reads <instance>/mmc-pack.json (the component list: Minecraft, loaders...) and returns its root object,
+// or an empty object if the file is missing/invalid. See minecraft/PackProfile.h for the file format.
+// (PackProfile itself could give the same data: std::dynamic_pointer_cast<MinecraftInstance>(inst)->getPackProfile().)
 QJsonObject loadMmcPack(const QString& rootDir) {
   QString jsonPath = rootDir + "/mmc-pack.json";
   QFile jsonFile(jsonPath);
@@ -48,6 +53,8 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
   QString rootDir = instance->instanceRoot();
   QJsonObject pack = loadMmcPack(rootDir);
   QJsonArray components = pack["components"].toArray();
+  // NOTE: assumes LWJGL is always first. Usually true, but not guaranteed (old instances, custom orders,
+  // or an empty list -> removeAt(0) on an empty array). Filtering on uid ("org.lwjgl"/"org.lwjgl3") is safer.
   components.removeAt(0);  // Remove the first element (usually LWJGL)
 
   // --- Mods folder ---
@@ -61,6 +68,8 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
   }
 
   // --- Collect mods into JSON array ---
+  // Each mod installed from Modrinth/CurseForge has a packwiz metadata file "<slug>.pw.toml" in mods/.index,
+  // written by modplatform/packwiz/Packwiz.cpp. Mods dropped in by hand have none and are skipped.
   QJsonArray modsArray;
   QFileInfoList tomlFiles = indexDir.entryInfoList(
       QStringList() << "*.toml", QDir::Files | QDir::NoDotAndDotDot);
@@ -77,8 +86,14 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
 
     // Extract needed values with regex (since Qt doesn't have native TOML
     // parser)
+    // NOTE: the launcher already links toml++ (used by Packwiz.cpp); Packwiz::V1::getIndexForMod() parses these
+    // files properly and returns name, version, url... which would be more robust than regexes.
     QJsonObject modEntry;
 
+    // NOTE: this pattern is not anchored to the start of a line, so it also matches inside
+    // "filename = '...'". toml++ writes keys in alphabetical order, so "filename" comes before "name" and is
+    // probably what gets captured here. Anchoring it ("^name\\s*=..." with
+    // QRegularExpression::MultilineOption) would fix it.
     QRegularExpression nameRe("name\\s*=\\s*'([^']*)'");  // Get name
     QRegularExpressionMatch nameMatch = nameRe.match(content);
     if (nameMatch.hasMatch()) {
@@ -93,6 +108,7 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
       modEntry["version"] = versionMatch.captured(1);
     }
 
+    // The [download] table's url. CurseForge mods whose authors block third-party downloads have no url.
     QRegularExpression urlRe("url\\s*=\\s*'([^']*)'");  // Get download URL
     QRegularExpressionMatch urlMatch = urlRe.match(content);
     if (urlMatch.hasMatch()) {
@@ -113,8 +129,10 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
   return manifestDoc.toJson(QJsonDocument::Compact);
 }
 
+// Upload the manifest. Blocking: see the class comment in ServerCommunication.h.
 int ServerUtils::PutManifest(InstancePtr instance) {
   // Get the global Application instance's network manager and settings manager
+  // (debug print left over; qDebug() would go to the launcher log instead of stdout)
   cout << "CREATINT MANIFEST";
   auto net = APPLICATION->network();
   auto settings = APPLICATION->settings();
@@ -126,6 +144,8 @@ int ServerUtils::PutManifest(InstancePtr instance) {
   QString instanceName = instance->settings()->get("name").toString();
 
   // Build Put url with credentials
+  // The instance name goes into the URL path as-is; QUrl percent-encodes spaces etc., but a name containing
+  // "/" or "?" would change the path. Credentials in the URL become an HTTP basic-auth header.
   QUrl url(serverUrl + "/modpacks/" + instanceName + "/manifest.json");
   url.setUserName(username);
   url.setPassword(password);
@@ -133,10 +153,12 @@ int ServerUtils::PutManifest(InstancePtr instance) {
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
+  // May be empty (no mods/.index folder): an empty body is uploaded in that case.
   QByteArray manifestData = ServerUtils::CreateManifest(instance);
   QNetworkReply* reply = net->put(request, manifestData);
 
   // Use event loop to block until finished
+  // (runs a nested event loop: other UI events are processed meanwhile, so the user can still click around)
   QEventLoop loop;
   QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
   loop.exec();
@@ -164,6 +186,7 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   url.setUserName(username);
   url.setPassword(password);
 
+  // NOTE: unused here (the GET sends no body); can be removed.
   QByteArray manifestData = ServerUtils::CreateManifest(instance);
 
   // Send GET request for the manifest.json
@@ -182,10 +205,15 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   return std::make_pair(code, response);
 }
 
+// Called before each launch. Today it only logs what the server answered; nothing is changed locally.
+// A full sync would compare `serverManifest` with `localManifest` and download/remove mods (e.g. with
+// ResourceDownloadTask) and update loaders (PackProfile::setComponentVersion) before the launch continues.
 int ServerUtils::SyncModpack(InstancePtr instance) {
   auto [code, response] = GetManifest(instance);
+  // Parsed but not used yet.
   QJsonDocument serverManifest = QJsonDocument::fromJson(response);
 
+  // Built but not used yet.
   auto localManifest = CreateManifest(instance);
   QString instanceName = instance->name();
   switch (code) {
@@ -202,5 +230,7 @@ int ServerUtils::SyncModpack(InstancePtr instance) {
       qWarning() << "Server error:" << code << response;
   };
   qDebug() << "Server replied with:" << response;
+  // NOTE: always 0. Application::launch() calls `if (!SyncModpack(...))`, so this is read as a failure and the
+  // "sync failed" warning is shown every time. Return a value that matches the caller's expectation.
   return 0;
 }

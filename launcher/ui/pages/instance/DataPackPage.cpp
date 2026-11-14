@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of DataPackPage.h. Instance page listing data packs (per world or global), with
+// download/enable/disable actions.
+
 #include "DataPackPage.h"
 #include "minecraft/PackProfile.h"
 #include "ui_ExternalResourcesPage.h"

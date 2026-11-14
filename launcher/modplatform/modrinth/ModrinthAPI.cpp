@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ModrinthAPI.h. Modrinth API client implementing ResourceAPI: search, versions,
+// version lookup by hash, latest versions, categories.
+
 #include "ModrinthAPI.h"
 
 #include "Application.h"

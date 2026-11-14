@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Json.h. JSON helper namespace: typed getters (requireString, ensureInteger...) that
+// throw JsonException on bad data, plus read/write helpers.
+
 #include "Json.h"
 
 #include <QFile>

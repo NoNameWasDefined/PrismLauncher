@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ResourceModel.h. Base list model for searching a platform (via ResourceAPI): paging,
+// search, project info/versions loading, logos. Used by every download page.
+
 #include "ResourceModel.h"
 
 #include <QCryptographicHash>

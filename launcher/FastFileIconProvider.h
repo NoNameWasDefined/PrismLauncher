@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: QFileIconProvider that returns generic file/folder icons without hitting the disk, keeping file views
+// fast.
+
 #pragma once
 
 #include <QFileIconProvider>

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Turns an extracted Technic pack (bin/modpack.jar, version.json) into a launcher instance.
+
 #pragma once
 
 #include <QString>

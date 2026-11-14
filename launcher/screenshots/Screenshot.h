@@ -1,3 +1,5 @@
+// File overview: One screenshot file of an instance (path, time, Imgur upload info).
+
 #pragma once
 
 #include <QDateTime>

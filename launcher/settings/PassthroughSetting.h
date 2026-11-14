@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Setting that stores its own value only while a "gate" setting is on (e.g. "override Java settings"
+// checkbox), otherwise passes through to the global setting.
+
 #pragma once
 
 #include <QObject>

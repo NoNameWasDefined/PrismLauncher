@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LanguagePage.h. Settings page "Language".
+
 #include "LanguagePage.h"
 
 #include <QVBoxLayout>

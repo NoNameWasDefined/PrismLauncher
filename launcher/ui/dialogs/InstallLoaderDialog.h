@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Dialog to add a mod loader (Forge, NeoForge, Fabric, Quilt, LiteLoader) to an existing instance.
+
 #pragma once
 
 #include <QDialog>

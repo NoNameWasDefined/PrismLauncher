@@ -33,6 +33,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of ConcurrentTask.h. Task that runs a list of sub-tasks with a maximum parallelism and
+// aggregates their progress.
+
 #include "ConcurrentTask.h"
 
 #include <QDebug>

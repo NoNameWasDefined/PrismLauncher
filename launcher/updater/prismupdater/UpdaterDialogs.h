@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Dialogs of the updater program for picking a release or an asset.
+
 #pragma once
 
 #include <QDialog>

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Installs an ATLauncher pack: downloads its version manifest, lets the user pick optional mods, sets up
+// loaders and downloads every file.
+
 #pragma once
 
 #include <meta/VersionList.h>

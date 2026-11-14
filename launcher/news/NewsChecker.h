@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Downloads and parses the launcher's RSS news feed shown in the main window.
+
 #pragma once
 
 #include <QList>

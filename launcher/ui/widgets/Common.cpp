@@ -1,3 +1,5 @@
+// File overview: Implementation of Common.h. Text layout helper (wrap text into lines) for custom painted views.
+
 #include "Common.h"
 
 // Origin: Qt

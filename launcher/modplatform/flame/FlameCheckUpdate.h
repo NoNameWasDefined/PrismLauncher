@@ -1,3 +1,5 @@
+// File overview: CheckUpdateTask for resources installed from CurseForge.
+
 #pragma once
 
 #include "modplatform/CheckUpdateTask.h"

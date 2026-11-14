@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of ReconstructAssets.h. Launch step that rebuilds legacy asset folders for old
+// Minecraft versions.
+
 #include "ReconstructAssets.h"
 #include "launch/LaunchTask.h"
 #include "minecraft/AssetsUtils.h"

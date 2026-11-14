@@ -19,6 +19,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Background task that checks whether a file is a valid shader pack.
+
 #pragma once
 
 #include <QDebug>

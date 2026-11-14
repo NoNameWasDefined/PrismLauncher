@@ -36,6 +36,8 @@
  *      limitations under the License.
  */
 
+// File overview: A NetRequest that downloads (GET) a URL into a Sink (file, memory, cache).
+
 #pragma once
 
 #include "HttpMetaCache.h"

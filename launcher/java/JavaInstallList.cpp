@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of JavaInstallList.h. List model of Java installations found on the system (via
+// JavaUtils + JavaChecker), with a load task.
+
 #include <QtNetwork>
 #include <QtXml>
 

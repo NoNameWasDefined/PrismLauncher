@@ -1,3 +1,6 @@
+// File overview: Implementation of PasteWizardPage.h. Setup wizard page asking to confirm the paste (log upload)
+// service defaults.
+
 #include "PasteWizardPage.h"
 #include "ui_PasteWizardPage.h"
 

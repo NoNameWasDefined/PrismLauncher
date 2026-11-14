@@ -1,3 +1,6 @@
+// File overview: Proxy model on top of a BaseVersionList that adds columns (type, architecture...), filtering and
+// sorting for version selection dialogs.
+
 #pragma once
 #include <QAbstractProxyModel>
 #include "BaseVersionList.h"

@@ -16,6 +16,9 @@
  *
  */
 
+// File overview: Implementation of WindowsConsole.h. Windows-only helpers to attach to the parent console and bind
+// stdout/stderr to it.
+
 #include "WindowsConsole.h"
 #include <system_error>
 

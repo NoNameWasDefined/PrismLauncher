@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ImportPage.h. New-instance page "Import": pick a local file or URL (zip, .mrpack,
+// and in this fork .json) and create an InstanceImportTask.
+
 #include "ImportPage.h"
 
 #include "ui/dialogs/ProgressDialog.h"

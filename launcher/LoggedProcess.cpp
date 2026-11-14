@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LoggedProcess.h. QProcess wrapper that splits stdout/stderr into lines and emits
+// them as log lines with a MessageLevel; used to run the game and pre/post launch commands.
+
 #include "LoggedProcess.h"
 #include <QDebug>
 #include <QStringDecoder>

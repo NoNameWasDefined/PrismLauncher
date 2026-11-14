@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Microsoft account login dialog (browser OAuth or device code), runs the AuthFlow.
+
 #pragma once
 
 #include <QTimer>

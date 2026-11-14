@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: Implementation of PrismUpdater.h. The separate updater program: finds the latest GitHub release,
+// downloads the right asset and replaces the launcher files.
+
 #include "PrismUpdater.h"
 #include "BuildConfig.h"
 #include "ui/dialogs/ProgressDialog.h"

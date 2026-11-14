@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: Implementation of GitHubRelease.h. Data structures for GitHub releases and their assets, parsed from
+// the GitHub API.
+
 #include "GitHubRelease.h"
 
 QDebug operator<<(QDebug debug, const GitHubReleaseAsset& asset)

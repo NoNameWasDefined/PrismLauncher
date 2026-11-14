@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ShortcutUtils.h. Creates desktop/start menu/application shortcuts that launch a
+// given instance directly.
+
 #include "ShortcutUtils.h"
 
 #include "FileSystem.h"

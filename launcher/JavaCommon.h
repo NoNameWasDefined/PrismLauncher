@@ -1,3 +1,6 @@
+// File overview: Shared UI helpers for Java pages: argument sanity checks and a "test Java" helper used by settings
+// pages.
+
 #pragma once
 #include <java/JavaChecker.h>
 

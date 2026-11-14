@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Base64 decoding that works on Java 8+ and older Java.
+
 package org.prismlauncher.legacy.utils;
 
 import org.prismlauncher.utils.logging.Log;

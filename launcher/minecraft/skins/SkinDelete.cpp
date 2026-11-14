@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of SkinDelete.h. Net request that resets the player's skin to the default.
+
 #include "SkinDelete.h"
 
 #include "net/ByteArraySink.h"

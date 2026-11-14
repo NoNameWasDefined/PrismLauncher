@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// File overview: List model of ATLauncher packs.
+
 #pragma once
 
 #include <QAbstractListModel>

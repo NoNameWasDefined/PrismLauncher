@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
+
+// File overview: Progress bar for one sub-task inside ProgressDialog.
+
 #pragma once
 
 #include <QWidget>

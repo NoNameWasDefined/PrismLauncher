@@ -1,3 +1,5 @@
+// File overview: Implementation of JavaWizardWidget.h. Java selection + memory widget used in the setup wizard.
+
 #include "JavaWizardWidget.h"
 
 #include <QFileDialog>

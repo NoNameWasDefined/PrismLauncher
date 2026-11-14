@@ -19,6 +19,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: A data pack file/folder (pack format, description, image) as listed on the Data packs page.
+
 #pragma once
 
 #include "Resource.h"

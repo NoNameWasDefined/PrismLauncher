@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of TexturePackFolderModel.h. Folder model for the legacy texturepacks folder.
+
 #include "TexturePackFolderModel.h"
 
 #include "minecraft/mod/tasks/LocalTexturePackParseTask.h"

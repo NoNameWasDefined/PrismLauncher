@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Item delegate that paints instance icons/names in the main window grid and handles renaming.
+
 #pragma once
 
 #include <QCache>

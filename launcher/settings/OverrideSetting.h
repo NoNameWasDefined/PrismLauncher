@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Setting whose default comes from another setting (instance setting falling back to the global one).
+
 #pragma once
 
 #include <QObject>

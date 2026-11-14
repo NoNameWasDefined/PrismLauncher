@@ -1,3 +1,6 @@
+// File overview: Implementation of ProjectDescriptionPage.h. Text browser for project descriptions (HTML/Markdown) with
+// image loading.
+
 #include "ProjectDescriptionPage.h"
 
 #include "VariableSizedImageObject.h"

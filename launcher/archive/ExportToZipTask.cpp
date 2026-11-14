@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Implementation of ExportToZipTask.h. Task that zips a set of files (e.g. an instance export), with
+// progress and abort support.
+
 #include "ExportToZipTask.h"
 
 #include <QtConcurrent>

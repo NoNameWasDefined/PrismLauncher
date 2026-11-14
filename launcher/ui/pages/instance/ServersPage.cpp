@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ServersPage.h. Instance page editing the servers.dat server list (add/remove/move,
+// ping status).
+
 #include "ServersPage.h"
 #include "Application.h"
 #include "ServerPingTask.h"

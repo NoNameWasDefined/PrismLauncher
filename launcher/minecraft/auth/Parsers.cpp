@@ -1,3 +1,5 @@
+// File overview: Implementation of Parsers.h. Parsers for Xbox/Minecraft authentication API responses.
+
 #include "Parsers.h"
 #include "Json.h"
 #include "Logging.h"

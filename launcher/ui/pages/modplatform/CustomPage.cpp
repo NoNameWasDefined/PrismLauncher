@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of CustomPage.h. New-instance page "Custom": pick a Minecraft version and optional mod
+// loader to create a vanilla/modded instance (creates a VanillaCreationTask).
+
 #include "CustomPage.h"
 #include "ui_CustomPage.h"
 

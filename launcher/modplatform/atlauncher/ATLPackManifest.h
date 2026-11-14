@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Data structures and parser for an ATLauncher pack version manifest (loaders, libraries, mods,
+// configs).
+
 #pragma once
 
 #include <QJsonObject>

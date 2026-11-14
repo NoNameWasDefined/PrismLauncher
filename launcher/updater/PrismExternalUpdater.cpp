@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: Implementation of PrismExternalUpdater.h. Windows/Linux self-updater implementation that runs the
+// separate prismlauncher_updater executable.
+
 #include "PrismExternalUpdater.h"
 #include <QCoreApplication>
 #include <QDateTime>

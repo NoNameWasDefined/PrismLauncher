@@ -37,6 +37,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FlameResourcePages.h. CurseForge pages of the resource download dialog.
+
 #include "FlameResourcePages.h"
 #include <QList>
 #include <memory>

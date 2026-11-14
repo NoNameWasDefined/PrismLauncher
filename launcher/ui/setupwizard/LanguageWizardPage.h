@@ -1,3 +1,5 @@
+// File overview: Setup wizard page to choose the UI language.
+
 #pragma once
 
 #include "BaseWizardPage.h"

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Widget that shows a list of pages on the left and the selected page on the right (used by Settings and
+// instance windows).
+
 #pragma once
 
 #include <QListView>

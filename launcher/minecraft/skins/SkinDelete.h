@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Net request that resets the player's skin to the default.
+
 #pragma once
 
 #include "net/NetRequest.h"

@@ -1,3 +1,5 @@
+// File overview: Setup wizard page to choose Java and memory settings.
+
 #pragma once
 
 #include "BaseWizardPage.h"

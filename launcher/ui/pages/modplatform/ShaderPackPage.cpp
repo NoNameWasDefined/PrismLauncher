@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ShaderPackPage.h. Download dialog page base for shader packs.
+
 #include "ShaderPackPage.h"
 #include "modplatform/ModIndex.h"
 #include "ui_ResourcePage.h"

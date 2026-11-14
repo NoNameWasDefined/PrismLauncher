@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModMinecraftJar.h. Launch step that builds a modified minecraft.jar when the
+// instance uses jar mods (and removes it afterwards).
+
 #include "ModMinecraftJar.h"
 #include "FileSystem.h"
 #include "MMCZip.h"

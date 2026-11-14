@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Net request that creates an Imgur album for uploaded screenshots.
+
 #pragma once
 
 #include "Screenshot.h"

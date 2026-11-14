@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Installs a Technic pack served by a Solder API (downloads each mod zip of the chosen build).
+
 #pragma once
 
 #include <InstanceTask.h>

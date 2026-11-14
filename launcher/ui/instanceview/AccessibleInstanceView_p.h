@@ -1,3 +1,5 @@
+// File overview: Private accessibility interface implementations for the instance view.
+
 #pragma once
 
 #include <QtGui/qaccessible.h>

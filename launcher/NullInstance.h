@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Placeholder instance type used when an instance folder can't be loaded as a real instance; does
+// nothing.
+
 #pragma once
 #include "BaseInstance.h"
 #include "launch/LaunchTask.h"

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of SettingsObject.h. Container of Settings: register settings with defaults, get/set
+// them, reset, and create override/passthrough settings. The launcher-wide one is APPLICATION->settings().
+
 #include "settings/SettingsObject.h"
 #include <QDebug>
 #include "PassthroughSetting.h"

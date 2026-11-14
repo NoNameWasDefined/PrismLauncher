@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VersionProxyModel.h. Proxy model on top of a BaseVersionList that adds columns
+// (type, architecture...), filtering and sorting for version selection dialogs.
+
 #include "VersionProxyModel.h"
 #include <Version.h>
 #include <meta/VersionList.h>

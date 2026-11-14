@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Enum of resource kinds (mod, resource pack, shader pack, data pack, modpack...) and string
+// conversions.
+
 #pragma once
 
 #include <set>

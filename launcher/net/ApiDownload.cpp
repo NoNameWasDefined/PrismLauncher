@@ -17,6 +17,9 @@
  *
  */
 
+// File overview: Implementation of ApiDownload.h. Factory functions for downloads that automatically add API headers
+// (user agent, API keys for CurseForge/Modrinth).
+
 #include "net/ApiDownload.h"
 #include "net/ApiHeaderProxy.h"
 

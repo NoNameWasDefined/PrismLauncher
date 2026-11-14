@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MSAStep.h. Auth step for Microsoft OAuth login in the browser (or silent refresh
+// with the stored refresh token).
+
 #include "MSAStep.h"
 
 #include <QAbstractOAuth2>

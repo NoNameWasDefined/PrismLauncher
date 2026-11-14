@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ChooseOfflineNameDialog.h. Dialog asking for a player name when launching in offline
+// mode.
+
 #include "ChooseOfflineNameDialog.h"
 
 #include <QPushButton>

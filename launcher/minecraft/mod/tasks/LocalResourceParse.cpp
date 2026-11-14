@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of LocalResourceParse.h. Detects what kind of resource a file is (mod, resource pack,
+// shader, world...) by looking inside it.
+
 #include <QObject>
 
 #include "LocalResourceParse.h"

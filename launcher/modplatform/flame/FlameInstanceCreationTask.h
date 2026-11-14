@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: InstanceCreationTask for CurseForge modpacks: reads manifest.json, sets up loaders, resolves and
+// downloads mod files (asking about blocked mods), copies overrides. Can also update an existing pack.
+
 #pragma once
 
 #include "InstanceCreationTask.h"

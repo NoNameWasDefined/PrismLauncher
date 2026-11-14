@@ -32,6 +32,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Task that tries its sub-tasks one by one until one succeeds (e.g. fallback mirrors).
+
 #pragma once
 
 #include "ConcurrentTask.h"

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: List model of Java installations found on the system (via JavaUtils + JavaChecker), with a load task.
+
 #pragma once
 
 #include <QAbstractListModel>

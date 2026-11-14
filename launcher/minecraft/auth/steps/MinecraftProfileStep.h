@@ -1,3 +1,5 @@
+// File overview: Auth step that fetches the Minecraft profile (name, uuid, skins, capes).
+
 #pragma once
 #include <QObject>
 #include <memory>

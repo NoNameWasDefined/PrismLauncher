@@ -1,3 +1,5 @@
+// File overview: Implementation of LanguageSelectionWidget.h. Language picker widget.
+
 #include "LanguageSelectionWidget.h"
 
 #include <QCheckBox>

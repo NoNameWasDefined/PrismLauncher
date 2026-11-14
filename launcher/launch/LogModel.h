@@ -1,3 +1,5 @@
+// File overview: Circular-buffer list model holding log lines (with levels) shown in the instance log window.
+
 #pragma once
 
 #include <QAbstractListModel>

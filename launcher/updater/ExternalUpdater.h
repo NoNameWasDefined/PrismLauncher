@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Interface for the launcher self-updater (check for updates, auto-check interval, beta channel).
+
 #ifndef LAUNCHER_EXTERNALUPDATER_H
 #define LAUNCHER_EXTERNALUPDATER_H
 

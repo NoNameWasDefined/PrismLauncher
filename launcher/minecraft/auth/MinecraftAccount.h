@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: One Minecraft account (Microsoft or offline): login/refresh, current task, profile, skin, and JSON
+// (de)serialization.
+
 #pragma once
 
 #include <QJsonObject>

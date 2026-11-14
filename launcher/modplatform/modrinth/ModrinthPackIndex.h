@@ -15,6 +15,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Parsers that turn Modrinth API JSON into ModPlatform::IndexedPack/IndexedVersion.
+
 #pragma once
 
 #include "modplatform/ModIndex.h"

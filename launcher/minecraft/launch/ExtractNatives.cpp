@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of ExtractNatives.h. Launch step that extracts native libraries (LWJGL .dll/.so) into
+// the instance's natives folder.
+
 #include "ExtractNatives.h"
 #include <launch/LaunchTask.h>
 #include <minecraft/MinecraftInstance.h>

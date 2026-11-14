@@ -1,3 +1,5 @@
+// File overview: Setup wizard page asking to confirm the paste (log upload) service defaults.
+
 #ifndef PASTEDEFAULTSCONFIRMATIONWIZARD_H
 #define PASTEDEFAULTSCONFIRMATIONWIZARD_H
 

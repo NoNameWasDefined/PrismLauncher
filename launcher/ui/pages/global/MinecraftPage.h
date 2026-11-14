@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Minecraft": global game window size, custom commands, environment variables,
+// performance options (wraps MinecraftSettingsWidget).
+
 #pragma once
 
 #include <QDialog>

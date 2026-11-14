@@ -1,3 +1,5 @@
+// File overview: Easter egg: detects the Konami code key sequence and emits a signal.
+
 #pragma once
 
 #include <QKeyEvent>

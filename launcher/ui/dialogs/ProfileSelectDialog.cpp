@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of ProfileSelectDialog.h. Dialog to choose which account to launch with (and optionally
+// make it the default).
+
 #include "ProfileSelectDialog.h"
 #include "ui_ProfileSelectDialog.h"
 

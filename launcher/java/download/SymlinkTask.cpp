@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Implementation of SymlinkTask.h. Task that creates symlinks needed by a downloaded Java runtime
+// (mostly macOS bundles).
+
 #include "java/download/SymlinkTask.h"
 #include <QFileInfo>
 

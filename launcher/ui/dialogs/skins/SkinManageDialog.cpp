@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of SkinManageDialog.h. The skin manager dialog: list saved skins, upload/select skins,
+// choose capes, with 3D preview.
+
 #include "SkinManageDialog.h"
 #include "ui/dialogs/skins/draw/SkinOpenGLWindow.h"
 #include "ui_SkinManageDialog.h"

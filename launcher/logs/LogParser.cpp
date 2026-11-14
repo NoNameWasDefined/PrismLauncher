@@ -17,6 +17,9 @@
  *
  */
 
+// File overview: Implementation of LogParser.h. Parses game log output, including Log4j XML events, and guesses message
+// levels for plain lines.
+
 #include "LogParser.h"
 
 #include <QRegularExpression>

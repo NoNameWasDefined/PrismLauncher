@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VersionFile.h. One parsed version file (a component's contribution): libraries,
+// arguments, main class, requirements... applyTo() merges it into a LaunchProfile.
+
 #include <QJsonArray>
 #include <QJsonDocument>
 

@@ -1,3 +1,6 @@
+// File overview: Implementation of AuthFlow.h. Task that runs a chain of AuthSteps to log in or refresh a Microsoft
+// account (MSA -> Xbox Live -> XSTS -> Minecraft token -> profile).
+
 #include <QDebug>
 #include <QNetworkReply>
 #include <QNetworkRequest>

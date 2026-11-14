@@ -1,3 +1,6 @@
+// File overview: Base for tasks that produce an instance: carries the target name, icon, group, staging path and how to
+// handle name conflicts.
+
 #pragma once
 
 #include "settings/SettingsObject.h"

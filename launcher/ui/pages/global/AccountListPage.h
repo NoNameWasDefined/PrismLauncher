@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Accounts": add/remove/refresh Microsoft and offline accounts, set default, manage
+// skins.
+
 #pragma once
 
 #include <QMainWindow>

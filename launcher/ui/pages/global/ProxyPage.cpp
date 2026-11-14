@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ProxyPage.h. Settings page "Proxy": network proxy configuration.
+
 #include "ProxyPage.h"
 #include "ui_ProxyPage.h"
 

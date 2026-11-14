@@ -1,3 +1,5 @@
+// File overview: Auth step that fetches the Xbox profile (gamertag), mostly for display.
+
 #pragma once
 #include <QObject>
 #include <memory>

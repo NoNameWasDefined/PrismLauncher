@@ -1,3 +1,6 @@
+// File overview: Implementation of AssetUpdateTask.h. Update task that downloads the asset index and every missing
+// asset object for the instance's Minecraft version.
+
 #include "AssetUpdateTask.h"
 
 #include "BuildConfig.h"

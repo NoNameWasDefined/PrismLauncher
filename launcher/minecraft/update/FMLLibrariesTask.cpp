@@ -1,3 +1,6 @@
+// File overview: Implementation of FMLLibrariesTask.h. Update task that downloads extra libraries old Forge (FML)
+// versions need.
+
 #include "FMLLibrariesTask.h"
 
 #include "FileSystem.h"

@@ -1,3 +1,5 @@
+// File overview: A resource pack (pack format, description, image, compatible Minecraft versions).
+
 #pragma once
 
 #include "Resource.h"

@@ -20,6 +20,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of ShaderPack.h. A shader pack (OptiFine/Iris format detection).
+
 #include "ShaderPack.h"
 
 void ShaderPack::setPackFormat(ShaderPackFormat new_format)

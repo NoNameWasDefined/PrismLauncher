@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of SkinUpload.h. Net request that uploads a skin image to the Minecraft services API.
+
 #include "SkinUpload.h"
 
 #include <QHttpMultiPart>

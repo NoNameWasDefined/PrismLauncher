@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModrinthPage.h. New-instance page "Modrinth": browse modpacks and create an
+// InstanceImportTask for the chosen version.
+
 #include "ModrinthPage.h"
 #include "Version.h"
 #include "modplatform/ModIndex.h"

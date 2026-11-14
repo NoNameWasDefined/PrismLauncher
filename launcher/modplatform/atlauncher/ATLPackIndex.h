@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+// File overview: ATLauncher pack list entries (name, versions) parsed from the ATLauncher API.
+
 #pragma once
 
 #include "ATLPackManifest.h"

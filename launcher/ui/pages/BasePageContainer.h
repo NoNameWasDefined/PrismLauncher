@@ -1,3 +1,5 @@
+// File overview: Interface for widgets that host pages (select page by id, refresh, request close).
+
 #pragma once
 
 class BasePage;

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Background task that lists a resource folder and creates Resource objects (plus their metadata) for
+// ResourceFolderModel.
+
 #pragma once
 
 #include <QDir>

@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of LocalTexturePackParseTask.h. Background task that reads a legacy texture pack's
+// pack.txt and pack.png.
+
 #include "LocalTexturePackParseTask.h"
 
 #include "FileSystem.h"

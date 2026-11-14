@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Implementation of ApiUpload.h. Factory functions for uploads that add API headers.
+
 #include "net/ApiUpload.h"
 #include "net/ApiHeaderProxy.h"
 

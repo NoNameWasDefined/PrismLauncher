@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of GetModDependenciesTask.h. Task that finds the required dependencies of mods being
+// downloaded (via the mod platform APIs) so they can be offered to the user.
+
 #include "GetModDependenciesTask.h"
 
 #include <QDebug>

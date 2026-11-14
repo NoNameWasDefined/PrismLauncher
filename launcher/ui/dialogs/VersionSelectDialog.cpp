@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VersionSelectDialog.h. Generic dialog to pick a version from a BaseVersionList
+// (Minecraft versions, loader versions, Java...).
+
 #include "VersionSelectDialog.h"
 
 #include <QDebug>

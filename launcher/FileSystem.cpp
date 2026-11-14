@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of FileSystem.h. Filesystem helper toolbox (namespace FS): safe file writes, path
+// combining, copy/move/link/delete operations with filters, symlink and clone support, shortcut creation.
+
 #include "FileSystem.h"
 #include <QPair>
 

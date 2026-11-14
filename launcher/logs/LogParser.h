@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
+
+// File overview: Parses game log output, including Log4j XML events, and guesses message levels for plain lines.
+
 #pragma once
 #include <QAnyStringView>
 #include <QDateTime>

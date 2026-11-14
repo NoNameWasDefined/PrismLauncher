@@ -35,6 +35,8 @@
  *      limitations under the License.
  */
 
+// File overview: Creates desktop/start menu/application shortcuts that launch a given instance directly.
+
 #pragma once
 #include "Application.h"
 

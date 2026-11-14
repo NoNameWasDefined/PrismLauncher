@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of DataPackModel.h. Search result model for data packs on a mod platform.
+
 #include "DataPackModel.h"
 
 #include <QMessageBox>

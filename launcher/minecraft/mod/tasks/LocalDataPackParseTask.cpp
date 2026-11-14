@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of LocalDataPackParseTask.h. Background task that reads a data pack's pack.mcmeta and
+// pack.png.
+
 #include "LocalDataPackParseTask.h"
 
 #include "FileSystem.h"

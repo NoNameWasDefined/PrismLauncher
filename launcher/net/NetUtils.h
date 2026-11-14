@@ -16,6 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Helpers to classify network errors (which ones are worth retrying).
+
 #pragma once
 
 #include <QNetworkReply>

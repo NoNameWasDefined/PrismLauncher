@@ -50,6 +50,8 @@
  *      limitations under the License.
  */
 
+// File overview: Fallback LegacyProxy used when the legacy module is not on the classpath (legacy launch unsupported).
+
 package org.prismlauncher.legacy;
 
 import org.prismlauncher.launcher.Launcher;

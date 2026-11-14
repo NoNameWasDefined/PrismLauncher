@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of DataPack.h. A data pack file/folder (pack format, description, image) as listed on
+// the Data packs page.
+
 #include "DataPack.h"
 
 #include <QDebug>

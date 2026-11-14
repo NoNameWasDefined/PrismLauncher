@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Container of Settings: register settings with defaults, get/set them, reset, and create
+// override/passthrough settings. The launcher-wide one is APPLICATION->settings().
+
 #pragma once
 
 #include <QJsonArray>
@@ -44,6 +47,17 @@ using SettingsObjectWeakPtr = std::weak_ptr<SettingsObject>;
  * \date 2/22/2013
  *
  * \sa Setting
+ *
+ * Recipe — adding a new launcher-wide setting:
+ *   1. Register it once with a default, in Application::Application() (launcher/Application.cpp):
+ *          m_settings->registerSetting("MyOption", false);
+ *   2. Read/write it anywhere:
+ *          bool on = APPLICATION->settings()->get("MyOption").toBool();
+ *          APPLICATION->settings()->set("MyOption", true);   // saved to prismlauncher.cfg automatically
+ *   3. Expose it in a settings page (e.g. ui/pages/global/LauncherPage.cpp + its .ui) by loading it in
+ *      loadSettings() and saving it in applySettings()/apply().
+ * Per-instance settings work the same way on instance->settings() (registered in the instance's
+ * loadSpecificSettings(), e.g. MinecraftInstance.cpp). Wrap many writes in a SettingsObject::Lock to save once.
  */
 class SettingsObject : public QObject {
     Q_OBJECT

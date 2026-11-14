@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page showing the game's options.txt as a table.
+
 #pragma once
 
 #include <QString>

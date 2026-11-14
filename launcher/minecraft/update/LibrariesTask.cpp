@@ -1,3 +1,6 @@
+// File overview: Implementation of LibrariesTask.h. Update task that downloads all libraries (and the client jar)
+// required by the LaunchProfile.
+
 #include "LibrariesTask.h"
 
 #include "minecraft/MinecraftInstance.h"

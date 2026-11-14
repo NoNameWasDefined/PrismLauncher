@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModrinthModel.h. List model of Modrinth modpack search results.
+
 #include "ModrinthModel.h"
 
 #include "Application.h"

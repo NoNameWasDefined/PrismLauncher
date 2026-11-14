@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of ShaderPackModel.h. Search result model for shader packs.
+
 #include "ShaderPackModel.h"
 
 #include <QMessageBox>

@@ -1,3 +1,5 @@
+// File overview: Auth step that gets an XSTS authorization token for a given relying party.
+
 #pragma once
 #include <QObject>
 #include <memory>

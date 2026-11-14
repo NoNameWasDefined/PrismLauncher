@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of GZip.h. In-memory gzip compress/uncompress helpers built on zlib.
+
 #include "GZip.h"
 #include <zlib.h>
 #include <QByteArray>

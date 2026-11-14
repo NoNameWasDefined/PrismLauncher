@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Panel under resource lists that shows details of the selected mod/pack (name, description, image).
+
 #pragma once
 
 #include <QFrame>

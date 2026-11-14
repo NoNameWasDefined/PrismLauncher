@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of JavaMetadata.h. Metadata for a downloadable Java runtime (from Mojang or
+// Adoptium/Azul meta), used by the Java downloader.
+
 #include "java/JavaMetadata.h"
 
 #include <memory>

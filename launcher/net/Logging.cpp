@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Implementation of Logging.h. Qt logging categories for network code.
+
 #include "net/Logging.h"
 
 Q_LOGGING_CATEGORY(taskNetLogC, "launcher.task.net")

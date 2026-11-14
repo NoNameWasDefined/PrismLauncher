@@ -1,3 +1,6 @@
+// File overview: Background task that opens a mod jar and parses its metadata (fabric.mod.json, quilt.mod.json,
+// mods.toml, mcmod.info...) into ModDetails.
+
 #pragma once
 
 #include <QDebug>

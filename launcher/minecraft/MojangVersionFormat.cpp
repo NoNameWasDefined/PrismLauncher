@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of MojangVersionFormat.h. Reader/writer for Mojang's official version JSON format (the
+// files in version_manifest).
+
 #include "MojangVersionFormat.h"
 #include "MojangDownloadInfo.h"
 #include "OneSixVersionFormat.h"

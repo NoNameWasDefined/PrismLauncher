@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: One version of a meta component (e.g. Minecraft 1.20.1 or Fabric loader 0.15), including its
+// requirements and the version file data.
+
 #pragma once
 
 #include "../Version.h"

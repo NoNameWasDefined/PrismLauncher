@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that prints instance, system and mod information at the top of the game log.
+
 #pragma once
 
 #include <launch/LaunchStep.h>

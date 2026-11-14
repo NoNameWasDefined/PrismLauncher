@@ -1,3 +1,5 @@
+// File overview: Text layout helper (wrap text into lines) for custom painted views.
+
 #pragma once
 
 #include <QTextLayout>

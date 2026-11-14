@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Instance page shown for instances created from a modpack (Modrinth/CurseForge): shows the pack and
+// lets the user update/change its version.
+
 #pragma once
 
 #include "BaseInstance.h"

@@ -33,6 +33,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AssetsUtils.h. Minecraft asset index handling: parses the assets index JSON,
+// computes object paths/URLs and builds the download job for missing assets; also reconstructs legacy "virtual" asset
+// folders.
+
 #include <QCryptographicHash>
 #include <QDebug>
 #include <QDir>

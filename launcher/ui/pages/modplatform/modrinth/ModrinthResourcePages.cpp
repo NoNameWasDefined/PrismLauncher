@@ -36,6 +36,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModrinthResourcePages.h. Modrinth pages of the resource download dialog.
+
 #include "ModrinthResourcePages.h"
 #include "ui/pages/modplatform/DataPackModel.h"
 #include "ui_ResourcePage.h"

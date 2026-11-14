@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ApplicationMessage.h. Small serializable message passed between launcher processes
+// (e.g. a second launcher start asking the running one to launch an instance or import a pack).
+
 #include "ApplicationMessage.h"
 
 #include <QJsonDocument>

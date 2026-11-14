@@ -1,3 +1,6 @@
+// File overview: Implementation of OverrideUtils.h. Remembers which files came from a modpack's overrides folder, so an
+// update can remove them first.
+
 #include "OverrideUtils.h"
 
 #include <QDirIterator>

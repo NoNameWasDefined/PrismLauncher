@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of MMCTime.h. Formatting helpers for durations (play time display).
+
 #include <MMCTime.h>
 #include <qobject.h>
 

@@ -1,3 +1,6 @@
+// File overview: Implementation of MinecraftLoadAndCheck.h. Task that reloads an instance's PackProfile and checks it
+// is valid, without downloading anything.
+
 #include "MinecraftLoadAndCheck.h"
 #include "MinecraftInstance.h"
 #include "PackProfile.h"

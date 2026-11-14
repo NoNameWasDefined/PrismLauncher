@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AccountListPage.h. Settings page "Accounts": add/remove/refresh Microsoft and
+// offline accounts, set default, manage skins.
+
 #include "AccountListPage.h"
 #include "ui/dialogs/skins/SkinManageDialog.h"
 #include "ui_AccountListPage.h"

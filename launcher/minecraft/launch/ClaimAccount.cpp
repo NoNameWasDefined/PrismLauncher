@@ -1,3 +1,6 @@
+// File overview: Implementation of ClaimAccount.h. Launch step that marks the account as in use while the game runs
+// (and releases it in finalize()).
+
 #include "ClaimAccount.h"
 #include <launch/LaunchTask.h>
 

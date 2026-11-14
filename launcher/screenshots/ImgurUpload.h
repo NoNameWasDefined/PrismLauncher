@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Net request that uploads one screenshot to Imgur.
+
 #pragma once
 
 #include <QFileInfo>

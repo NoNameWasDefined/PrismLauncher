@@ -1,3 +1,5 @@
+// File overview: CheckUpdateTask for resources installed from Modrinth (batch lookup by file hash).
+
 #pragma once
 
 #include "modplatform/CheckUpdateTask.h"

@@ -32,6 +32,8 @@
  *      limitations under the License.
  */
 
+// File overview: Helper that renames an instance folder to match its new name, if the user wants that.
+
 #pragma once
 
 #include "BaseInstance.h"

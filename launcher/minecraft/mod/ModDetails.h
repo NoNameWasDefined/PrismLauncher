@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Details parsed from a mod's own metadata (fabric.mod.json, mods.toml, mcmod.info...): id, name,
+// version, authors, license, issue tracker.
+
 #pragma once
 
 #include <QString>

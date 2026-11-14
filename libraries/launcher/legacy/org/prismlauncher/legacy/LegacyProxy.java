@@ -50,6 +50,9 @@
  *      limitations under the License.
  */
 
+// File overview: Real LegacyProxy used when the legacy module is on the classpath: creates the LegacyLauncher and
+// applies online fixes.
+
 package org.prismlauncher.legacy;
 
 import org.prismlauncher.launcher.Launcher;

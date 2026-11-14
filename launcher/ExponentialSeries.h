@@ -1,3 +1,5 @@
+// File overview: Generates an exponentially growing series of numbers; InstanceList uses it as a retry back-off when
+// committing a new instance from its staging folder.
 
 #pragma once
 

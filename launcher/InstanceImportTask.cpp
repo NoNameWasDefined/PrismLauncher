@@ -34,6 +34,10 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InstanceImportTask.h. Task that imports a modpack from a file or URL (zip, .mrpack,
+// CurseForge, MultiMC, Technic; in this fork also .json packs), detects its type, extracts it and hands off to the
+// platform-specific creation task.
+
 #include "InstanceImportTask.h"
 
 #include "Application.h"
@@ -74,6 +78,12 @@ bool InstanceImportTask::abort()
     return wasAborted;
 }
 
+// Import flow:
+//   executeTask() -> (remote URL) downloadFromUrl() into the meta cache -> processPack()
+//   processPack()  -> archive? processZipPack(): detect type (Modrinth / Technic / MultiMC / CurseForge) and
+//                     extract into the staging folder -> extractFinished() -> processModrinth()/processFlame()/...
+//                     which usually hand over to the platform's InstanceCreationTask.
+//                  -> (this fork) not an archive but JSON? processJSONPack().
 void InstanceImportTask::executeTask()
 {
     setAbortable(true);
@@ -150,8 +160,11 @@ void InstanceImportTask::processPack()
     if (packZip.collectFiles()) {
         processZipPack(packZip);
     } else {
+        // (This fork) Not a readable archive: try to parse the file as a JSON pack description.
         QFile file(m_json_or_archivePath);
         if (file.open(QIODevice::ReadOnly)) {
+            // NOTE: read(16) only reads the first 16 bytes, so any real JSON document fails to parse here.
+            // Use file.readAll() to parse the whole file.
             QByteArray data = file.read(16);
             file.close();
             QJsonDocument json = QJsonDocument::fromJson(data);
@@ -169,6 +182,11 @@ void InstanceImportTask::processPack()
     }
 }
 
+// (This fork) Create an instance from a JSON pack description (e.g. a sync-server manifest).
+// TODO: not implemented. As written, the task never calls emitSucceeded()/emitFailed(), so the import
+// dialog would wait forever. A real implementation would read the loaders/mods from `packJson`, write
+// mmc-pack.json + instance.cfg into m_stagingPath (like VanillaCreationTask does), queue the mod downloads,
+// and finally call emitSucceeded().
 void InstanceImportTask::processJSONPack(QJsonDocument packJson)
 {
     // process JSON file at `m_json_or_archive_path`

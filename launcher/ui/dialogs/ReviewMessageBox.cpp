@@ -1,3 +1,6 @@
+// File overview: Implementation of ReviewMessageBox.h. Dialog that lists resources (and their dependencies) for the
+// user to confirm before downloading.
+
 #include "ReviewMessageBox.h"
 #include "ui_ReviewMessageBox.h"
 

@@ -33,6 +33,9 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of ITheme.h. Theme interface: palette, stylesheet, log colours, Qt style to apply.
+
 #include "ITheme.h"
 #include <QDir>
 #include <QStyleFactory>

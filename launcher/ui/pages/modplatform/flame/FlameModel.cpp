@@ -1,3 +1,5 @@
+// File overview: Implementation of FlameModel.h. List model of CurseForge modpack search results.
+
 #include "FlameModel.h"
 #include <Json.h>
 #include "Application.h"

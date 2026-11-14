@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Library.h. One Java library from a version file (Maven coordinates, download info,
+// natives, OS rules) and the logic to find which files it needs locally and from where to download them.
+
 #include "Library.h"
 #include "MinecraftInstance.h"
 #include "net/NetRequest.h"

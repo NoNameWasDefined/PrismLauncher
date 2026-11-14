@@ -19,6 +19,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: A shader pack (OptiFine/Iris format detection).
+
 #pragma once
 
 #include "Resource.h"

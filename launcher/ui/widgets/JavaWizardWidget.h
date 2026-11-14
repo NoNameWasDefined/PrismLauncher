@@ -1,3 +1,5 @@
+// File overview: Java selection + memory widget used in the setup wizard.
+
 #pragma once
 #include <QWidget>
 

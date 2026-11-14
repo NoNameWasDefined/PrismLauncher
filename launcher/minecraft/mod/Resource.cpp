@@ -1,3 +1,6 @@
+// File overview: Implementation of Resource.h. Base class for one file/folder in a resource folder (mod, resource pack,
+// shader...): name, enabled state, size, platform metadata.
+
 #include "Resource.h"
 
 #include <QDirIterator>

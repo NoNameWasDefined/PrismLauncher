@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of TechnicPackProcessor.h. Turns an extracted Technic pack (bin/modpack.jar,
+// version.json) into a launcher instance.
+
 #include "TechnicPackProcessor.h"
 
 #include <FileSystem.h>

@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Download dialog page base for mods (adds the mod filter widget).
+
 #pragma once
 
 #include <QWidget>

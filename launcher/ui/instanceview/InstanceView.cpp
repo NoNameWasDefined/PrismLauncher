@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of InstanceView.h. Custom item view that shows instances as an icon grid split into
+// collapsible groups.
+
 #include "InstanceView.h"
 
 #include <QAccessible>

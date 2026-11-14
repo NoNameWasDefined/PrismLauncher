@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: ResourceFolderModel for the mods (and core mods) folder; adds mod-specific columns (version, loaders,
+// provider).
+
 #pragma once
 
 #include <QAbstractListModel>

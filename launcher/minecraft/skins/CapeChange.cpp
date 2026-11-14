@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of CapeChange.h. Net request that changes (or hides) the player's active cape via the
+// Minecraft services API.
+
 #include "CapeChange.h"
 
 #include <memory>

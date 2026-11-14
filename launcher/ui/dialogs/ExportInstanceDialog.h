@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Dialog to export an instance as a launcher zip, with a file tree to choose what is included.
+
 #pragma once
 
 #include <QDialog>

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Adapts any Task into a LaunchStep, so ordinary tasks (e.g. updates) can run inside a launch.
+
 #pragma once
 
 #include <LoggedProcess.h>

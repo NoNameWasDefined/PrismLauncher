@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Implementation of ManifestDownloadTask.h. Task that downloads a Java runtime file by file from a
+// Mojang-style manifest.
+
 #include "java/download/ManifestDownloadTask.h"
 
 #include "Application.h"

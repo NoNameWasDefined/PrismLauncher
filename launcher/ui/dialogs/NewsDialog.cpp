@@ -1,3 +1,5 @@
+// File overview: Implementation of NewsDialog.h. Dialog listing news articles from the RSS feed.
+
 #include "NewsDialog.h"
 #include "ui_NewsDialog.h"
 

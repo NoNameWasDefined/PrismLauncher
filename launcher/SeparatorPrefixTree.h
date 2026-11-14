@@ -1,3 +1,6 @@
+// File overview: Prefix tree over paths split by a separator; used to remember which folders/files are selected for
+// export.
+
 #pragma once
 #include <QMap>
 #include <QString>

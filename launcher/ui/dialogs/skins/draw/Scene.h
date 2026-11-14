@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: OpenGL scene of the 3D player model (body parts, cape, elytra) for the skin preview.
+
 #pragma once
 
 #include "ui/dialogs/skins/draw/BoxGeometry.h"

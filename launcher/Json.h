@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: JSON helper namespace: typed getters (requireString, ensureInteger...) that throw JsonException on bad
+// data, plus read/write helpers.
+
 #pragma once
 
 #include <QDateTime>

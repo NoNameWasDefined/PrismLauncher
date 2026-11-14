@@ -1,3 +1,5 @@
+// File overview: Base for themes based on Qt's Fusion style.
+
 #pragma once
 
 #include "ITheme.h"

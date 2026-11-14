@@ -1,3 +1,5 @@
+// File overview: JProfiler integration (attaches JProfiler to the game process).
+
 #pragma once
 
 #include "BaseProfiler.h"

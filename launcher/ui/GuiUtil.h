@@ -1,3 +1,6 @@
+// File overview: UI helper functions: upload logs to a paste service (with confirmation), copy to clipboard, file
+// open/save dialogs that remember the last folder.
+
 #pragma once
 
 #include <QFileInfo>

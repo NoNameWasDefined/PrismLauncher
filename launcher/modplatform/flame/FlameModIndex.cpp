@@ -1,3 +1,6 @@
+// File overview: Implementation of FlameModIndex.h. Parsers that turn CurseForge API JSON into
+// ModPlatform::IndexedPack/IndexedVersion.
+
 #include "FlameModIndex.h"
 
 #include "FileSystem.h"

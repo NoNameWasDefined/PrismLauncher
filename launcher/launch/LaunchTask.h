@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Runs the ordered chain of LaunchSteps that starts an instance, collects the log into a LogModel and
+// manages the game process lifetime. See launcher/launch/README.md.
+
 #pragma once
 #include <QObjectPtr.h>
 #include <minecraft/MinecraftInstance.h>
@@ -45,6 +48,30 @@
 #include "MessageLevel.h"
 #include "logs/LogParser.h"
 
+/*
+ * How a launch works:
+ *
+ *   LaunchController (UI side: account selection, offline name...)
+ *     -> MinecraftInstance::createLaunchTask(session, target) builds a LaunchTask and appends steps:
+ *          TextPrint (folder info) -> CreateGameFolders -> [LookupServerAddress]
+ *          -> MinecraftLoadAndCheck (reload mmc-pack.json + meta)  -> AutoInstallJava -> CheckJava
+ *          -> [PreLaunchCommand] -> (online only) ClaimAccount + update tasks (libraries, assets...)
+ *          -> ModMinecraftJar -> ScanModFolders -> PrintInstanceInfo -> ExtractNatives
+ *          -> ReconstructAssets -> VerifyJavaInstall -> LauncherPartLaunch (starts Java)
+ *          -> [PostLaunchCommand] -> [QuitAfterGameStop]
+ *     -> start(): steps run one after the other (onStepFinished() starts the next one).
+ *
+ * A step may pause the chain by emitting readyForLaunch() (e.g. LauncherPartLaunch waiting for a
+ * profiler to attach); proceed() resumes it. When the chain ends (success, failure or abort),
+ * finalize() is called on every step that ran, in reverse order, so steps can undo things
+ * (release the account, delete the temporary modded jar...).
+ *
+ * Every step's log lines go through onLogLine(s) -> censorPrivateInfo() -> m_logModel, which the
+ * instance window's log page displays.
+ *
+ * To add your own step: subclass LaunchStep, then appendStep()/insert it in
+ * MinecraftInstance::createLaunchTask at the right place.
+ */
 class LaunchTask : public Task {
     Q_OBJECT
    protected:
@@ -52,14 +79,17 @@ class LaunchTask : public Task {
     void init();
 
    public:
+    // Waiting = paused by a step (readyForLaunch), resumed with proceed().
     enum State { NotStarted, Running, Waiting, Failed, Aborted, Finished };
 
    public: /* methods */
     static shared_qobject_ptr<LaunchTask> create(MinecraftInstancePtr inst);
     virtual ~LaunchTask() = default;
 
+    // Steps must be added before start(); they run in list order.
     void appendStep(shared_qobject_ptr<LaunchStep> step);
     void prependStep(shared_qobject_ptr<LaunchStep> step);
+    // Map of secret -> replacement (access token, uuid...) applied to every log line before it is shown/uploaded.
     void setCensorFilter(QMap<QString, QString> filter);
 
     MinecraftInstancePtr instance() { return m_instance; }
@@ -88,7 +118,10 @@ class LaunchTask : public Task {
     shared_qobject_ptr<LogModel> getLogModel();
 
    public:
+    // Replaces $INST_NAME, $INST_ID, $INST_DIR, $INST_MC_DIR, $INST_JAVA, $INST_JAVA_ARGS... in user commands
+    // (pre-launch, wrapper, post-exit). The variables come from MinecraftInstance::getVariables().
     QString substituteVariables(QString& cmd, bool isLaunch = false) const;
+    // Applies the censor filter (see setCensorFilter).
     QString censorPrivateInfo(QString in);
 
    protected: /* methods */

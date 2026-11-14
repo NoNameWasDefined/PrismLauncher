@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of Rule.h. OS/feature rules from version files ("allow this library only on windows")
+// and their evaluation against a RuntimeContext.
+
 #include <QJsonArray>
 #include <QJsonObject>
 

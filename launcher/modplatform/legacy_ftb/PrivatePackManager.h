@@ -1,3 +1,5 @@
+// File overview: Stores the user's legacy FTB private pack codes.
+
 #pragma once
 
 #include <QFile>

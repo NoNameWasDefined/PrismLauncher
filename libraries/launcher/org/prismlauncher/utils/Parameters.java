@@ -52,6 +52,8 @@
  *      limitations under the License.
  */
 
+// File overview: Key -> list of values store for launch script parameters.
+
 package org.prismlauncher.utils;
 
 import org.prismlauncher.exception.ParameterNotFoundException;

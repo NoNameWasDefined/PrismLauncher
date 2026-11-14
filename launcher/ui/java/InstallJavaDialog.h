@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Dialog to download a Java runtime (Mojang or Adoptium/Azul) into the managed Java folder.
+
 #pragma once
 
 #include <QDialog>

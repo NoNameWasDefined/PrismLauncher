@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of WorldList.h. List model of an instance's worlds (saves folder), shown on the Worlds
+// page; watches the folder for changes.
+
 #include "WorldList.h"
 
 #include <FileSystem.h>

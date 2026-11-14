@@ -1,3 +1,6 @@
+// File overview: Implementation of LocalModParseTask.h. Background task that opens a mod jar and parses its metadata
+// (fabric.mod.json, quilt.mod.json, mods.toml, mcmod.info...) into ModDetails.
+
 #include "LocalModParseTask.h"
 
 #include <qdcss.h>

@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
+// File overview: Implementation of FlameAPI.h. CurseForge ("Flame") API client implementing ResourceAPI: search, files,
+// fingerprint matching, categories, changelogs.
+
 #include "FlameAPI.h"
 #include <memory>
 #include <optional>

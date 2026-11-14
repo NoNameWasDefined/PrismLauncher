@@ -1,3 +1,6 @@
+// File overview: Implementation of InstanceCopyPrefs.h. Options chosen in the "Copy instance" dialog (which folders to
+// copy, keep play time, use links...).
+
 //
 // Created by marcelohdez on 10/22/22.
 //

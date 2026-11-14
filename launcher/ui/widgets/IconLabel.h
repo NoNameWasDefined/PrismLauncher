@@ -1,3 +1,5 @@
+// File overview: Tiny widget that paints an icon.
+
 #pragma once
 #include <QIcon>
 #include <QWidget>

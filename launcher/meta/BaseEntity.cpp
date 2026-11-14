@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of BaseEntity.h. Base for everything downloaded from the Prism meta server (index,
+// version lists, versions): handles local caching, sha256 checks and the load task.
+
 #include "BaseEntity.h"
 
 #include "Exception.h"

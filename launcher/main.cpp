@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Program entry point: creates the Application object and runs the Qt event loop (or exits early when
+// the app was only forwarding a message to an already running launcher).
+
 #include "Application.h"
 
 int main(int argc, char* argv[])

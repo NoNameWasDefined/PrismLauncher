@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "CurseForge": browse modpacks and create an InstanceImportTask for the chosen file.
+
 #pragma once
 
 #include <QWidget>

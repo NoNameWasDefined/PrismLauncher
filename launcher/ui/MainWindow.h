@@ -38,6 +38,9 @@
  *      limitations under the License.
  */
 
+// File overview: The main launcher window: toolbar, instance view, status bar, news, menus and all the actions (launch,
+// add instance, edit, delete, copy, export...). Most UI flows start from here. See launcher/ui/README.md.
+
 #pragma once
 
 #include <memory>

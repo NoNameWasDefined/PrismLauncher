@@ -1,3 +1,5 @@
+// File overview: Standalone window that shows the launcher's own log.
+
 #pragma once
 
 #include <QMainWindow>

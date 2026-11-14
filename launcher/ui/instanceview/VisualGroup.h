@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Layout data for one group header and its rows in the InstanceView.
+
 #pragma once
 
 #include <QList>

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ImgurAlbumCreation.h. Net request that creates an Imgur album for uploaded
+// screenshots.
+
 #include "ImgurAlbumCreation.h"
 
 #include <QDebug>

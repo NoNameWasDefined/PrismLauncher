@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Metadata for a downloadable Java runtime (from Mojang or Adoptium/Azul meta), used by the Java
+// downloader.
+
 #pragma once
 
 #include <QDateTime>

@@ -1,3 +1,6 @@
+// File overview: Implementation of BaseProfiler.h. Base class for profiler integrations that start profiling once the
+// game process is up.
+
 #include "BaseProfiler.h"
 #include "QObjectPtr.h"
 

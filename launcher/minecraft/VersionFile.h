@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: One parsed version file (a component's contribution): libraries, arguments, main class,
+// requirements... applyTo() merges it into a LaunchProfile.
+
 #pragma once
 
 #include <QDateTime>

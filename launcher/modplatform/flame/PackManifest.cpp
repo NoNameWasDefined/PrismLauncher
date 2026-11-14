@@ -1,3 +1,5 @@
+// File overview: Implementation of PackManifest.h. Data structures and parser for a CurseForge modpack manifest.json.
+
 #include "PackManifest.h"
 #include "Json.h"
 

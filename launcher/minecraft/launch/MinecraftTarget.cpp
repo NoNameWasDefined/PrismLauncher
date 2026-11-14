@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Implementation of MinecraftTarget.h. Server/world to join directly on launch ("address:port" or a
+// singleplayer world).
+
 #include "MinecraftTarget.h"
 
 #include <QStringList>

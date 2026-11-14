@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Dialog asking for a player name when launching in offline mode.
+
 #pragma once
 
 #include <QDialog>

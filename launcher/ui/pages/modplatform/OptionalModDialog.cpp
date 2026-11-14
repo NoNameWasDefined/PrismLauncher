@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of OptionalModDialog.h. Dialog to choose optional files when installing a modpack.
+
 #include "OptionalModDialog.h"
 #include "ui_OptionalModDialog.h"
 

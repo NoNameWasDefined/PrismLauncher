@@ -1,3 +1,5 @@
+// File overview: Setup wizard page that offers to add a Microsoft account.
+
 #pragma once
 #include <QWidget>
 #include "BaseWizardPage.h"

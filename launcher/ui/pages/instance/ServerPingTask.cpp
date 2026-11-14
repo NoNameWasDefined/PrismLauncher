@@ -1,3 +1,6 @@
+// File overview: Implementation of ServerPingTask.h. Task that pings a Minecraft server and returns its online player
+// count.
+
 #include <QFutureWatcher>
 
 #include <Json.h>

@@ -1,3 +1,5 @@
+// File overview: Dialog listing news articles from the RSS feed.
+
 #pragma once
 
 #include <QDialog>

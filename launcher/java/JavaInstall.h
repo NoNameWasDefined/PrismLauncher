@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: One detected Java installation (path, version, architecture), shown in Java selection lists.
+
 #pragma once
 
 #include "BaseVersion.h"

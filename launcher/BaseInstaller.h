@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Legacy base class for "installers" that patch an instance's version profile (add/remove a patch file).
+// Kept for old code; new mod loaders are components (see minecraft/PackProfile).
+
 #pragma once
 
 #include <memory>

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: New-instance page "FTB App Import": lists FTB App instances to import.
+
 #pragma once
 
 #include <QDialog>

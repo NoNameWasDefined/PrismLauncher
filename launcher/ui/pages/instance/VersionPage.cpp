@@ -38,6 +38,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VersionPage.h. Instance page "Version": shows and edits the PackProfile component
+// list (change Minecraft version, install loaders, add jar mods, move/remove components).
+
 #include "Application.h"
 
 #include <QAbstractItemModel>

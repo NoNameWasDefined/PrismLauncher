@@ -1,3 +1,6 @@
+// File overview: Builds the list of pages shown in an instance's "Edit instance" window (version, mods, worlds,
+// settings...).
+
 #pragma once
 #include <FileSystem.h>
 #include <ui/pages/instance/DataPackPage.h>

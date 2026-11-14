@@ -19,6 +19,8 @@
  *
  */
 
+// File overview: Windows-only helpers to attach to the parent console and bind stdout/stderr to it.
+
 #pragma once
 
 #include <system_error>

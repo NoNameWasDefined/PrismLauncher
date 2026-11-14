@@ -17,6 +17,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Task that downloads one mod/resource pack/shader version from a mod platform into an instance, writing
+// its packwiz-style metadata and replacing the old file when updating.
+
 #pragma once
 
 #include "net/NetJob.h"

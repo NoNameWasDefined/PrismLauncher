@@ -1,3 +1,5 @@
+// File overview: Delegate that paints search results (logo, title, description, checkbox).
+
 #pragma once
 
 #include <QStyledItemDelegate>

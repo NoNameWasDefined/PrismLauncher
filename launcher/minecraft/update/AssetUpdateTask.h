@@ -1,3 +1,6 @@
+// File overview: Update task that downloads the asset index and every missing asset object for the instance's Minecraft
+// version.
+
 #pragma once
 #include "net/NetJob.h"
 #include "tasks/Task.h"

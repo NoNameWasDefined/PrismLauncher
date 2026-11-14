@@ -35,6 +35,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of GuiUtil.h. UI helper functions: upload logs to a paste service (with confirmation),
+// copy to clipboard, file open/save dialogs that remember the last folder.
+
 #include "GuiUtil.h"
 
 #include <QApplication>

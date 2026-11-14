@@ -20,6 +20,9 @@
  *
  */
 
+// File overview: Small helper program (FileLinkApp) run with elevated rights on Windows to create symlinks/hard links
+// on behalf of the launcher.
+
 #pragma once
 
 #include <QtCore>

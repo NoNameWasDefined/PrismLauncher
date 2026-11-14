@@ -1,3 +1,5 @@
+// File overview: Auth step that exchanges the XSTS token for a Minecraft access token (login_with_xbox).
+
 #pragma once
 #include <QObject>
 #include <memory>

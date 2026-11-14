@@ -35,6 +35,10 @@
  *      limitations under the License.
  */
 
+// File overview: Abstract base for every instance (one folder under instances/). Holds the instance settings, status,
+// play time, group/name/icon and declares the factory methods (createLaunchTask, createUpdateTask...) that concrete
+// types like MinecraftInstance implement.
+
 #pragma once
 #include <cassert>
 
@@ -88,6 +92,27 @@ bool shouldStopOnConsoleOverflow(SettingsObjectPtr settings);
  *
  * To create a new instance type, create a new class inheriting from this class
  * and implement the pure virtual functions.
+ */
+/*
+ * An instance = one folder in the launcher's instances/ directory:
+ *
+ *   instances/<id>/
+ *     instance.cfg      <- this instance's settings (name, icon, notes, Java/memory overrides, managed pack info...)
+ *     mmc-pack.json     <- component list (Minecraft + loaders), see minecraft/PackProfile
+ *     minecraft/        <- the game directory (gameRoot()): mods/, saves/, config/, resourcepacks/...
+ *     patches/          <- optional local component overrides
+ *
+ * Instances are created by InstanceTasks into a staging folder and then moved in by InstanceList, which owns
+ * every loaded instance. Get one with APPLICATION->instances()->getInstanceById(id). The only real
+ * implementation is MinecraftInstance; cast with std::dynamic_pointer_cast<MinecraftInstance>(inst) when you
+ * need Minecraft-specific things (PackProfile, mod lists...).
+ *
+ * Settings: settings() returns this instance's SettingsObject. Many keys (Java path, memory...) are
+ * OverrideSettings/PassthroughSettings that fall back to APPLICATION->settings() unless the instance
+ * overrides them. Read with settings()->get("Key"), write with settings()->set("Key", value).
+ *
+ * "Managed pack": instances made from a Modrinth/CurseForge/... modpack remember the pack's platform, id and
+ * version (getManagedPack*()), so the launcher can offer pack updates.
  */
 class BaseInstance : public QObject, public std::enable_shared_from_this<BaseInstance> {
     Q_OBJECT
@@ -283,6 +308,7 @@ class BaseInstance : public QObject, public std::enable_shared_from_this<BaseIns
 
     bool isLegacy();
 
+    // Added in this fork. Returns the same folder as instanceRoot(); prefer instanceRoot() in new code.
     QString rootDir() const { return m_rootDir; }
 
    protected:

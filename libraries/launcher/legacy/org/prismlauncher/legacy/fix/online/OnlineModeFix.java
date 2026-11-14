@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Fix that redirects the old joinserver.jsp call to the current session server.
+
 package org.prismlauncher.legacy.fix.online;
 
 import org.prismlauncher.legacy.utils.url.UrlUtils;

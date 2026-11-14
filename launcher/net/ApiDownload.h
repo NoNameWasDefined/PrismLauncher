@@ -17,6 +17,9 @@
  *
  */
 
+// File overview: Factory functions for downloads that automatically add API headers (user agent, API keys for
+// CurseForge/Modrinth).
+
 #pragma once
 
 #include "Download.h"

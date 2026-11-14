@@ -19,6 +19,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
+
+// File overview: Dialog telling the user a launcher update is available, with release notes.
+
 #pragma once
 
 #include <QDialog>

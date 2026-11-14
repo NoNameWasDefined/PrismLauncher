@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: New-instance page "Custom": pick a Minecraft version and optional mod loader to create a
+// vanilla/modded instance (creates a VanillaCreationTask).
+
 #pragma once
 
 #include <QWidget>

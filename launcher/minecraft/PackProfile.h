@@ -37,6 +37,10 @@
  *      limitations under the License.
  */
 
+// File overview: The component stack of a Minecraft instance (mmc-pack.json): an ordered, editable list of Components
+// shown on the Version page. Saves/loads the file, adds/removes loaders and builds the LaunchProfile. See
+// launcher/minecraft/README.md.
+
 #pragma once
 
 #include <QAbstractListModel>
@@ -55,6 +59,28 @@ class MinecraftInstance;
 struct PackProfileData;
 class ComponentUpdateTask;
 
+/*
+ * The "Version" of a Minecraft instance: an ordered list of Components saved in <instance>/mmc-pack.json:
+ *
+ *   { "formatVersion": 1, "components": [
+ *       { "uid": "org.lwjgl3",                "version": "3.3.1",   "dependencyOnly": true },
+ *       { "uid": "net.minecraft",             "version": "1.20.1",  "important": true },
+ *       { "uid": "net.fabricmc.intermediary", "version": "1.20.1",  "dependencyOnly": true },
+ *       { "uid": "net.fabricmc.fabric-loader","version": "0.15.11" } ] }
+ *
+ * Each uid is a package on the meta server (meta/Index). Components later in the list are applied on top of
+ * earlier ones to build the LaunchProfile (main class, libraries, arguments) via getProfile().
+ * "dependencyOnly" components were added automatically to satisfy requirements and are removed when nothing
+ * needs them anymore. Users can also "customize" a component (copy it to patches/<uid>.json and edit it).
+ *
+ * Common operations:
+ *   auto profile = minecraftInstance->getPackProfile();
+ *   profile->getComponentVersion("net.minecraft");                  // "1.20.1"
+ *   profile->setComponentVersion("net.fabricmc.fabric-loader", v);  // add or change a loader
+ *   profile->getModLoaders();                                       // which loaders are installed
+ *   profile->reload(Net::Mode::Online);                             // re-read file + resolve with meta
+ * Changes are saved automatically (scheduleSave()), or immediately with saveNow().
+ */
 class PackProfile : public QAbstractListModel {
     Q_OBJECT
     friend ComponentUpdateTask;

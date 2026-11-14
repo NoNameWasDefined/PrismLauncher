@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Windows/Linux self-updater implementation that runs the separate prismlauncher_updater executable.
+
 #pragma once
 
 #include <QObject>

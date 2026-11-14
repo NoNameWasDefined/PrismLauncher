@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Instance page editing the servers.dat server list (add/remove/move, ping status).
+
 #pragma once
 
 #include <QMainWindow>

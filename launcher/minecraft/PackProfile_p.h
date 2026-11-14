@@ -1,3 +1,5 @@
+// File overview: Private data of PackProfile (component list, update task, save timer).
+
 #pragma once
 
 #include <QList>

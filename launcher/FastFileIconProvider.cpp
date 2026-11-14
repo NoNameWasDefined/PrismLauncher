@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of FastFileIconProvider.h. QFileIconProvider that returns generic file/folder icons
+// without hitting the disk, keeping file views fast.
+
 #include "FastFileIconProvider.h"
 
 #include <QApplication>

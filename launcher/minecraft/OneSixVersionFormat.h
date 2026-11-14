@@ -1,3 +1,6 @@
+// File overview: Reader/writer for the launcher's own version file format (Mojang format plus extras like +tweakers,
+// jar mods, agents). Used for meta files and local patches.
+
 #pragma once
 
 #include <ProblemProvider.h>

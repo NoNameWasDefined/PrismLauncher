@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Helpers for reading/writing component order files and loading local patch JSON files.
+
 #pragma once
 #include "Library.h"
 #include "VersionFile.h"

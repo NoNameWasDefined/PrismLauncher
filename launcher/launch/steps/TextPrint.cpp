@@ -1,3 +1,5 @@
+// File overview: Implementation of TextPrint.h. Launch step that just prints some text into the log.
+
 #include "TextPrint.h"
 
 TextPrint::TextPrint(LaunchTask* parent, const QStringList& lines, MessageLevel level) : LaunchStep(parent)

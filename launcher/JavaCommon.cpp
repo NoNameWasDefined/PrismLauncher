@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of JavaCommon.h. Shared UI helpers for Java pages: argument sanity checks and a "test
+// Java" helper used by settings pages.
+
 #include "JavaCommon.h"
 #include "java/JavaUtils.h"
 #include "ui/dialogs/CustomMessageBox.h"

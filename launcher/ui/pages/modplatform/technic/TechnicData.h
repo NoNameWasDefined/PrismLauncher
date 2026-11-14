@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Data structure for a Technic modpack in the browser.
+
 #pragma once
 
 #include <QList>

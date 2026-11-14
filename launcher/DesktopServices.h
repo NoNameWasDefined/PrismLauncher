@@ -1,3 +1,6 @@
+// File overview: Wrapper around QDesktopServices (open files, folders, URLs) with platform workarounds (Flatpak,
+// Snap...). Use this instead of QDesktopServices directly.
+
 #pragma once
 
 #include <QString>

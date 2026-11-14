@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Sort/filter proxy over the InstanceList for the main window (sort by name/last played, search filter).
+
 #pragma once
 
 #include <QCollator>

@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Base class for one file/folder in a resource folder (mod, resource pack, shader...): name, enabled
+// state, size, platform metadata.
+
 #pragma once
 
 #include <QDateTime>

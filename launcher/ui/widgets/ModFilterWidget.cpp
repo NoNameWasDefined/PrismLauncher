@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ModFilterWidget.h. Filter panel for mod search (Minecraft versions, loaders, side,
+// categories, open source...).
+
 #include "ModFilterWidget.h"
 #include <QCheckBox>
 #include <QComboBox>

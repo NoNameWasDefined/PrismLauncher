@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: "Copy instance" dialog: new name, group, icon and which parts to copy (fills InstanceCopyPrefs).
+
 #pragma once
 
 #include <QDialog>

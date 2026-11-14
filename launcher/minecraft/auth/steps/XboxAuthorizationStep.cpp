@@ -1,3 +1,6 @@
+// File overview: Implementation of XboxAuthorizationStep.h. Auth step that gets an XSTS authorization token for a given
+// relying party.
+
 #include "XboxAuthorizationStep.h"
 
 #include <QJsonDocument>

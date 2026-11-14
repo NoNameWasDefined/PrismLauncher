@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Dialog for adding a custom component (uid + name) to an instance's version list.
+
 #pragma once
 
 #include <QDialog>

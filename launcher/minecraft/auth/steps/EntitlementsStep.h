@@ -1,3 +1,5 @@
+// File overview: Auth step that checks whether the account owns Minecraft (entitlements API).
+
 #pragma once
 #include <QObject>
 #include <memory>

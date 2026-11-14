@@ -34,6 +34,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of VersionListView.h. Tree view for version lists, with empty/error messages.
+
 #include "VersionListView.h"
 #include <QApplication>
 #include <QDrag>

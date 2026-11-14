@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: Tool button that wraps its text label.
+
 #pragma once
 
 #include <QPushButton>

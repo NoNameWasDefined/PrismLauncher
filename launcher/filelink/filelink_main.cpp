@@ -20,6 +20,8 @@
  *
  */
 
+// File overview: Entry point of the file-link helper executable.
+
 #include "FileLink.h"
 
 int main(int argc, char* argv[])

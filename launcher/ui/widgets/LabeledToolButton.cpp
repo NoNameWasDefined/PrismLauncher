@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of LabeledToolButton.h. Tool button that wraps its text label.
+
 #include "LabeledToolButton.h"
 #include <QApplication>
 #include <QDebug>

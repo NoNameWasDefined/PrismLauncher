@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: List model of available UI languages; downloads translation files and switches the app language.
+
 #pragma once
 
 #include <QAbstractListModel>

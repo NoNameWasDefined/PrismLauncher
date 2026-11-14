@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: String helpers: std/Qt conversions, natural sort compare, human readable file sizes, URL truncation,
+// random strings.
+
 #pragma once
 
 #include <QPair>

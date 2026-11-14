@@ -1,3 +1,6 @@
+// File overview: Defines Filter (a std::function<bool(QString)>) and the Filters:: combinators (equals, contains,
+// startsWith, regexp, inverse, any) used to choose which files are copied/exported.
+
 #pragma once
 
 #include <QRegularExpression>

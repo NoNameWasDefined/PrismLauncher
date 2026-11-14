@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Settings page "Tools": profilers (JProfiler, VisualVM), MCEdit and external editor paths.
+
 #pragma once
 
 #include <QWidget>

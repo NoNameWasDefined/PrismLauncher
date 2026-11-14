@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of MangoHud.h. Locates the MangoHud overlay library on Linux so it can be injected when
+// launching.
+
 #include <QDebug>
 #include <QDir>
 #include <QString>

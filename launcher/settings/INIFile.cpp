@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of INIFile.h. Sectionless INI file reader/writer used for launcher and instance .cfg
+// files.
+
 #include "settings/INIFile.h"
 #include <FileSystem.h>
 

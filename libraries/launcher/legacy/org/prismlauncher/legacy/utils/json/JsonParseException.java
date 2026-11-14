@@ -33,6 +33,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Exception thrown by the small built-in JSON parser.
+
 package org.prismlauncher.legacy.utils.json;
 
 import java.io.IOException;

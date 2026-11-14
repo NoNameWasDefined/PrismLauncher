@@ -16,6 +16,9 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Implementation of Markdown.h. Converts Markdown to HTML (via cmark) for changelogs and mod
+// descriptions.
+
 #include "Markdown.h"
 
 QString markdownToHTML(const QString& markdown)

@@ -15,6 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// File overview: Task that extracts an archive (or a sub-folder of it) to a target directory, with progress and abort
+// support.
+
 #pragma once
 
 #include <QDir>

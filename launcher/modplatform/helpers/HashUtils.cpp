@@ -1,3 +1,6 @@
+// File overview: Implementation of HashUtils.h. Hashing helpers and Hasher tasks (sha1, sha512, murmur2 for CurseForge
+// fingerprints) for files.
+
 #include "HashUtils.h"
 
 #include <QBuffer>

@@ -52,6 +52,8 @@
  *      limitations under the License.
  */
 
+// File overview: Reflection helpers (find a class's main method).
+
 package org.prismlauncher.utils;
 
 import java.lang.invoke.MethodHandle;

@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of SolderPackInstallTask.h. Installs a Technic pack served by a Solder API (downloads
+// each mod zip of the chosen build).
+
 #include "SolderPackInstallTask.h"
 
 #include <FileSystem.h>

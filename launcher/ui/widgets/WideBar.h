@@ -1,3 +1,5 @@
+// File overview: Toolbar used across pages that can be customised (hide actions via right-click).
+
 #pragma once
 
 #include <QAction>

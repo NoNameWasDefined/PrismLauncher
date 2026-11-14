@@ -33,6 +33,9 @@
  *      limitations under the License.
  */
 
+// File overview: Interface every page implements (settings pages, instance pages, creation pages): id, display name,
+// icon, apply(), opened/closed hooks, help link. See launcher/ui/README.md.
+
 #pragma once
 
 #include <QIcon>

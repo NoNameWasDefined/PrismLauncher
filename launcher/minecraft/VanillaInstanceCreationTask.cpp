@@ -1,3 +1,6 @@
+// File overview: Implementation of VanillaInstanceCreationTask.h. InstanceCreationTask for a plain new instance: writes
+// instance.cfg and an mmc-pack.json with the chosen Minecraft version (and optional mod loader).
+
 #include "VanillaInstanceCreationTask.h"
 
 #include <utility>

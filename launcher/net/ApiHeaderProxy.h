@@ -17,6 +17,8 @@
  *
  */
 
+// File overview: Header proxy that injects API keys/user agent for known mod platform hosts.
+
 #pragma once
 
 #include "Application.h"

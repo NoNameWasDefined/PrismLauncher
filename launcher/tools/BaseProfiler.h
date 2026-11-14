@@ -1,3 +1,5 @@
+// File overview: Base class for profiler integrations that start profiling once the game process is up.
+
 #pragma once
 
 #include "BaseExternalTool.h"

@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of AtlPage.h. New-instance page "ATLauncher": browse packs and create a
+// PackInstallTask.
+
 #include "AtlPage.h"
 #include "ui/widgets/ProjectItem.h"
 #include "ui_AtlPage.h"

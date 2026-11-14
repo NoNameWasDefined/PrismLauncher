@@ -1,3 +1,5 @@
+// File overview: Implementation of ViewLogWindow.h. Standalone window that shows the launcher's own log.
+
 #include <QCloseEvent>
 
 #include "ViewLogWindow.h"

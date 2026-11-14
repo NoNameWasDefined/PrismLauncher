@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+// File overview: Launch step that builds a modified minecraft.jar when the instance uses jar mods (and removes it
+// afterwards).
+
 #pragma once
 
 #include <launch/LaunchStep.h>

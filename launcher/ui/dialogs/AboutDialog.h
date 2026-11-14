@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+// File overview: The "About" dialog (version, credits, license).
+
 #pragma once
 
 #include <QDialog>

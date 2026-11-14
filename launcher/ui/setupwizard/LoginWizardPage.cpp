@@ -1,3 +1,5 @@
+// File overview: Implementation of LoginWizardPage.h. Setup wizard page that offers to add a Microsoft account.
+
 #include "LoginWizardPage.h"
 #include "minecraft/auth/AccountList.h"
 #include "ui/dialogs/MSALoginDialog.h"

@@ -1,3 +1,6 @@
+// File overview: Task that runs a chain of AuthSteps to log in or refresh a Microsoft account (MSA -> Xbox Live -> XSTS
+// -> Minecraft token -> profile).
+
 #pragma once
 
 #include <QImage>

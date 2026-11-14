@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of ATLPackManifest.h. Data structures and parser for an ATLauncher pack version
+// manifest (loaders, libraries, mods, configs).
+
 #include "ATLPackManifest.h"
 
 #include "Json.h"

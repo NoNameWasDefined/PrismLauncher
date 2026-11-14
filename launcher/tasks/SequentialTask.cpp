@@ -33,6 +33,10 @@
  *      See the License for the specific language governing permissions and
  *      limitations under the License.
  */
+
+// File overview: Implementation of SequentialTask.h. ConcurrentTask limited to one sub-task at a time: runs sub-tasks
+// strictly in order and stops on failure.
+
 #include "SequentialTask.h"
 
 #include <QDebug>

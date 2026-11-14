@@ -33,6 +33,8 @@
  *      limitations under the License.
  */
 
+// File overview: Interface for where downloaded data goes (file, memory, cache); runs validators while writing.
+
 #pragma once
 
 #include "Validator.h"

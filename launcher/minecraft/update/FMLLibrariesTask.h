@@ -1,3 +1,5 @@
+// File overview: Update task that downloads extra libraries old Forge (FML) versions need.
+
 #pragma once
 #include "minecraft/VersionFilterData.h"
 #include "net/NetJob.h"

@@ -16,6 +16,8 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// File overview: Dialog to choose optional files when installing a modpack.
+
 #pragma once
 
 #include <QAbstractListModel>

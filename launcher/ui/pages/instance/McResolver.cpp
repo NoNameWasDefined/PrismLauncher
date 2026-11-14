@@ -1,3 +1,6 @@
+// File overview: Implementation of McResolver.h. Resolves a Minecraft server address (SRV then A record) before pinging
+// it.
+
 #include <QtNetwork/qtcpsocket.h>
 #include <QDnsLookup>
 #include <QHostInfo>

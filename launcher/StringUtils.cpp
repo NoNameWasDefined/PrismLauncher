@@ -34,6 +34,9 @@
  *      limitations under the License.
  */
 
+// File overview: Implementation of StringUtils.h. String helpers: std/Qt conversions, natural sort compare, human
+// readable file sizes, URL truncation, random strings.
+
 #include "StringUtils.h"
 #include <qpair.h>
 
