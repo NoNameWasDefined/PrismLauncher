@@ -17,7 +17,7 @@ Just build it. No release yet.
 
 ### Development Build
 
-Please understand that this builds are not intended for most users. This is mainly to serve for us, altough you are free to use it. There may be bugs, and other instabilities. You have been warned.
+Please understand that this build is not intended for most users. This is mainly to serve for us, altough you are free to use it. There may be bugs, and other instabilities. You have been warned.
 
 There are development builds available through:
 - This is a dev build already, what do you want more from me?
