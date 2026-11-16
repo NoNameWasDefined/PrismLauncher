@@ -39,8 +39,6 @@
  */
 class ServerUtils {  // Communication with sync server
    public:
-    // Declared but not implemented anywhere: calling it fails to link. Remove it or implement it.
-    static void init();
 
     // Builds the manifest JSON (compact) for `instance` from its mmc-pack.json and the packwiz metadata files in
     // <mods folder>/.index. Returns an EMPTY QByteArray when the instance has no mods/.index folder
