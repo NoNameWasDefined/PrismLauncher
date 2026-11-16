@@ -1579,7 +1579,7 @@ bool Application::launch(InstancePtr instance,
         // explicit status) to fix it.
         if (settings()->get("AutoSyncModpack").toBool()) {
             if (!ServerUtils::SyncModpack(instance)) {
-                qWarning() << "Modpack sync failed, aborting launch.";
+                qWarning() << "Modpack sync failed.";
                 auto result = QMessageBox::warning(
                     nullptr,
                     "Warning",

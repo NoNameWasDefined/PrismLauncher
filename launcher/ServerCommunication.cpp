@@ -84,8 +84,7 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
     QString content = tomlFile.readAll();
     tomlFile.close();
 
-    // Extract needed values with regex (since Qt doesn't have native TOML
-    // parser)
+    // Extract needed values with regex (since Qt doesn't have native TOML parser)
     // NOTE: the launcher already links toml++ (used by Packwiz.cpp); Packwiz::V1::getIndexForMod() parses these
     // files properly and returns name, version, url... which would be more robust than regexes.
     QJsonObject modEntry;
@@ -230,7 +229,5 @@ int ServerUtils::SyncModpack(InstancePtr instance) {
       qWarning() << "Server error:" << code << response;
   };
   qDebug() << "Server replied with:" << response;
-  // NOTE: always 0. Application::launch() calls `if (!SyncModpack(...))`, so this is read as a failure and the
-  // "sync failed" warning is shown every time. Return a value that matches the caller's expectation.
-  return 0;
+  return 1;
 }
