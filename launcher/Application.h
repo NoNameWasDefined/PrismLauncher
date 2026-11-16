@@ -324,6 +324,8 @@ class Application : public QApplication {
     size_t m_openWindows = 0;
     size_t m_runningInstances = 0;
     bool m_updateRunning = false;
+    // (This fork) True while Application::launch() waits for ServerUtils::SyncModpack().
+    bool m_syncRunning = false;
 
     // main window, if any
     MainWindow* m_mainWindow = nullptr;

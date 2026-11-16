@@ -1573,12 +1573,17 @@ bool Application::launch(InstancePtr instance,
         qDebug() << "Cannot launch instances while an update is running. Please try again when updates are completed.";
     } else if (instance->canLaunch()) {
         // (This fork) Ask the sync server whether this modpack changed before launching.
-        // ServerUtils::SyncModpack() blocks the UI until the HTTP request returns (see ServerCommunication.cpp).
-        // NOTE: SyncModpack() currently always returns 0, so `!SyncModpack(...)` is always true and this
-        // warning is shown on every launch. Make SyncModpack() return non-zero on success (or compare to an
-        // explicit status) to fix it.
+        // ServerUtils::SyncModpack() waits for the HTTP reply in a nested event loop, so the user can click
+        // Launch again meanwhile: m_syncRunning refuses that second launch instead of starting a second sync.
         if (settings()->get("AutoSyncModpack").toBool()) {
-            if (!ServerUtils::SyncModpack(instance)) {
+            if (m_syncRunning) {
+                qDebug() << "Cannot launch while a modpack sync is running.";
+                return false;
+            }
+            m_syncRunning = true;
+            bool synced = ServerUtils::SyncModpack(instance);
+            m_syncRunning = false;
+            if (!synced) {
                 qWarning() << "Modpack sync failed.";
                 auto result = QMessageBox::warning(
                     nullptr,

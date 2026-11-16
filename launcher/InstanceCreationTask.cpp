@@ -75,7 +75,8 @@ void InstanceCreationTask::executeTask() {
     //    The instance still lives in its staging folder at this point; InstanceList moves it into
     //    instances/ after emitSucceeded(). The HTTP status code returned by PutManifest is ignored, so
     //    a failed upload does not stop the creation.
-    ServerUtils::PutManifest(createdInstance);
+    if (m_uploadManifest)
+      ServerUtils::PutManifest(createdInstance);
     emitSucceeded();
   }
 }

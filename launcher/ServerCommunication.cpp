@@ -142,8 +142,9 @@ int ServerUtils::PutManifest(InstancePtr instance) {
   QString serverUrl = settings->get("ModpackSyncServerURL").toString();
   QString instanceName = instance->settings()->get("name").toString();
 
-  if (serverUrl == ""){
-    return 0
+  // No server configured: nothing to upload.
+  if (serverUrl.isEmpty()) {
+    return 0;
   }
 
   // Build Put url with credentials
@@ -155,6 +156,8 @@ int ServerUtils::PutManifest(InstancePtr instance) {
 
   QNetworkRequest request(url);
   request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+  // Give up if the server stops answering, using the same "RequestTimeout" setting as net/NetRequest.cpp.
+  request.setTransferTimeout(settings->get("RequestTimeout").toInt() * 1000);
 
   // May be empty (no mods/.index folder): an empty body is uploaded in that case.
   QByteArray manifestData = ServerUtils::CreateManifest(instance);
@@ -184,8 +187,9 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   QString serverUrl = settings->get("ModpackSyncServerURL").toString();
   QString instanceName = instance->settings()->get("name").toString();
 
-  if (serverUrl == ""){
-    return 0
+  // No server configured: report "no reply".
+  if (serverUrl.isEmpty()) {
+    return { 0, QByteArray() };
   }
 
   // Build Put url with credentials
@@ -193,11 +197,9 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   url.setUserName(username);
   url.setPassword(password);
 
-  // NOTE: unused here (the GET sends no body); can be removed.
-  QByteArray manifestData = ServerUtils::CreateManifest(instance);
-
   // Send GET request for the manifest.json
   QNetworkRequest request(url);
+  request.setTransferTimeout(settings->get("RequestTimeout").toInt() * 1000);
   QNetworkReply* reply = net->get(request);
 
   // Use event loop to block until finished
@@ -216,6 +218,11 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
 // A full sync would compare `serverManifest` with `localManifest` and download/remove mods (e.g. with
 // ResourceDownloadTask) and update loaders (PackProfile::setComponentVersion) before the launch continues.
 int ServerUtils::SyncModpack(InstancePtr instance) {
+  // No server configured: nothing to sync, which is not an error.
+  if (APPLICATION->settings()->get("ModpackSyncServerURL").toString().isEmpty()) {
+    return 1;
+  }
+
   auto [code, response] = GetManifest(instance);
   // Parsed but not used yet.
   QJsonDocument serverManifest = QJsonDocument::fromJson(response);
@@ -234,7 +241,9 @@ int ServerUtils::SyncModpack(InstancePtr instance) {
       qDebug() << "Manifest for" << instanceName << ":" << response;
       break;
     default:
+      // Includes code 0: server unreachable or timed out.
       qWarning() << "Server error:" << code << response;
+      return 0;
   };
   qDebug() << "Server replied with:" << response;
   return 1;

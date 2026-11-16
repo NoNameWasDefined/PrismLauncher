@@ -52,6 +52,7 @@
 
 #include "modplatform/flame/FlameInstanceCreationTask.h"
 #include "modplatform/modrinth/ModrinthInstanceCreationTask.h"
+#include "modplatform/sync/SyncPackCreationTask.h"
 #include "modplatform/technic/TechnicPackProcessor.h"
 
 #include "settings/INISettingsObject.h"
@@ -163,12 +164,10 @@ void InstanceImportTask::processPack()
         // (This fork) Not a readable archive: try to parse the file as a JSON pack description.
         QFile file(m_json_or_archivePath);
         if (file.open(QIODevice::ReadOnly)) {
-            // NOTE: read(16) only reads the first 16 bytes, so any real JSON document fails to parse here.
-            // Use file.readAll() to parse the whole file.
-            QByteArray data = file.read(16);
+            QByteArray data = file.readAll();
             file.close();
             QJsonDocument json = QJsonDocument::fromJson(data);
-            if (!json.isNull()) {
+            if (json.isObject()) {
                 processJSONPack(json);
                 return;
             } else {
@@ -182,14 +181,38 @@ void InstanceImportTask::processPack()
     }
 }
 
-// (This fork) Create an instance from a JSON pack description (e.g. a sync-server manifest).
-// TODO: not implemented. As written, the task never calls emitSucceeded()/emitFailed(), so the import
-// dialog would wait forever. A real implementation would read the loaders/mods from `packJson`, write
-// mmc-pack.json + instance.cfg into m_stagingPath (like VanillaCreationTask does), queue the mod downloads,
-// and finally call emitSucceeded().
+// (This fork) Create an instance from a JSON pack description, i.e. a sync-server manifest (format in
+// ServerCommunication.h). Same hand-off as processModrinth(): SyncPackCreationTask does the actual work.
 void InstanceImportTask::processJSONPack(QJsonDocument packJson)
 {
-    // process JSON file at `m_json_or_archive_path`
+    auto manifest = packJson.object();
+    if (!manifest.contains("loadersVersion")) {
+        emitFailed(tr("This JSON file is not a modpack manifest."));
+        return;
+    }
+
+    auto inst_creation_task = makeShared<SyncPackCreationTask>(m_stagingPath, m_globalSettings, manifest);
+
+    inst_creation_task->setName(*this);
+    inst_creation_task->setIcon(m_instIcon);
+    inst_creation_task->setGroup(m_instGroup);
+    inst_creation_task->setConfirmUpdate(shouldConfirmUpdate());
+
+    connect(inst_creation_task.get(), &Task::succeeded, this, &InstanceImportTask::emitSucceeded);
+    connect(inst_creation_task.get(), &Task::failed, this, &InstanceImportTask::emitFailed);
+    connect(inst_creation_task.get(), &Task::progress, this, &InstanceImportTask::setProgress);
+    connect(inst_creation_task.get(), &Task::stepProgress, this, &InstanceImportTask::propagateStepProgress);
+    connect(inst_creation_task.get(), &Task::status, this, &InstanceImportTask::setStatus);
+    connect(inst_creation_task.get(), &Task::details, this, &InstanceImportTask::setDetails);
+
+    connect(inst_creation_task.get(), &Task::aborted, this, &InstanceImportTask::emitAborted);
+    connect(inst_creation_task.get(), &Task::abortStatusChanged, this, &Task::setAbortable);
+
+    connect(inst_creation_task.get(), &Task::warningLogged, this, [this](const QString& line) { m_Warnings.append(line); });
+
+    m_task.reset(inst_creation_task);
+    setAbortable(true);
+    m_task->start();
 }
 
 void InstanceImportTask::processZipPack(MMCZip::ArchiveReader& packZip)

@@ -34,8 +34,8 @@
  *   }
  *
  * All functions are static and BLOCKING: they wait for the HTTP reply with a nested QEventLoop on the
- * calling (UI) thread. That keeps the code simple but freezes the window while waiting, and a server that
- * doesn't answer blocks until Qt's network timeout. The non-blocking alternative is a NetJob (net/NetJob.h).
+ * calling (UI) thread. That keeps the code simple but freezes the window while waiting; a server that stops
+ * answering is given up on after the "RequestTimeout" setting. The non-blocking alternative is a NetJob (net/NetJob.h).
  */
 class ServerUtils {  // Communication with sync server
    public:
@@ -49,9 +49,9 @@ class ServerUtils {  // Communication with sync server
     // failed before getting a reply, e.g. server unreachable or empty URL).
     static int PutManifest(InstancePtr instance);
 
-    // Fetches the server's manifest for `instance` and logs what the server said.
-    // NOTE: currently always returns 0 (nothing is applied locally yet), and Application::launch() treats 0
-    // as failure. Decide on a convention (e.g. return true/1 on success) and update the caller.
+    // Fetches the server's manifest for `instance` and logs what the server said (nothing is applied locally yet).
+    // Returns 1 on success or when no server is configured, 0 when the server is unreachable or replies with an
+    // unexpected status.
     static int SyncModpack(InstancePtr instance);
 
     // HTTP GET of the manifest. Returns {status code, response body}.

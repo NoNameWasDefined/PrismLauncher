@@ -70,6 +70,10 @@ class InstanceCreationTask : public InstanceTask {
   // When updating an existing pack: files from the old version to delete once the new files are in place.
   QStringList m_files_to_remove;
 
+  // (This fork) Whether executeTask() uploads the new instance's manifest to the sync server. Turned off by
+  // SyncPackCreationTask, whose instance was built from the server's own manifest.
+  bool m_uploadManifest = true;
+
  private:
   QString m_error_message;
 };

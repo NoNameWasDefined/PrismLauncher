@@ -558,6 +558,12 @@ set(MODRINTH_SOURCES
     modplatform/modrinth/ModrinthPackExportTask.h
 )
 
+# Sync server packs (this fork)
+set(SYNC_SOURCES
+    modplatform/sync/SyncPackCreationTask.cpp
+    modplatform/sync/SyncPackCreationTask.h
+)
+
 set(PACKWIZ_SOURCES
     modplatform/packwiz/Packwiz.h
     modplatform/packwiz/Packwiz.cpp
@@ -773,6 +779,7 @@ set(LOGIC_SOURCES
     ${FTB_SOURCES}
     ${FLAME_SOURCES}
     ${MODRINTH_SOURCES}
+    ${SYNC_SOURCES}
     ${PACKWIZ_SOURCES}
     ${TECHNIC_SOURCES}
     ${ATLAUNCHER_SOURCES}

@@ -212,10 +212,12 @@ void ImportPage::setExtraInfo(const QMap<QString, QString>& extra_info)
 void ImportPage::on_modpackBtn_clicked()
 {
     const QMimeType zip = QMimeDatabase().mimeTypeForName("application/zip");
-    auto filter = tr("Supported files") + QString(" (%1 *.mrpack)").arg(zip.globPatterns().join(" "));
+    auto filter = tr("Supported files") + QString(" (%1 *.mrpack *.json)").arg(zip.globPatterns().join(" "));
     filter += ";;" + zip.filterString();
     //: Option for filtering for *.mrpack files when importing
     filter += ";;" + tr("Modrinth pack") + " (*.mrpack)";
+    //: Option for filtering for *.json sync-server pack manifests when importing
+    filter += ";;" + tr("Sync server pack") + " (*.json)";
     const QUrl url = QFileDialog::getOpenFileUrl(this, tr("Choose modpack"), modpackUrl(), filter);
     if (url.isValid()) {
         if (url.isLocalFile()) {
