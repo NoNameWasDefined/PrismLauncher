@@ -132,7 +132,7 @@ QByteArray ServerUtils::CreateManifest(InstancePtr instance) {
 int ServerUtils::PutManifest(InstancePtr instance) {
   // Get the global Application instance's network manager and settings manager
   // (debug print left over; qDebug() would go to the launcher log instead of stdout)
-  cout << "CREATINT MANIFEST";
+  cout << "CREATING MANIFEST";
   auto net = APPLICATION->network();
   auto settings = APPLICATION->settings();
 
@@ -141,6 +141,10 @@ int ServerUtils::PutManifest(InstancePtr instance) {
   QString password = settings->get("ServerPsswd").toString();
   QString serverUrl = settings->get("ModpackSyncServerURL").toString();
   QString instanceName = instance->settings()->get("name").toString();
+
+  if (serverUrl == ""){
+    return 0
+  }
 
   // Build Put url with credentials
   // The instance name goes into the URL path as-is; QUrl percent-encodes spaces etc., but a name containing
@@ -179,6 +183,10 @@ std::pair<int, QByteArray> ServerUtils::GetManifest(InstancePtr instance) {
   QString password = settings->get("ServerPsswd").toString();
   QString serverUrl = settings->get("ModpackSyncServerURL").toString();
   QString instanceName = instance->settings()->get("name").toString();
+
+  if (serverUrl == ""){
+    return 0
+  }
 
   // Build Put url with credentials
   QUrl url(serverUrl + "/modpacks/" + instanceName + "/manifest.json");
